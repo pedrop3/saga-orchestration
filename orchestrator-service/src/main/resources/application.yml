@@ -1,0 +1,20 @@
+server:
+  port: 8050
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    topic:
+      start-saga: start-saga
+      finish-success: finish-success
+      finish-fail: finish-fail
+      orchestrator: orchestrator
+    consumer:
+      group-id: orchestrator-group
+      auto-offset-reset: latest
+
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF
