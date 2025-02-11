@@ -2,6 +2,7 @@ package com.learn.orchestrated.inventory_service.config.kafka;
 
 import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 import lombok.RequiredArgsConstructor;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.*;
 
 import java.util.HashMap;
@@ -19,6 +21,9 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class KafkaConfig {
 
+    public static final Integer REPLICA_COUNT = 1;
+    public static final Integer PARTITION_COUNT = 1;
+
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
@@ -27,6 +32,15 @@ public class KafkaConfig {
 
     @Value("${spring.kafka.consumer.auto-offset-reset}")
     private String autoOffsetReset;
+
+    @Value("${spring.kafka.topic.inventory-fail}")
+    private String inventoryFailTopic;
+
+    @Value("${spring.kafka.topic.inventory-success}")
+    private String inventorySuccessTopic;
+
+    @Value("${spring.kafka.topic.orchestrator}")
+    private String orchestratorTopic;
 
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
@@ -63,6 +77,29 @@ public class KafkaConfig {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate(ProducerFactory<String, String> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
+    }
+
+    private NewTopic buildTopic(String name) {
+        return TopicBuilder
+                .name(name)
+                .replicas(REPLICA_COUNT)
+                .partitions(PARTITION_COUNT)
+                .build();
+    }
+
+    @Bean
+    public NewTopic inventoryFailTopic() {
+        return buildTopic(inventoryFailTopic);
+    }
+
+    @Bean
+    public NewTopic inventorySuccessTopic() {
+        return buildTopic(inventorySuccessTopic);
+    }
+
+    @Bean
+    public NewTopic orchestratorTopic() {
+        return buildTopic(orchestratorTopic);
     }
 
 }
