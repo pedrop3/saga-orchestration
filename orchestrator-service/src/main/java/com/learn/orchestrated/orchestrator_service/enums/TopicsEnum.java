@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum ETopics {
+public enum TopicsEnum {
 
     START_SAGA("start-saga"),
     BASE_ORCHESTRATOR("orchestrator"),

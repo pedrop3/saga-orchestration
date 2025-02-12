@@ -16,7 +16,7 @@ import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.learn.orchestrated.orchestrator_service.enums.ETopics.*;
+import static com.learn.orchestrated.orchestrator_service.enums.TopicsEnum.*;
 
 @EnableKafka
 @Configuration
