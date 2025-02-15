@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating the base objets">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/producer/SagaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/enums/SagaStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/exception/ExceptionDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/exception/ExceptionGlobalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/utils/JsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/History.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/OrderProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/OrderProducts.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating commons for reuse across microservices">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/producer/SagaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/producer/SagaOrchestrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/producer/SagaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/producer/SagaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +220,7 @@
     "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/saga-commons/src/main/java/com/learn/sagacommons",
+    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -253,11 +242,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
+      <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
+      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka" />
       <recent name="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons" />
-      <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto" />
-      <recent name="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/utils" />
-      <recent name="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto" />
-      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.learn.sagacommons.dto" />
@@ -496,7 +485,7 @@
       <workItem from="1739316237073" duration="9841000" />
       <workItem from="1739631544778" duration="5216000" />
       <workItem from="1739655708730" duration="927000" />
-      <workItem from="1739656645138" duration="5722000" />
+      <workItem from="1739656645138" duration="6131000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -546,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739322527590</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creating commons for reuse across microservices">
+      <option name="closed" value="true" />
+      <created>1739663397966</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739663397966</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +567,9 @@
     <MESSAGE value="Creating the configuration to Kafka." />
     <MESSAGE value="Creating the configuration to KafkaConfig to all MS." />
     <MESSAGE value="Creating the base objets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the base objets" />
+    <MESSAGE value="Creating commons for reuse acrossl micronservices" />
+    <MESSAGE value="Creating commons for reuse across microservices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating commons for reuse across microservices" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
