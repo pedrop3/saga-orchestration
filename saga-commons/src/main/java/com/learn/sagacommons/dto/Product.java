@@ -1,5 +1,4 @@
-package com.learn.orchestrated.order_service.document;
-
+package com.learn.sagacommons.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderProducts {
+public class Product {
 
-    private Product product;
-    private int quantity;
+    private String code;
+    private double unitValue;
 }

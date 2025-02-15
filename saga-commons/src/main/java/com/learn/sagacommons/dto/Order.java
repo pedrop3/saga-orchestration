@@ -1,11 +1,10 @@
-package com.learn.orchestrated.order_service.document;
+package com.learn.sagacommons.dto;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Order {
 
-    @Id
+
     private String orderId;
     private List<OrderProducts> products;
     private int quantity;

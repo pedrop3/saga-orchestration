@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/inventory-service/build/libs/inventory-service-0.0.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/inventory-service/build/libs/inventory-service-0.0.1-SNAPSHOT-plain.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

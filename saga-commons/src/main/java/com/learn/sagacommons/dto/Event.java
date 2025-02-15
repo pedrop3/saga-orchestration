@@ -1,5 +1,7 @@
-package com.learn.orchestrated.order_service.document;
+package com.learn.sagacommons.dto;
 
+
+import com.learn.sagacommons.enums.SagaStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +20,6 @@ public class Event {
     private String orderId;
     private Order order;
     private String source;
-    private String status;
+    private SagaStatusEnum status;
     private List<History> history;
 }

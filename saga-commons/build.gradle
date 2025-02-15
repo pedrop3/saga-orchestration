@@ -1,0 +1,63 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.2'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'maven-publish'
+}
+
+group = 'com.learn'
+version = '0.0.2-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	implementation 'org.projectlombok:lombok:1.18.30'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.4.2'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.jar {
+	enabled = true
+	archiveClassifier = ''
+}
+
+tasks.bootJar {
+	enabled = false
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+			groupId = 'com.learn'
+			artifactId = 'saga-commons'
+			version = '0.0.2-SNAPSHOT'
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
+		}
+	}
+	repositories {
+		mavenLocal()
+	}
+}

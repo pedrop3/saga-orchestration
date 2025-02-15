@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.4</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin">
+      <LastIntrospectionLocalTimestamp>2025-02-12.00:03:35</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="3" parent="1" name="config">
+      <LastIntrospectionLocalTimestamp>2025-02-12.00:03:35</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="4" parent="1" name="local">
+      <LastIntrospectionLocalTimestamp>2025-02-12.00:03:35</LastIntrospectionLocalTimestamp>
+    </schema>
+    <table id="5" parent="3" name="system.sessions"/>
+    <table id="6" parent="4" name="startup_log"/>
+    <column id="7" parent="6" name="_id">
+      <Position>1</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="8" parent="6" name="buildinfo">
+      <Position>2</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="9" parent="6" name="buildinfo.allocator">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="10" parent="6" name="buildinfo.bits">
+      <Position>4</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+    <column id="11" parent="6" name="buildinfo.buildEnvironment">
+      <Position>5</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="12" parent="6" name="buildinfo.buildEnvironment.cc">
+      <Position>6</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="13" parent="6" name="buildinfo.buildEnvironment.ccflags">
+      <Position>7</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="14" parent="6" name="buildinfo.buildEnvironment.cppdefines">
+      <Position>8</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="15" parent="6" name="buildinfo.buildEnvironment.cxx">
+      <Position>9</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="16" parent="6" name="buildinfo.buildEnvironment.cxxflags">
+      <Position>10</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="17" parent="6" name="buildinfo.buildEnvironment.distarch">
+      <Position>11</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="18" parent="6" name="buildinfo.buildEnvironment.distmod">
+      <Position>12</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="19" parent="6" name="buildinfo.buildEnvironment.linkflags">
+      <Position>13</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="20" parent="6" name="buildinfo.buildEnvironment.target_arch">
+      <Position>14</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="21" parent="6" name="buildinfo.buildEnvironment.target_os">
+      <Position>15</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="22" parent="6" name="buildinfo.debug">
+      <Position>16</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <column id="23" parent="6" name="buildinfo.gitVersion">
+      <Position>17</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="24" parent="6" name="buildinfo.javascriptEngine">
+      <Position>18</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="25" parent="6" name="buildinfo.maxBsonObjectSize">
+      <Position>19</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+    <column id="26" parent="6" name="buildinfo.modules">
+      <Position>20</Position>
+      <StoredType>list|4999545s</StoredType>
+    </column>
+    <column id="27" parent="6" name="buildinfo.openssl">
+      <Position>21</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="28" parent="6" name="buildinfo.openssl.compiled">
+      <Position>22</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="29" parent="6" name="buildinfo.openssl.running">
+      <Position>23</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="30" parent="6" name="buildinfo.storageEngines">
+      <Position>24</Position>
+      <StoredType>Array|2003s</StoredType>
+    </column>
+    <column id="31" parent="6" name="buildinfo.sysInfo">
+      <Position>25</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="32" parent="6" name="buildinfo.version">
+      <Position>26</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="33" parent="6" name="buildinfo.versionArray">
+      <Position>27</Position>
+      <StoredType>Array|2003s</StoredType>
+    </column>
+    <column id="34" parent="6" name="cmdLine">
+      <Position>28</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="35" parent="6" name="cmdLine.net">
+      <Position>29</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="36" parent="6" name="cmdLine.net.bindIp">
+      <Position>30</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="37" parent="6" name="cmdLine.net.port">
+      <Position>31</Position>
+      <StoredType>Int32|4s</StoredType>
+    </column>
+    <column id="38" parent="6" name="cmdLine.net.tls">
+      <Position>32</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="39" parent="6" name="cmdLine.net.tls.mode">
+      <Position>33</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="40" parent="6" name="cmdLine.processManagement">
+      <Position>34</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="41" parent="6" name="cmdLine.processManagement.fork">
+      <Position>35</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <column id="42" parent="6" name="cmdLine.processManagement.pidFilePath">
+      <Position>36</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="43" parent="6" name="cmdLine.security">
+      <Position>37</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="44" parent="6" name="cmdLine.security.authorization">
+      <Position>38</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="45" parent="6" name="cmdLine.systemLog">
+      <Position>39</Position>
+      <StoredType>Object|4999544s</StoredType>
+    </column>
+    <column id="46" parent="6" name="cmdLine.systemLog.destination">
+      <Position>40</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="47" parent="6" name="cmdLine.systemLog.logAppend">
+      <Position>41</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <column id="48" parent="6" name="cmdLine.systemLog.path">
+      <Position>42</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="49" parent="6" name="hostname">
+      <Position>43</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="50" parent="6" name="pid">
+      <Position>44</Position>
+      <StoredType>Int64|12s</StoredType>
+    </column>
+    <column id="51" parent="6" name="startTime">
+      <Position>45</Position>
+      <StoredType>ISODate|91s</StoredType>
+    </column>
+    <column id="52" parent="6" name="startTimeLocal">
+      <Position>46</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <index id="53" parent="6" name="_id_">
+      <ColNames>_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+  </database-model>
+</dataSource>

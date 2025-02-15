@@ -1,4 +1,4 @@
-package com.learn.orchestrated.order_service.document;
+package com.learn.sagacommons.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
