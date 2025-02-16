@@ -4,12 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating commons for reuse across microservices">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/producer/SagaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/producer/SagaOrchestrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/producer/SagaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/producer/SagaProducer.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating producer">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryComsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/InventoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/History.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/OrderProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/enums/SagaStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/producer/SagaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/utils/JsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory_service/InventoryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/InventoryServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/OrchestratorServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestratorServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/dto/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/History.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/OrderProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/EventSourceEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/EventSourceEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/SagaStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/TopicsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/producer/SagaOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/utils/JsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator_service/OrchestratorServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator/service/OrchestratorServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/OrderServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/producer/SagaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order_service/OrderServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/OrderServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/PaymentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/PaymentServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/History.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/OrderProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/enums/SagaStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/producer/SagaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/utils/JsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment_service/PaymentServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/PaymentServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/ProductValidationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/History.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/OrderProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/enums/SagaStatusEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/producer/SagaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/utils/JsonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product_validation_service/ProductValidationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,39 +134,18 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="order-service" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -178,15 +218,20 @@
     "Gradle.Build order-service.executor": "Run",
     "Gradle.Build payment-service.executor": "Run",
     "Gradle.Build product-validation-service.executor": "Run",
+    "Gradle.Building Gradle Dependencies.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
-    "Gradle.inventory-service [build].executor": "Run",
+    "Gradle.inventory-service [buildDependents].executor": "Run",
+    "Gradle.inventory-service [build].executor": "Debug",
+    "Gradle.inventory-service [clean build].executor": "Run",
     "Gradle.inventory-service [clean].executor": "Run",
+    "Gradle.orchestrator-service [buildDependents].executor": "Run",
     "Gradle.orchestrator-service [build].executor": "Run",
+    "Gradle.orchestrator-service [clean build].executor": "Run",
     "Gradle.orchestrator-service [clean].executor": "Run",
     "Gradle.order-service [buildDependents].executor": "Run",
     "Gradle.order-service [build].executor": "Run",
     "Gradle.order-service [clean].executor": "Run",
-    "Gradle.payment-service [build].executor": "Run",
+    "Gradle.payment-service [build].executor": "Debug",
     "Gradle.payment-service [clean].executor": "Run",
     "Gradle.product-validation-service [buildDependents].executor": "Run",
     "Gradle.product-validation-service [build].executor": "Run",
@@ -217,10 +262,11 @@
     "Spring Boot.OrderServiceApplication.executor": "Debug",
     "Spring Boot.PaymentServiceApplication (1).executor": "Run",
     "Spring Boot.PaymentServiceApplication.executor": "Debug",
+    "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
     "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service",
+    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/inventory-service/src/main/java/com/learn/orchestrated/inventory_service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -230,7 +276,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -242,17 +288,22 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
       <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
+      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
+      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
       <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka" />
-      <recent name="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.learn.sagacommons.dto" />
       <recent name="com.learn.orchestrated.orchestrator_service.enums" />
       <recent name="com.learn.orchestrated.order_service.document" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle clean build" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -264,18 +315,19 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.saga-commons [publishToMavenLocal]">
-    <configuration name="order-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.OrchestratorServiceApplication">
+    <configuration name="inventory-service [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
+            <option value="clean" />
             <option value="build" />
           </list>
         </option>
@@ -287,10 +339,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="order-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="inventory-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -309,17 +361,18 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="orchestrator-service [clean build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
+            <option value="clean" />
             <option value="build" />
           </list>
         </option>
@@ -331,12 +384,12 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="orchestrator-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -358,12 +411,14 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
+            <option value="clean" />
+            <option value="build" />
             <option value="publishToMavenLocal" />
           </list>
         </option>
@@ -378,7 +433,7 @@
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="inventory-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.inventory_service.InventoryServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.inventory.service.InventoryServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -386,14 +441,14 @@
     <configuration name="OrchestratorServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="orchestrator-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.orchestrator_service.OrchestratorServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.orchestrator.service.OrchestratorServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="order-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.order_service.OrderServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.order.service.OrderServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -401,14 +456,14 @@
     <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="payment-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.payment_service.PaymentServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.payment.service.PaymentServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ProductValidationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="product-validation-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.product_validation_service.ProductValidationServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.product.validation.service.ProductValidationServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -428,11 +483,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.saga-commons [clean]" />
+      <item itemvalue="Gradle.orchestrator-service [clean build]" />
+      <item itemvalue="Gradle.orchestrator-service [clean]" />
+      <item itemvalue="Gradle.inventory-service [clean build]" />
       <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
-      <item itemvalue="Gradle.order-service [build]" />
-      <item itemvalue="Gradle.order-service [clean]" />
-      <item itemvalue="Gradle.saga-commons [build]" />
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.PaymentServiceApplication" />
       <item itemvalue="Spring Boot.SagaCommonsApplication" />
@@ -442,11 +496,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.orchestrator-service [clean build]" />
+        <item itemvalue="Gradle.orchestrator-service [clean]" />
+        <item itemvalue="Gradle.inventory-service [clean build]" />
+        <item itemvalue="Gradle.inventory-service [clean build]" />
         <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
-        <item itemvalue="Gradle.saga-commons [build]" />
-        <item itemvalue="Gradle.saga-commons [clean]" />
-        <item itemvalue="Gradle.order-service [build]" />
-        <item itemvalue="Gradle.order-service [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -485,7 +539,7 @@
       <workItem from="1739316237073" duration="9841000" />
       <workItem from="1739631544778" duration="5216000" />
       <workItem from="1739655708730" duration="927000" />
-      <workItem from="1739656645138" duration="6131000" />
+      <workItem from="1739656645138" duration="17433000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -543,7 +597,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739663397966</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creating producer">
+      <option name="closed" value="true" />
+      <created>1739663689245</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739663689245</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +631,35 @@
     <MESSAGE value="Creating the base objets" />
     <MESSAGE value="Creating commons for reuse acrossl micronservices" />
     <MESSAGE value="Creating commons for reuse across microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating commons for reuse across microservices" />
+    <MESSAGE value="Creating producer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating producer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/utils/JsonUtil.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="objectMapper.readValue(json, Event.class)" />
+        <watch expression="event.get()" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

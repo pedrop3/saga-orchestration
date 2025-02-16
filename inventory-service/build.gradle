@@ -15,11 +15,14 @@ java {
 
 repositories {
 	mavenCentral()
+	mavenLocal()
+
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
+	implementation('com.learn:saga-commons:0.0.2-SNAPSHOT')
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
