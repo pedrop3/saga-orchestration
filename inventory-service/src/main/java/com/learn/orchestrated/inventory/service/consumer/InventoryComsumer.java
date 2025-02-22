@@ -21,8 +21,8 @@ public class InventoryComsumer {
     public void consumeInventorySuccessEvent(String payload) {
         log.info("Receiving event  {} from inventory payment success topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from inventory  success topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from inventory  success topic", event);
 
     }
 
@@ -33,8 +33,8 @@ public class InventoryComsumer {
     public void consumeInventoryFailEvent(String payload) {
         log.info("Receiving rollback event  {} from inventory payment fail topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from inventory payment fail topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from inventory payment fail topic", event);
 
     }
 }

@@ -21,8 +21,8 @@ public class PaymentConsumer {
     public void consumePaymentSuccessEvent(String payload) {
         log.info("Receiving event  {} from product payment success topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from product payment success topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from product payment success topic", event);
 
     }
 
@@ -33,8 +33,8 @@ public class PaymentConsumer {
     public void consumePaymentFailEvent(String payload) {
         log.info("Receiving rollback event  {} from product payment fail topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from product payment fail topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from product payment fail topic", event);
 
     }
 }

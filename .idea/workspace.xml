@@ -4,73 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating producer">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryComsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Rename package&#10;Import saga-commons&#10;Creating consumer and producer.">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/order-service.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/InventoryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/History.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/dto/OrderProducts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/enums/SagaStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/producer/SagaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service/utils/JsonUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory_service/InventoryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/InventoryServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/OrchestratorServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestratorServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/dto/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/History.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/OrderProducts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/dto/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/EventSourceEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/EventSourceEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/SagaStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/enums/TopicsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/producer/SagaOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service/utils/JsonUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator_service/OrchestratorServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator/service/OrchestratorServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/OrderServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/document/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/producer/SagaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order_service/OrderServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/OrderServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/PaymentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/PaymentServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/History.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/OrderProducts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/dto/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/enums/SagaStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/producer/SagaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service/utils/JsonUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment_service/PaymentServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/PaymentServiceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/ProductValidationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/History.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/OrderProducts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/dto/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/enums/SagaStatusEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/producer/SagaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/producer/SagaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/utils/JsonUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product_validation_service/ProductValidationServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryComsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryComsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,6 +200,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.InventoryServiceApplication.executor": "Debug",
     "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
@@ -266,7 +211,7 @@
     "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/inventory-service/src/main/java/com/learn/orchestrated/inventory_service",
+    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -483,6 +428,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.inventory-service [clean]" />
       <item itemvalue="Gradle.orchestrator-service [clean build]" />
       <item itemvalue="Gradle.orchestrator-service [clean]" />
       <item itemvalue="Gradle.inventory-service [clean build]" />
@@ -539,7 +485,9 @@
       <workItem from="1739316237073" duration="9841000" />
       <workItem from="1739631544778" duration="5216000" />
       <workItem from="1739655708730" duration="927000" />
-      <workItem from="1739656645138" duration="17433000" />
+      <workItem from="1739656645138" duration="20105000" />
+      <workItem from="1739822083169" duration="20000" />
+      <workItem from="1740266243301" duration="113000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -605,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739663689245</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Rename package&#10;Import saga-commons&#10;Creating consumer and producer.">
+      <option name="closed" value="true" />
+      <created>1739734426716</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739734426716</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +588,8 @@
     <MESSAGE value="Creating commons for reuse acrossl micronservices" />
     <MESSAGE value="Creating commons for reuse across microservices" />
     <MESSAGE value="Creating producer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating producer" />
+    <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -21,8 +21,8 @@ public class ProductValidationConsumer {
     public void consumeProductValidationSuccessEvent(String payload) {
         log.info("Receiving event  {} from product validation success topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from product validation success topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from product validation success topic", event);
 
     }
 
@@ -33,8 +33,8 @@ public class ProductValidationConsumer {
     public void consumeProductValidationFailEvent(String payload) {
         log.info("Receiving rollback event  {} from product validation fail topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from product validation fail topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from product validation fail topic", event);
 
     }
 }

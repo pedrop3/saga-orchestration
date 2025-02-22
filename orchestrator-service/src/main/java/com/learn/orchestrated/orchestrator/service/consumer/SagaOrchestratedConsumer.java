@@ -21,8 +21,8 @@ public class SagaOrchestratedConsumer {
     public void consumeStartSagaEvent(String payload) {
         log.info("Receiving event  {} from start-saga topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from start-sagatopic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from start-sagatopic", event);
 
     }
 
@@ -33,8 +33,8 @@ public class SagaOrchestratedConsumer {
     public void consumeOrchestratorEvent(String payload) {
         log.info("Receiving event  {} from orchestrator topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from orchestrator topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from orchestrator topic", event);
 
     }
 
@@ -45,8 +45,8 @@ public class SagaOrchestratedConsumer {
     public void consumeFinishSuccessEvent(String payload) {
         log.info("Receiving event  {} from finish success topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from finish success topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from finish success topic", event);
 
     }
 
@@ -57,8 +57,8 @@ public class SagaOrchestratedConsumer {
     public void consumeFinishFailEvent(String payload) {
         log.info("Receiving event  {} from finish fail topic", payload);
 
-        var event = jsonUtil.toEvent(payload);
-        log.info("Received event {} from finish fail topic", event.toString());
+        var event = jsonUtil.toEvent(payload).orElseThrow();
+        log.info("Received event {} from finish fail topic", event);
 
     }
 }
