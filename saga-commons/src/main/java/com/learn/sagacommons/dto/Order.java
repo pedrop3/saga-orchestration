@@ -1,22 +1,19 @@
 package com.learn.sagacommons.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
 
-
-    private String orderId;
+    protected String orderId;
     private List<OrderProducts> products;
     private int quantity;
     private LocalDateTime createdAt;

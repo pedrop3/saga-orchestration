@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-	implementation('com.learn:saga-commons:0.0.2-SNAPSHOT')
+	implementation('com.learn:saga-commons:0.0.3-SNAPSHOT')
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	implementation 'org.projectlombok:lombok:1.18.30'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
