@@ -1,19 +1,12 @@
 package com.learn.orchestrated.order.service.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.learn.orchestrated.order.service.document.EventDocument;
 import com.learn.orchestrated.order.service.document.OrderDocument;
 import com.learn.orchestrated.order.service.dto.OrderRequestDTO;
 import com.learn.orchestrated.order.service.exception.OrderProcessingException;
-import com.learn.orchestrated.order.service.exception.SerializationException;
-import com.learn.orchestrated.order.service.producer.SagaProducer;
-import com.learn.orchestrated.order.service.repository.EventRepository;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
 import com.learn.orchestrated.order.service.service.EventPublisherService;
-import com.learn.orchestrated.order.service.service.EventService;
 import com.learn.orchestrated.order.service.service.OrderService;
-import com.learn.sagacommons.dto.Event;
-import com.learn.sagacommons.dto.Order;
 import com.learn.sagacommons.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -22,10 +15,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.nio.Buffer;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.UUID;
 
 @Service
@@ -62,11 +53,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private OrderDocument saveOrder(OrderRequestDTO orderRequestDTO) {
-        OrderDocument orderDocument = new OrderDocument(
-                orderRequestDTO.getProducts(),
-                LocalDateTime.now(),
-                generateTransactionId()
-        );
+        OrderDocument orderDocument = new OrderDocument();
+        orderDocument.setProducts(orderRequestDTO.getProducts());
+        orderDocument.setCreatedAt(LocalDateTime.now());
+        orderDocument.setOrderId(generateTransactionId());
+
         return orderRepository.save(orderDocument);
     }
 

@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Rename package&#10;Import saga-commons&#10;Creating consumer and producer.">
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/OrderDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/EventFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/exception/OrderProcessingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/exception/SerializationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/EventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/EventPublisherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/EventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventPublisherServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Simples test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga-commons/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/OrderDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/OrderDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventPublisherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventPublisherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +155,7 @@
     &quot;Gradle.Build product-validation-service.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Building Gradle Dependencies.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderServiceTest.shouldCreateOrder.executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.inventory-service [buildDependents].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.inventory-service [build].executor&quot;: &quot;Debug&quot;,
     &quot;Gradle.inventory-service [clean build].executor&quot;: &quot;Run&quot;,
@@ -274,7 +259,31 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Gradle.OrderServiceTest.shouldCreateOrder">
+    <configuration name="OrderServiceTest.shouldCreateOrder" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.order.service.order.service.OrderServiceTest.shouldCreateOrder&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="order-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -331,28 +340,6 @@
         <option name="taskNames">
           <list>
             <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="saga-commons [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -438,25 +425,25 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.OrderServiceTest.shouldCreateOrder" />
       <item itemvalue="Gradle.order-service [build]" />
       <item itemvalue="Gradle.order-service [clean]" />
       <item itemvalue="Gradle.saga-commons [build]" />
-      <item itemvalue="Gradle.saga-commons [clean]" />
       <item itemvalue="Gradle.saga-commons [publishToMavenLocal] (1)" />
-      <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
-      <item itemvalue="Spring Boot.PaymentServiceApplication" />
-      <item itemvalue="Spring Boot.SagaCommonsApplication" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
+      <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
+      <item itemvalue="Spring Boot.PaymentServiceApplication" />
       <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
+      <item itemvalue="Spring Boot.SagaCommonsApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OrderServiceTest.shouldCreateOrder" />
         <item itemvalue="Gradle.order-service [build]" />
         <item itemvalue="Gradle.order-service [clean]" />
         <item itemvalue="Gradle.saga-commons [publishToMavenLocal] (1)" />
         <item itemvalue="Gradle.saga-commons [build]" />
-        <item itemvalue="Gradle.saga-commons [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -498,7 +485,10 @@
       <workItem from="1739656645138" duration="20105000" />
       <workItem from="1739822083169" duration="20000" />
       <workItem from="1740266243301" duration="3676000" />
-      <workItem from="1740269939661" duration="6650000" />
+      <workItem from="1740269939661" duration="8641000" />
+      <workItem from="1740305149910" duration="2114000" />
+      <workItem from="1740427313139" duration="11000" />
+      <workItem from="1740603143373" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -580,7 +570,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740266563170</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Creating EventDocument logic, Custom Exception">
+      <option name="closed" value="true" />
+      <created>1740302815897</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740302815897</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +606,9 @@
     <MESSAGE value="Creating commons for reuse across microservices" />
     <MESSAGE value="Creating producer" />
     <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
+    <MESSAGE value="Creating EventDocument logic" />
+    <MESSAGE value="Creating EventDocument logic, Custom Exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating EventDocument logic, Custom Exception" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -628,8 +628,43 @@
           <line>32</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.learn.orchestrated.order.service.dto.OrderRequestDTO" memberName="products" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="objectMapper.readValue(json, Event.class)" />
