@@ -21,3 +21,9 @@ logging:
     org:
       apache:
         kafka: OFF
+
+springdoc:
+  api-docs:
+    enabled: true
+    title: Order Service
+    version: openapi_3_0

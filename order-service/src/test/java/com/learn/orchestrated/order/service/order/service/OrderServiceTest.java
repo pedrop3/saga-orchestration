@@ -48,7 +48,7 @@ public class OrderServiceTest {
         OrderRequest orderRequest = new OrderRequest(List.of(orderProducts));
 
         OrderDocument orderDocument = new OrderDocument();
-        orderDocument.setProducts(orderRequest.getProducts());
+        orderDocument.setProducts(orderRequest.products());
         orderDocument.setCreatedAt(LocalDateTime.now());
         orderDocument.setOrderId(UUID.randomUUID().toString());
 

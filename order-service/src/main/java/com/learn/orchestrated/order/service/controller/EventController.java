@@ -28,7 +28,7 @@ public class EventController {
     }
 
     @GetMapping("/filters")
-    public ResponseEntity<EventDocument> findByFilters(@Valid @RequestBody  EventFilter eventFilter) {
+    public ResponseEntity<EventDocument> findByFilters(@Valid  EventFilter eventFilter) {
         EventDocument eventDocument = eventService.findByFilters(eventFilter);
         return ResponseEntity.status(HttpStatus.OK).body(eventDocument);
     }

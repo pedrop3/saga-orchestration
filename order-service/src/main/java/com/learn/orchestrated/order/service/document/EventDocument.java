@@ -16,9 +16,4 @@ public class EventDocument extends Event {
 
     @Id
     private String eventId;
-
-
-    public EventDocument(String eventId, String transactionId, OrderDocument orderDocument, LocalDateTime now) {
-        super();
-    }
 }

@@ -41,7 +41,7 @@ public class OrderServiceImpl implements OrderService {
 
             eventPublisherService.publish(eventDocument);
 
-            logger.info("Ordem {} criada com sucesso.", orderDocument.getOrderId());
+            logger.info("Order {} criada com sucesso.", orderDocument.getOrderId());
             return orderDocument;
         } catch (DataAccessException e) {
             logger.error("Erro ao acessar o banco de dados.", e);
@@ -56,7 +56,7 @@ public class OrderServiceImpl implements OrderService {
         OrderDocument orderDocument = new OrderDocument();
         orderDocument.setProducts(orderRequest.products());
         orderDocument.setCreatedAt(LocalDateTime.now());
-        orderDocument.setOrderId(generateTransactionId());
+        orderDocument.setTransactionId(generateTransactionId());
 
         return orderRepository.save(orderDocument);
     }
@@ -66,8 +66,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private EventDocument createEventPayload(OrderDocument orderDocument) {
-        return new EventDocument(orderDocument.getOrderId(), orderDocument.getTransactionId(),
-                orderDocument, LocalDateTime.now());
+        var eventDocument = new EventDocument();
+        eventDocument.setOrderId(orderDocument.getOrderId());
+        eventDocument.setTransactionId(orderDocument.getTransactionId());
+        eventDocument.setCreatedAt(LocalDateTime.now());
+        return eventDocument;
     }
 
 }

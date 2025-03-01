@@ -1,7 +1,6 @@
 package com.learn.orchestrated.order.service.exception;
 
 
-import org.apache.kafka.common.security.oauthbearer.internals.secured.ValidateException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
