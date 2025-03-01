@@ -2,7 +2,7 @@ package com.learn.orchestrated.order.service.service.impl;
 
 import com.learn.orchestrated.order.service.document.EventDocument;
 import com.learn.orchestrated.order.service.document.OrderDocument;
-import com.learn.orchestrated.order.service.dto.OrderRequestDTO;
+import com.learn.orchestrated.order.service.dto.OrderRequest;
 import com.learn.orchestrated.order.service.exception.OrderProcessingException;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
 import com.learn.orchestrated.order.service.service.EventPublisherService;
@@ -32,11 +32,11 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Transactional
-    public OrderDocument createOrder(OrderRequestDTO orderRequestDTO) {
+    public OrderDocument createOrder(OrderRequest orderRequest) {
         try {
             logger.info("Iniciando criação da ordem...");
 
-            var orderDocument = saveOrder(orderRequestDTO);
+            var orderDocument = saveOrder(orderRequest);
             var eventDocument = createEventPayload(orderDocument);
 
             eventPublisherService.publish(eventDocument);
@@ -52,9 +52,9 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-    private OrderDocument saveOrder(OrderRequestDTO orderRequestDTO) {
+    private OrderDocument saveOrder(OrderRequest orderRequest) {
         OrderDocument orderDocument = new OrderDocument();
-        orderDocument.setProducts(orderRequestDTO.getProducts());
+        orderDocument.setProducts(orderRequest.products());
         orderDocument.setCreatedAt(LocalDateTime.now());
         orderDocument.setOrderId(generateTransactionId());
 

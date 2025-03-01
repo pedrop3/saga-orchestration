@@ -1,13 +1,19 @@
 package com.learn.orchestrated.order.service.service.impl;
 
 import com.learn.orchestrated.order.service.document.EventDocument;
+import com.learn.orchestrated.order.service.dto.EventFilter;
+import com.learn.orchestrated.order.service.exception.InvalidArgumentsException;
 import com.learn.orchestrated.order.service.repository.EventRepository;
 import com.learn.orchestrated.order.service.service.EventService;
+import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
+import static org.apache.logging.log4j.util.Strings.isEmpty;
 
 @Slf4j
 @Service
@@ -29,6 +35,26 @@ public class EventServiceImpl implements EventService {
     @Override
     public EventDocument save(EventDocument eventDocument) {
         return eventRepository.save(eventDocument);
+    }
+
+    @Override
+    public List<EventDocument> findAll() {
+        return eventRepository.findAllByOrderByCreatedAtDesc();
+    }
+
+    @Override
+    public EventDocument findByFilters(EventFilter eventFilter) {
+        return !eventFilter.orderId().isEmpty()
+                ? this.findByOrderId(eventFilter.orderId())
+                : this.findByTransactionId(eventFilter.transactionId());
+    }
+
+    private EventDocument findByOrderId(String orderId) {
+        return eventRepository.findTop1ByOrderIdOrderByCreatedAtDesc(orderId).orElseThrow(() -> new InvalidArgumentsException("Order not found"));
+    }
+
+    private EventDocument findByTransactionId(String transactionId) {
+        return eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc(transactionId).orElseThrow(() -> new InvalidArgumentsException("Transcation not found"));
     }
 
 

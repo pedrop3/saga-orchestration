@@ -2,7 +2,7 @@ package com.learn.orchestrated.order.service.order.service;
 
 import com.learn.orchestrated.order.service.document.EventDocument;
 import com.learn.orchestrated.order.service.document.OrderDocument;
-import com.learn.orchestrated.order.service.dto.OrderRequestDTO;
+import com.learn.orchestrated.order.service.dto.OrderRequest;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
 import com.learn.orchestrated.order.service.service.EventPublisherService;
 import com.learn.orchestrated.order.service.service.impl.OrderServiceImpl;
@@ -45,7 +45,7 @@ public class OrderServiceTest {
         orderProducts.setProduct(new Product());
         orderProducts.setQuantity(1);
 
-        OrderRequestDTO orderRequest = new OrderRequestDTO(List.of(orderProducts));
+        OrderRequest orderRequest = new OrderRequest(List.of(orderProducts));
 
         OrderDocument orderDocument = new OrderDocument();
         orderDocument.setProducts(orderRequest.getProducts());
