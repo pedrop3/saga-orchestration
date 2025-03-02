@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8a7e30f-bcc3-4ff5-93b7-81f33128afa3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8a7e30f-bcc3-4ff5-93b7-81f33128afa3.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="fix: TransactionId was not being informed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +76,39 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="saga-commons" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -123,6 +148,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.4.2/387ff91a749cce404f7a6e4a15a3b75ff497bdbc/spring-data-commons-3.4.2.jar!/org/springframework/data/annotation/Id.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.sdkman/candidates/java/21.0.4-zulu/zulu-21.jdk/Contents/Home/lib/src.zip!/java.base/java/time/LocalDateTime.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="HttpClientEndpointsTabState">
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;8223ada6844faaebac200cacd400ae41011be779&quot; value=&quot;###&amp;#10;POST http://localhost:3000/api/orders&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;products&amp;quot;: []&amp;#10;}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file:///private/var/folders/yr/8cbb7_8x6g1269m_v3m93r5w0000gn/T/whats-new-dir/whats-new.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-loop.http" environment="test" />
+    <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -189,6 +222,10 @@
     "Gradle.saga-commons [publishToMavenLocal] (1).executor": "Run",
     "Gradle.saga-commons [publishToMavenLocal].executor": "Run",
     "Gradle.saga-commons [publish].executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -264,30 +301,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
-    <configuration name="OrderServiceTest.shouldCreateOrder" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.order.service.OrderServiceTest.shouldCreateOrder&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="order-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -354,7 +367,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [publishToMavenLocal] (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="saga-commons [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
@@ -374,6 +387,9 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -429,11 +445,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.OrderServiceTest.shouldCreateOrder" />
+      <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
       <item itemvalue="Gradle.order-service [build]" />
       <item itemvalue="Gradle.order-service [clean]" />
       <item itemvalue="Gradle.saga-commons [build]" />
-      <item itemvalue="Gradle.saga-commons [publishToMavenLocal] (1)" />
+      <item itemvalue="HTTP Request.generated-requests | #3" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
@@ -443,10 +459,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="Gradle.order-service [build]" />
         <item itemvalue="Gradle.order-service [clean]" />
-        <item itemvalue="Gradle.OrderServiceTest.shouldCreateOrder" />
-        <item itemvalue="Gradle.saga-commons [publishToMavenLocal] (1)" />
+        <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
         <item itemvalue="Gradle.saga-commons [build]" />
       </list>
     </recent_temporary>
@@ -493,7 +509,7 @@
       <workItem from="1740305149910" duration="2114000" />
       <workItem from="1740427313139" duration="11000" />
       <workItem from="1740603143373" duration="8342000" />
-      <workItem from="1740864152138" duration="9156000" />
+      <workItem from="1740864152138" duration="11849000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -607,7 +623,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740869292426</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix: TransactionId was not being informed.">
+      <option name="closed" value="true" />
+      <created>1740873572900</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740873572900</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +664,8 @@
     <MESSAGE value="Creating the logic to saveOrder and create the payload." />
     <MESSAGE value="Creating notifyEnding to Event" />
     <MESSAGE value="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception." />
+    <MESSAGE value="fix: TransactionId was not being informed." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: TransactionId was not being informed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -666,19 +691,9 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java</url>
           <line>55</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/exception/GlobalExceptionHandler.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventPublisherServiceImpl.java</url>

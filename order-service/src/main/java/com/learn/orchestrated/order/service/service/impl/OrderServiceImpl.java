@@ -70,6 +70,7 @@ public class OrderServiceImpl implements OrderService {
         eventDocument.setOrderId(orderDocument.getOrderId());
         eventDocument.setTransactionId(orderDocument.getTransactionId());
         eventDocument.setCreatedAt(LocalDateTime.now());
+        eventDocument.setOrder(orderDocument);
         return eventDocument;
     }
 
