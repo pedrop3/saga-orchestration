@@ -24,9 +24,9 @@ public class EventConsumer {
     public void consumeNotifyEndingEvent(String payload) {
         log.info("Receiving ending notification event  {} from notify-ending topic", payload);
 
-        var event = (EventDocument) jsonUtil.toEvent(payload).orElseThrow();
+        var event =  jsonUtil.toEvent(payload).orElseThrow();
         log.info("Received event {} from notify-ending topic", event);
 
-        eventService.notifyEnding(event);
+        eventService.notifyEnding( EventDocument.fromEvent(event));
     }
 }

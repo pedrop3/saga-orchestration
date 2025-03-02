@@ -19,4 +19,18 @@ public class EventDocument extends Event {
     @Id
     private String eventId;
 
+
+    //TODO  Review inheritance structure
+    public static EventDocument fromEvent(Event event) {
+        EventDocument eventDocument = new EventDocument();
+        eventDocument.setEventId(event.getEventId());
+        eventDocument.setTransactionId(event.getTransactionId());
+        eventDocument.setOrderId(event.getOrderId());
+        eventDocument.setOrder(event.getOrder());
+        eventDocument.setSource(event.getSource());
+        eventDocument.setStatus(event.getStatus());
+        eventDocument.setHistory(event.getHistory());
+        eventDocument.setCreatedAt(event.getCreatedAt());
+        return eventDocument;
+    }
 }

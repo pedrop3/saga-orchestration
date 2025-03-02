@@ -5,15 +5,11 @@ import com.learn.orchestrated.order.service.dto.EventFilter;
 import com.learn.orchestrated.order.service.exception.InvalidArgumentsException;
 import com.learn.orchestrated.order.service.repository.EventRepository;
 import com.learn.orchestrated.order.service.service.EventService;
-import jakarta.validation.ValidationException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
-
-import static org.apache.logging.log4j.util.Strings.isEmpty;
 
 @Slf4j
 @Service
@@ -24,12 +20,9 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public void notifyEnding(EventDocument eventDocument) {
-        eventDocument.setOrderId(eventDocument.getOrderId());
-        eventDocument.setCreatedAt(LocalDateTime.now());
+
         save(eventDocument);
-
         log.info("Order {} with saga notified!  TransactionId: {}", eventDocument.getEventId(), eventDocument.getTransactionId());
-
     }
 
     @Override

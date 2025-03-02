@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface EventService {
     void notifyEnding(EventDocument eventDocument);
+
     EventDocument save(EventDocument eventDocument);
 
     List<EventDocument> findAll();
