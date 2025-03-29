@@ -1,4 +1,4 @@
-package com.learn.orchestrated.product.validation.service.config.kafka;
+package com.learn.orchestrated.product.validation.service.config;
 
 import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 import lombok.RequiredArgsConstructor;

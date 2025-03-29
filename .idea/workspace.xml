@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="fix: Adding Order in EventDocument">
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Product and Validation">
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/JpaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/model/AuditableEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/model/Validation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/repository/ProductValidationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/repository/ValidationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +137,8 @@
         <option value="Enum" />
         <option value="Record" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -153,10 +162,9 @@
     <setting file="jar://$USER_HOME$/.sdkman/candidates/java/21.0.4-zulu/zulu-21.jdk/Contents/Home/lib/src.zip!/java.base/java/time/LocalDateTime.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="HttpClientEndpointsTabState">
-    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;8223ada6844faaebac200cacd400ae41011be779&quot; value=&quot;###&amp;#10;POST http://localhost:3000/api/orders&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;products&amp;quot;: []&amp;#10;}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;b742dcb50cc48d9fddd56fcbc723f8bd25f987a7&quot; value=&quot;###&amp;#10;GET http://localhost:3000/api/events/filters&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
   </component>
   <component name="HttpClientSelectedEnvironments">
-    <file url="file:///private/var/folders/yr/8cbb7_8x6g1269m_v3m93r5w0000gn/T/whats-new-dir/whats-new.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-loop.http" environment="test" />
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/get-requests.http" environment="test" />
   </component>
@@ -176,100 +184,100 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Docker.docker-compose.yml.inventory-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.order-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.order-service: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.payment-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.product-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Build inventory-service.executor": "Run",
-    "Gradle.Build orchestrator-service.executor": "Run",
-    "Gradle.Build order-service.executor": "Run",
-    "Gradle.Build payment-service.executor": "Run",
-    "Gradle.Build product-validation-service.executor": "Run",
-    "Gradle.Building Gradle Dependencies.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.OrderServiceTest.shouldCreateOrder.executor": "Debug",
-    "Gradle.inventory-service [buildDependents].executor": "Run",
-    "Gradle.inventory-service [build].executor": "Debug",
-    "Gradle.inventory-service [clean build].executor": "Run",
-    "Gradle.inventory-service [clean].executor": "Run",
-    "Gradle.orchestrator-service [buildDependents].executor": "Run",
-    "Gradle.orchestrator-service [build].executor": "Run",
-    "Gradle.orchestrator-service [clean build].executor": "Run",
-    "Gradle.orchestrator-service [clean].executor": "Run",
-    "Gradle.order-service [buildDependents].executor": "Run",
-    "Gradle.order-service [build].executor": "Run",
-    "Gradle.order-service [clean].executor": "Run",
-    "Gradle.order-service [jar].executor": "Run",
-    "Gradle.payment-service [build].executor": "Debug",
-    "Gradle.payment-service [clean].executor": "Run",
-    "Gradle.product-validation-service [buildDependents].executor": "Run",
-    "Gradle.product-validation-service [build].executor": "Run",
-    "Gradle.product-validation-service [clean].executor": "Run",
-    "Gradle.saga-commons [bootJar].executor": "Run",
-    "Gradle.saga-commons [bootRun].executor": "Run",
-    "Gradle.saga-commons [buildDependents].executor": "Run",
-    "Gradle.saga-commons [build].executor": "Run",
-    "Gradle.saga-commons [clean] (1).executor": "Run",
-    "Gradle.saga-commons [clean].executor": "Run",
-    "Gradle.saga-commons [generateMetadataFileForMavenJavaPublication].executor": "Run",
-    "Gradle.saga-commons [jar].executor": "Run",
-    "Gradle.saga-commons [publishMavenJavaPublicationToMavenLocalRepository].executor": "Run",
-    "Gradle.saga-commons [publishToMavenLocal] (1).executor": "Run",
-    "Gradle.saga-commons [publishToMavenLocal].executor": "Run",
-    "Gradle.saga-commons [publish].executor": "Run",
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.InventoryServiceApplication.executor": "Debug",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
-    "Spring Boot.PaymentServiceApplication (1).executor": "Run",
-    "Spring Boot.PaymentServiceApplication.executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29425287",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "copyright",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.docker-compose.yml.inventory-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.kafka: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.order-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.order-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.payment-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.product-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build inventory-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build orchestrator-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build order-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build payment-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build product-validation-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Building Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderServiceTest.shouldCreateOrder.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.inventory-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [build].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.inventory-service [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.payment-service [build].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.payment-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [bootRun].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [clean] (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [generateMetadataFileForMavenJavaPublication].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishMavenJavaPublicationToMavenLocalRepository].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishToMavenLocal] (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publish].executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | GET request with parameter.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.InventoryServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.OrchestratorServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.PaymentServiceApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PaymentServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ProductValidationServiceApplication (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ProductValidationServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/pedrosantos/Documents/workspace/saga-orchestration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29425287&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql",
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;,
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
@@ -282,11 +290,11 @@
       <recent name="com.learn.orchestrated.order.service.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.orchestrated.product.validation.service.repository" />
+      <recent name="com.learn.orchestrated.product.validation.service.model" />
       <recent name="com.learn.orchestrated.order.service.exception" />
       <recent name="com.learn.orchestrated.order.service.controller" />
       <recent name="com.learn.orchestrated.order.service.service.impl" />
-      <recent name="com.learn.orchestrated.order.service.service" />
-      <recent name="com.learn.orchestrated.order.service.repository" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -304,7 +312,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ProductValidationServiceApplication">
     <configuration name="order-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -339,28 +347,6 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="order-service [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -408,9 +394,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductValidationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="ProductValidationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="product-validation-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.orchestrated.product.validation.service.ProductValidationServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.orchestrated.product.validation.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -430,7 +423,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.order-service [jar]" />
       <item itemvalue="Gradle.order-service [build]" />
       <item itemvalue="Gradle.order-service [clean]" />
       <item itemvalue="HTTP Request.generated-requests | #2" />
@@ -439,16 +431,16 @@
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
       <item itemvalue="Spring Boot.PaymentServiceApplication" />
-      <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
       <item itemvalue="Spring Boot.SagaCommonsApplication" />
+      <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
         <item itemvalue="HTTP Request.generated-requests | GET request with parameter" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="Gradle.order-service [build]" />
         <item itemvalue="Gradle.order-service [clean]" />
-        <item itemvalue="Gradle.order-service [jar]" />
       </list>
     </recent_temporary>
   </component>
@@ -494,7 +486,27 @@
       <workItem from="1740305149910" duration="2114000" />
       <workItem from="1740427313139" duration="11000" />
       <workItem from="1740603143373" duration="8342000" />
-      <workItem from="1740864152138" duration="15752000" />
+      <workItem from="1740864152138" duration="26183000" />
+      <workItem from="1743072883776" duration="3784000" />
+      <workItem from="1743088357787" duration="78000" />
+      <workItem from="1743095215994" duration="27000" />
+      <workItem from="1743095254561" duration="4000" />
+      <workItem from="1743096007540" duration="9000" />
+      <workItem from="1743096186469" duration="44000" />
+      <workItem from="1743097704301" duration="4000" />
+      <workItem from="1743121536062" duration="72000" />
+      <workItem from="1743201974960" duration="77000" />
+      <workItem from="1743202098115" duration="15000" />
+      <workItem from="1743202130616" duration="42000" />
+      <workItem from="1743202293451" duration="31000" />
+      <workItem from="1743202357634" duration="11000" />
+      <workItem from="1743268268828" duration="10000" />
+      <workItem from="1743268304904" duration="41000" />
+      <workItem from="1743268434657" duration="21000" />
+      <workItem from="1743268477953" duration="9000" />
+      <workItem from="1743268590365" duration="6000" />
+      <workItem from="1743272884999" duration="217000" />
+      <workItem from="1743274377422" duration="1472000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -624,7 +636,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740876275792</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: Review the flow to notifyEnding">
+      <option name="closed" value="true" />
+      <created>1740880351988</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1740880351988</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update gitignore">
+      <option name="closed" value="true" />
+      <created>1740880708673</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1740880708673</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +687,10 @@
     <MESSAGE value="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception." />
     <MESSAGE value="fix: TransactionId was not being informed." />
     <MESSAGE value="fix: Adding Order in EventDocument" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Adding Order in EventDocument" />
+    <MESSAGE value="fix: Review the flow to notifyEnding" />
+    <MESSAGE value="update gitignore" />
+    <MESSAGE value="Creating Product and Validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating Product and Validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
