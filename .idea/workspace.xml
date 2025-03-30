@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Product and Validation flow">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/payment-service.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/JpaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/enums/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/model/AuditableEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/model/Payment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/respository/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Payment flow">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/model/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/model/OrderInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/repository/InventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/repository/OrderInventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/KafkaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryComsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/consumer/InventoryConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +77,21 @@
         <projects_view>
           <tree_state>
             <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="inventory-service" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="inventory-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="inventory-service" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="payment-service" type="f1a62948:ProjectNode" />
@@ -190,7 +198,7 @@
     &quot;Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.ProductValidationServiceTest.validateExistingProducts_Success.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.inventory-service [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.inventory-service [build].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.inventory-service [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.inventory-service [clean build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.inventory-service [clean].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.orchestrator-service [buildDependents].executor&quot;: &quot;Run&quot;,
@@ -297,7 +305,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PaymentServiceApplication">
+  <component name="RunManager" selected="Spring Boot.InventoryServiceApplication">
     <configuration name="ProductValidationServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -322,52 +330,48 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductValidationServiceTest.shouldFailWhenProductIsMissing" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="inventory-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/product-validation-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.product.validation.service.ProductValidationServiceTest.shouldFailWhenProductIsMissing&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ProductValidationServiceTest.validateExistingProducts_Success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="inventory-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/product-validation-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.product.validation.service.ProductValidationServiceTest.validateExistingProducts_Success&quot;" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="payment-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -468,9 +472,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.inventory-service [build]" />
+      <item itemvalue="Gradle.inventory-service [clean]" />
       <item itemvalue="Gradle.ProductValidationServiceTest" />
-      <item itemvalue="Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing" />
-      <item itemvalue="Gradle.ProductValidationServiceTest.validateExistingProducts_Success" />
       <item itemvalue="Gradle.payment-service [build]" />
       <item itemvalue="Gradle.payment-service [clean]" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
@@ -482,11 +486,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.inventory-service [build]" />
+        <item itemvalue="Gradle.inventory-service [clean]" />
         <item itemvalue="Gradle.payment-service [build]" />
         <item itemvalue="Gradle.payment-service [clean]" />
         <item itemvalue="Gradle.ProductValidationServiceTest" />
-        <item itemvalue="Gradle.ProductValidationServiceTest.validateExistingProducts_Success" />
-        <item itemvalue="Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing" />
       </list>
     </recent_temporary>
   </component>
@@ -553,7 +557,9 @@
       <workItem from="1743268590365" duration="6000" />
       <workItem from="1743272884999" duration="217000" />
       <workItem from="1743274377422" duration="14175000" />
-      <workItem from="1743332344164" duration="3470000" />
+      <workItem from="1743332344164" duration="4847000" />
+      <workItem from="1743338613764" duration="38000" />
+      <workItem from="1743339183043" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -715,7 +721,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743330509700</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Creating Payment flow">
+      <option name="closed" value="true" />
+      <created>1743337184900</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1743337184900</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,7 +768,8 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="Creating Product and Validation" />
     <MESSAGE value="Creating Product and Validation flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating Product and Validation flow" />
+    <MESSAGE value="Creating Payment flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating Payment flow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
