@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="clean">
-      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/EventControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventPublisherServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventServiceImplTest.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Improve tests order service.">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/AtLeastOneNotEmptyValidatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/anotation/AtLeastOneNotEmpty.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/anotation/AtLeastOneNotEmpty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/EventFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/EventFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +164,7 @@
     "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.AtLeastOneNotEmptyValidatorTest.executor": "Run",
     "Gradle.Build inventory-service.executor": "Run",
     "Gradle.Build orchestrator-service.executor": "Run",
     "Gradle.Build order-service.executor": "Run",
@@ -183,6 +176,9 @@
     "Gradle.EventPublisherServiceImplTest.executor": "Run",
     "Gradle.EventServiceImplTest.shouldNotifyEndingAndSaveEvent.executor": "Run",
     "Gradle.EventServiceImplTest.shouldSaveEvent.executor": "Debug",
+    "Gradle.InventoryServiceTest.executor": "Run",
+    "Gradle.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound.executor": "Run",
+    "Gradle.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists.executor": "Run",
     "Gradle.OrderControllerTest.shouldCreateOrderSuccessfully.executor": "Run",
     "Gradle.OrderServiceTest.deveLancarExcecaoAoSalvarOrdem.executor": "Run",
     "Gradle.OrderServiceTest.executor": "Run",
@@ -191,6 +187,7 @@
     "Gradle.ProductValidationServiceTest.executor": "Run",
     "Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing.executor": "Run",
     "Gradle.ProductValidationServiceTest.validateExistingProducts_Success.executor": "Run",
+    "Gradle.Tests in 'inventory-service'.executor": "Coverage",
     "Gradle.Tests in 'order-service'.executor": "Coverage",
     "Gradle.inventory-service [buildDependents].executor": "Run",
     "Gradle.inventory-service [build].executor": "Run",
@@ -302,11 +299,11 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'order-service'">
-    <configuration name="EventControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Tests in 'inventory-service'">
+    <configuration name="InventoryServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -316,7 +313,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.controller.EventControllerTest&quot;" />
+            <option value="&quot;com.learn.orchestrated.inventory.service.service.InventoryServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -327,10 +324,10 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EventServiceImplTest.shouldSaveEvent" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -340,7 +337,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.order.service.EventServiceImplTest.shouldSaveEvent&quot;" />
+            <option value="&quot;com.learn.orchestrated.inventory.service.service.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -351,10 +348,10 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="OrderControllerTest.shouldCreateOrderSuccessfully" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -364,7 +361,29 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.controller.OrderControllerTest.shouldCreateOrderSuccessfully&quot;" />
+            <option value="&quot;com.learn.orchestrated.inventory.service.service.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'inventory-service'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -396,20 +415,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
-    </configuration>
-    <configuration name="com.learn.orchestrated.order.service.controller in order-service.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.orchestrated.order.service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.learn.orchestrated.order.service.controller" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -457,11 +462,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.EventControllerTest" />
-      <item itemvalue="Gradle.EventServiceImplTest.shouldSaveEvent" />
-      <item itemvalue="Gradle.OrderControllerTest.shouldCreateOrderSuccessfully" />
+      <item itemvalue="Gradle.InventoryServiceTest" />
+      <item itemvalue="Gradle.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound" />
+      <item itemvalue="Gradle.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists" />
+      <item itemvalue="Gradle.Tests in 'inventory-service'" />
       <item itemvalue="Gradle.Tests in 'order-service'" />
-      <item itemvalue="JUnit.com.learn.orchestrated.order.service.controller in order-service.main" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
@@ -470,11 +475,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'inventory-service'" />
+        <item itemvalue="Gradle.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound" />
+        <item itemvalue="Gradle.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists" />
+        <item itemvalue="Gradle.InventoryServiceTest" />
         <item itemvalue="Gradle.Tests in 'order-service'" />
-        <item itemvalue="JUnit.com.learn.orchestrated.order.service.controller in order-service.main" />
-        <item itemvalue="Gradle.EventControllerTest" />
-        <item itemvalue="Gradle.OrderControllerTest.shouldCreateOrderSuccessfully" />
-        <item itemvalue="Gradle.EventServiceImplTest.shouldSaveEvent" />
       </list>
     </recent_temporary>
   </component>
@@ -545,7 +550,7 @@
       <workItem from="1743338613764" duration="38000" />
       <workItem from="1743339183043" duration="7350000" />
       <workItem from="1743348406309" duration="2267000" />
-      <workItem from="1743350702238" duration="3190000" />
+      <workItem from="1743350702238" duration="5586000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -747,7 +752,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743350115269</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Improve tests order service.">
+      <option name="closed" value="true" />
+      <created>1743354320024</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1743354320024</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -765,7 +778,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creating config to kafka, redpanda and MS" />
     <MESSAGE value="Saga Organization" />
     <MESSAGE value="Creating the configuration to Kafka." />
     <MESSAGE value="Creating the configuration to KafkaConfig to all MS." />
@@ -790,7 +802,8 @@
     <MESSAGE value="Creating OrchestrationService Flow" />
     <MESSAGE value="fix:validation isEventSourceAndStatusValid" />
     <MESSAGE value="clean" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean" />
+    <MESSAGE value="Improve tests order service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve tests order service." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -850,6 +863,26 @@
           <line>64</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -858,6 +891,9 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression=" ex.getMessage()" />
+      </configuration>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="orderRepository.save(orderDocument);" />
         <watch expression="(EventDocument) event" />
@@ -872,9 +908,10 @@
     <SUITE FILE_PATH="coverage/inventory_service$com_learn_orchestrated_order_service_service_impl_in_order_service_main.ic" NAME="com.learn.orchestrated.order.service.service.impl in order-service.main Coverage Results" MODIFIED="1743351763656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.learn.orchestrated.order.service.service.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__order_service_.ic" NAME="Tests in 'order-service' Coverage Results" MODIFIED="1743354092579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__order_service_.ic" NAME="Tests in 'order-service' Coverage Results" MODIFIED="1743354549695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/inventory_service$com_learn_orchestrated_order_service_controller_in_order_service_main.ic" NAME="com.learn.orchestrated.order.service.controller in order-service.main Coverage Results" MODIFIED="1743354083056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.learn.orchestrated.order.service.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__inventory_service_.ic" NAME="Tests in 'inventory-service' Coverage Results" MODIFIED="1743361039679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

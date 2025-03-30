@@ -43,6 +43,7 @@ public class InventoryService {
             log.error("Error trying to update inventory: ", ex);
             handleFailCurrentNotExecuted(event, ex.getMessage());
         }
+
         producer.sendEvent(jsonUtil.toJson(event).orElseThrow());
     }
 
