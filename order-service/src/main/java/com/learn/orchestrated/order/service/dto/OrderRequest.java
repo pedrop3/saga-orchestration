@@ -7,6 +7,9 @@ import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 public record OrderRequest(
-        @NotNull @Schema(description = "Lista de produtos do pedido", example = "[{\"product\":{\"code\":\"COMIC_BOOKS\",\"unitValue\":15.50},\"quantity\":3},{\"product\":{\"code\":\"BOOKS\",\"unitValue\":9.90},\"quantity\":1}]")
+        @NotNull @Schema(
+                description = "Lista de produtos do pedido",
+                example = "[{\"product\":{\"code\":\"COMIC_BOOKS\",\"unitValue\":15.50},\"quantity\":3},{\"product\":{\"code\":\"BOOKS\",\"unitValue\":9.90},\"quantity\":1}]"
+        )
         List<OrderProducts> products
 ) {}

@@ -1,6 +1,7 @@
 package com.learn.orchestrated.product.validation.service.consumer;
 
 
+import com.learn.orchestrated.product.validation.service.service.ProductValidationService;
 import com.learn.sagacommons.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class ProductValidationConsumer {
 
     private final JsonUtil jsonUtil;
+    private final ProductValidationService productValidationService;
 
     @KafkaListener(
             groupId = "${spring.kafka.consumer.group-id}",
@@ -23,7 +25,7 @@ public class ProductValidationConsumer {
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
         log.info("Received event {} from product validation success topic", event);
-
+        productValidationService.validateExistingProducts(event);
     }
 
     @KafkaListener(
@@ -35,6 +37,6 @@ public class ProductValidationConsumer {
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
         log.info("Received event {} from product validation fail topic", event);
-
+        productValidationService.rollbackEvent(event);
     }
 }
