@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/orchestrator-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/orchestrator-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/order-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/order-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payment-service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/payment-service.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/saga-commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/saga-commons.main.iml" />
     </modules>

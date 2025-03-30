@@ -4,19 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Product and Validation">
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Product and Validation flow">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/payment-service.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/JpaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/enums/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/model/AuditableEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/respository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/consumer/ProductValidationConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/PaymentConsumer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,24 +86,22 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
+                <item name="product-validation-service" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -111,9 +115,9 @@
       <list>
         <option value="OpenAPI" />
         <option value="Dockerfile" />
-        <option value="Enum" />
         <option value="Record" />
         <option value="Exception" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -161,104 +165,104 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Docker.docker-compose.yml.inventory-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.order-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.order-service: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.payment-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.product-db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Build inventory-service.executor": "Run",
-    "Gradle.Build orchestrator-service.executor": "Run",
-    "Gradle.Build order-service.executor": "Run",
-    "Gradle.Build payment-service.executor": "Run",
-    "Gradle.Build product-validation-service.executor": "Run",
-    "Gradle.Building Gradle Dependencies.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.OrderServiceTest.shouldCreateOrder.executor": "Debug",
-    "Gradle.ProductValidationServiceTest.executor": "Run",
-    "Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing.executor": "Run",
-    "Gradle.ProductValidationServiceTest.validateExistingProducts_Success.executor": "Run",
-    "Gradle.inventory-service [buildDependents].executor": "Run",
-    "Gradle.inventory-service [build].executor": "Debug",
-    "Gradle.inventory-service [clean build].executor": "Run",
-    "Gradle.inventory-service [clean].executor": "Run",
-    "Gradle.orchestrator-service [buildDependents].executor": "Run",
-    "Gradle.orchestrator-service [build].executor": "Run",
-    "Gradle.orchestrator-service [clean build].executor": "Run",
-    "Gradle.orchestrator-service [clean].executor": "Run",
-    "Gradle.order-service [buildDependents].executor": "Run",
-    "Gradle.order-service [build].executor": "Run",
-    "Gradle.order-service [clean].executor": "Run",
-    "Gradle.order-service [jar].executor": "Run",
-    "Gradle.payment-service [build].executor": "Debug",
-    "Gradle.payment-service [clean].executor": "Run",
-    "Gradle.product-validation-service [buildDependents].executor": "Run",
-    "Gradle.product-validation-service [build].executor": "Run",
-    "Gradle.product-validation-service [clean].executor": "Run",
-    "Gradle.saga-commons [bootJar].executor": "Run",
-    "Gradle.saga-commons [bootRun].executor": "Run",
-    "Gradle.saga-commons [buildDependents].executor": "Run",
-    "Gradle.saga-commons [build].executor": "Run",
-    "Gradle.saga-commons [clean] (1).executor": "Run",
-    "Gradle.saga-commons [clean].executor": "Run",
-    "Gradle.saga-commons [generateMetadataFileForMavenJavaPublication].executor": "Run",
-    "Gradle.saga-commons [jar].executor": "Run",
-    "Gradle.saga-commons [publishMavenJavaPublicationToMavenLocalRepository].executor": "Run",
-    "Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal].executor": "Run",
-    "Gradle.saga-commons [publishToMavenLocal] (1).executor": "Run",
-    "Gradle.saga-commons [publishToMavenLocal].executor": "Run",
-    "Gradle.saga-commons [publish].executor": "Run",
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.InventoryServiceApplication.executor": "Debug",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
-    "Spring Boot.PaymentServiceApplication (1).executor": "Run",
-    "Spring Boot.PaymentServiceApplication.executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29425287",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.docker-compose.yml.inventory-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.kafka: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.order-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.order-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.payment-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.product-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build inventory-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build orchestrator-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build order-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build payment-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build product-validation-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Building Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderServiceTest.shouldCreateOrder.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.ProductValidationServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ProductValidationServiceTest.validateExistingProducts_Success.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [build].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.inventory-service [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.inventory-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [clean build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.orchestrator-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.order-service [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.payment-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.payment-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.product-validation-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [bootJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [bootRun].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [clean] (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [generateMetadataFileForMavenJavaPublication].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishMavenJavaPublicationToMavenLocalRepository].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishToMavenLocal] (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.saga-commons [publish].executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | GET request with parameter.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Spring Boot.InventoryServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.OrchestratorServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.PaymentServiceApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PaymentServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ProductValidationServiceApplication (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ProductValidationServiceApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/pedrosantos/Documents/workspace/saga-orchestration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29425287&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql",
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;,
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
@@ -271,11 +275,11 @@
       <recent name="com.learn.orchestrated.order.service.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.orchestrated.payment.service.config" />
+      <recent name="com.learn.orchestrated.payment.service.model" />
       <recent name="com.learn.orchestrated.product.validation.service.repository" />
       <recent name="com.learn.orchestrated.product.validation.service.model" />
       <recent name="com.learn.orchestrated.order.service.exception" />
-      <recent name="com.learn.orchestrated.order.service.controller" />
-      <recent name="com.learn.orchestrated.order.service.service.impl" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -293,7 +297,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProductValidationServiceApplication">
+  <component name="RunManager" selected="Spring Boot.PaymentServiceApplication">
     <configuration name="ProductValidationServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -366,10 +370,10 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [publishMavenJavaPublicationToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="payment-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -377,7 +381,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="publishMavenJavaPublicationToMavenLocal" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -388,10 +392,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="payment-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -399,7 +403,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="publishToMavenLocal" />
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -467,8 +471,8 @@
       <item itemvalue="Gradle.ProductValidationServiceTest" />
       <item itemvalue="Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing" />
       <item itemvalue="Gradle.ProductValidationServiceTest.validateExistingProducts_Success" />
-      <item itemvalue="Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal]" />
-      <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
+      <item itemvalue="Gradle.payment-service [build]" />
+      <item itemvalue="Gradle.payment-service [clean]" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
@@ -478,11 +482,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.payment-service [build]" />
+        <item itemvalue="Gradle.payment-service [clean]" />
         <item itemvalue="Gradle.ProductValidationServiceTest" />
         <item itemvalue="Gradle.ProductValidationServiceTest.validateExistingProducts_Success" />
         <item itemvalue="Gradle.ProductValidationServiceTest.shouldFailWhenProductIsMissing" />
-        <item itemvalue="Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal]" />
-        <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
       </list>
     </recent_temporary>
   </component>
@@ -548,7 +552,8 @@
       <workItem from="1743268477953" duration="9000" />
       <workItem from="1743268590365" duration="6000" />
       <workItem from="1743272884999" duration="217000" />
-      <workItem from="1743274377422" duration="12057000" />
+      <workItem from="1743274377422" duration="14175000" />
+      <workItem from="1743332344164" duration="3470000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -702,7 +707,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743275871378</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Creating Product and Validation flow">
+      <option name="closed" value="true" />
+      <created>1743330509700</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1743330509700</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -740,7 +753,8 @@
     <MESSAGE value="fix: Review the flow to notifyEnding" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="Creating Product and Validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating Product and Validation" />
+    <MESSAGE value="Creating Product and Validation flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating Product and Validation flow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,26 +808,6 @@
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
           <line>42</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/learn/saga-commons/0.0.3-SNAPSHOT/saga-commons-0.0.3-SNAPSHOT.jar!/com/learn/sagacommons/dto/Event.class</url>
-          <line>24</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/learn/saga-commons/0.0.3-SNAPSHOT/saga-commons-0.0.3-SNAPSHOT.jar!/com/learn/sagacommons/dto/Event.class</url>
-          <line>28</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Event.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/learn/saga-commons/0.0.3-SNAPSHOT/saga-commons-0.0.3-SNAPSHOT.jar!/com/learn/sagacommons/dto/Event.class</url>
-          <line>25</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
