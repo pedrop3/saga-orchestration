@@ -24,12 +24,8 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
     private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 
-    private static final String TRANSACTION_ID_PATTERN = "%s_%s";
-
     private final OrderRepository orderRepository;
     private final EventPublisherService eventPublisherService;
-    private final JsonUtil jsonUtil;
-
 
     @Transactional
     public OrderDocument createOrder(OrderRequest orderRequest) {
