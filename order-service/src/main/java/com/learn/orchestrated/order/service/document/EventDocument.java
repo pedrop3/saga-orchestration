@@ -18,8 +18,6 @@ public class EventDocument extends Event {
     @Id
     private String eventId;
 
-
-    //TODO  Review inheritance structure
     public static EventDocument fromEvent(Event event) {
         EventDocument eventDocument = new EventDocument();
         eventDocument.setEventId(event.getEventId());
@@ -28,7 +26,7 @@ public class EventDocument extends Event {
         eventDocument.setOrder(event.getOrder());
         eventDocument.setSource(event.getSource());
         eventDocument.setStatus(event.getStatus());
-        eventDocument.setHistory(event.getHistory());
+        eventDocument.setEventHistory(event.getEventHistory());
         eventDocument.setCreatedAt(event.getCreatedAt());
         return eventDocument;
     }

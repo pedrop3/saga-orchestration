@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating Inventory Flow">
-      <change afterPath="$PROJECT_DIR$/SagaOrchestrator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ServiceTopic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/saga/SagaExecutionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/saga/SagaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating OrchestrationService Flow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SagaOrganization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestratorProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/saga/SagaExecutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/saga/SagaExecutionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +129,7 @@
     <setting file="jar://$USER_HOME$/.sdkman/candidates/java/21.0.4-zulu/zulu-21.jdk/Contents/Home/lib/src.zip!/java.base/java/time/LocalDateTime.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="HttpClientEndpointsTabState">
-    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;b742dcb50cc48d9fddd56fcbc723f8bd25f987a7&quot; value=&quot;###&amp;#10;GET http://localhost:3000/api/events/filters&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;b742dcb50cc48d9fddd56fcbc723f8bd25f987a7&quot; value=&quot;###&amp;#10;GET http://localhost:3000/api/events/filters&quot; /&gt;&#10;  &lt;entry key=&quot;8223ada6844faaebac200cacd400ae41011be779&quot; value=&quot;###&amp;#10;POST http://localhost:3000/api/orders&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;products&amp;quot;: []&amp;#10;}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
   </component>
   <component name="HttpClientSelectedEnvironments">
     <file url="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/requests-with-loop.http" environment="test" />
@@ -290,7 +283,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.orchestrator-service [build]">
+  <component name="RunManager" selected="Spring Boot.OrchestratorServiceApplication">
     <configuration name="inventory-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -440,14 +433,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SagaCommonsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="saga-commons.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.sagacommons.SagaCommonsApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
@@ -464,7 +449,6 @@
       <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
       <item itemvalue="Spring Boot.PaymentServiceApplication" />
-      <item itemvalue="Spring Boot.SagaCommonsApplication" />
       <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
     </list>
     <recent_temporary>
@@ -542,7 +526,8 @@
       <workItem from="1743274377422" duration="14175000" />
       <workItem from="1743332344164" duration="4847000" />
       <workItem from="1743338613764" duration="38000" />
-      <workItem from="1743339183043" duration="3221000" />
+      <workItem from="1743339183043" duration="7350000" />
+      <workItem from="1743348406309" duration="677000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -720,7 +705,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743339970803</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Creating OrchestrationService Flow">
+      <option name="closed" value="true" />
+      <created>1743342678121</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1743342678121</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -761,7 +754,8 @@
     <MESSAGE value="Creating Product and Validation flow" />
     <MESSAGE value="Creating Payment flow" />
     <MESSAGE value="Creating Inventory Flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating Inventory Flow" />
+    <MESSAGE value="Creating OrchestrationService Flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating OrchestrationService Flow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -785,11 +779,6 @@
           <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java</url>
           <line>55</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>

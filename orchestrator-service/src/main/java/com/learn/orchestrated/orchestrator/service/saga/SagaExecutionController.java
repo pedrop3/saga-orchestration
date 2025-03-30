@@ -42,7 +42,7 @@ public class SagaExecutionController {
                                                 Object[] row) {
         var source = row[EVENT_SOURCE_INDEX];
         var status = row[SAGA_STATUS_INDEX];
-        return source.equals(event.getSource()) && status.equals(event.getStatus());
+        return source.toString().equals(event.getSource()) && status.equals(event.getStatus());
     }
 
     private void logCurrentSaga(Event event, TopicsEnum topic) {

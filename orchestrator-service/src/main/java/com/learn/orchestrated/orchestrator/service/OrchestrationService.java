@@ -8,7 +8,6 @@ import com.learn.sagacommons.dto.History;
 import com.learn.sagacommons.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -74,11 +73,11 @@ public class OrchestrationService {
     }
 
     private void sendToProducerWithTopic(Event event, TopicsEnum topic) {
-        producer.sendEvent(jsonUtil.toJson(event).orElseThrow(), topic.getTopic());
+        producer.sendEvent(topic.getTopic(),jsonUtil.toJson(event).orElseThrow() );
     }
 
     private void notifyFinishedSaga(Event event) {
-        producer.sendEvent(jsonUtil.toJson(event).orElseThrow(), TopicsEnum.NOTIFY_ENDING.getTopic());
+        producer.sendEvent(TopicsEnum.NOTIFY_ENDING.getTopic(),jsonUtil.toJson(event).orElseThrow() );
     }
 
 }
