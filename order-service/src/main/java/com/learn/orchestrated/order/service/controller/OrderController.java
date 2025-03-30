@@ -24,7 +24,7 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<Order> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
-        log.info("Recebendo pedido para criar nova ordem: {}", orderRequest);
+        log.info("Receiving request to create new order: {}", orderRequest);
         Order createdOrder = orderService.createOrder(orderRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdOrder);
     }

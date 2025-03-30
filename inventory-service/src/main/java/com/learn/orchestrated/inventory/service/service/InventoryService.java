@@ -81,8 +81,10 @@ public class InventoryService {
     private void updateInventory(Order order) {
         order.getProducts().forEach(product -> {
             var inventory = findInventoryByProductCode(product.getProduct().getCode());
+
             checkInventory(inventory.getAvailable(), product.getQuantity());
             inventory.setAvailable(inventory.getAvailable() - product.getQuantity());
+
             inventoryRepository.save(inventory);
         });
     }
@@ -120,6 +122,7 @@ public class InventoryService {
     public void rollbackInventory(Event event) {
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
+
         try {
             returnInventoryToPreviousValues(event);
             addHistory(event, "Rollback executed for inventory!");
@@ -135,6 +138,7 @@ public class InventoryService {
                 .forEach(orderInventory -> {
                     var inventory = orderInventory.getInventory();
                     inventory.setAvailable(orderInventory.getOldQuantity());
+
                     inventoryRepository.save(inventory);
                     log.info("Restored inventory for order {}: from {} to {}",
                             event.getOrder().getOrderId(), orderInventory.getNewQuantity(), inventory.getAvailable());

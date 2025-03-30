@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = AtLeastOneNotEmptyValidator.class)
 public @interface AtLeastOneNotEmpty {
 
-    String message() default "Pelo menos um dos campos deve ser preenchido.";
+    String message() default "At least one of the fields must be filled in.";
 
     Class<?>[] groups() default {};
 

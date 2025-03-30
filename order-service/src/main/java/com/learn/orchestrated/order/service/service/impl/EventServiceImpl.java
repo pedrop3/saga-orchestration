@@ -49,6 +49,4 @@ public class EventServiceImpl implements EventService {
     private EventDocument findByTransactionId(String transactionId) {
         return eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc(transactionId).orElseThrow(() -> new InvalidArgumentsException("Transcation not found"));
     }
-
-
 }

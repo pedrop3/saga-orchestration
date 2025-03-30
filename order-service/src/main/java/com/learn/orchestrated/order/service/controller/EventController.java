@@ -16,7 +16,6 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/events")
-
 public class EventController {
 
     private final EventService eventService;
@@ -32,6 +31,4 @@ public class EventController {
         EventDocument eventDocument = eventService.findByFilters(eventFilter);
         return ResponseEntity.status(HttpStatus.OK).body(eventDocument);
     }
-
-
 }

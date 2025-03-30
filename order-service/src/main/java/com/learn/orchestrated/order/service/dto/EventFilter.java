@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AtLeastOneNotEmpty(fields = {"orderId", "transactionId"},
-        message = "Pelo menos um dos campos 'orderId' ou 'transactionId' deve ser preenchido.")
+        message = "At least one of the 'orderId' or 'transactionId' fields must be filled.")
 public record EventFilter(String orderId, String transactionId) {}

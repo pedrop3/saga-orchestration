@@ -3,6 +3,7 @@ package com.learn.orchestrated.order.service.order.service;
 import com.learn.orchestrated.order.service.document.EventDocument;
 import com.learn.orchestrated.order.service.document.OrderDocument;
 import com.learn.orchestrated.order.service.dto.OrderRequest;
+import com.learn.orchestrated.order.service.exception.OrderProcessingException;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
 import com.learn.orchestrated.order.service.service.EventPublisherService;
 import com.learn.orchestrated.order.service.service.impl.OrderServiceImpl;
@@ -14,12 +15,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.dao.DataAccessResourceFailureException;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -36,33 +38,70 @@ public class OrderServiceTest {
     private JsonUtil jsonUtil;
 
     @InjectMocks
-    private OrderServiceImpl orderServiceImpl;
+    private OrderServiceImpl orderService;
 
 
     @Test
-    void shouldCreateOrder() {
-        OrderProducts orderProducts = new OrderProducts();
-        orderProducts.setProduct(new Product());
-        orderProducts.setQuantity(1);
+    void shouldCreateOrderSuccessfully() {
+        OrderRequest request = createOrderRequest();
 
-        OrderRequest orderRequest = new OrderRequest(List.of(orderProducts));
+        OrderDocument savedOrder = new OrderDocument();
+        savedOrder.setOrderId(UUID.randomUUID().toString());
+        savedOrder.setProducts(request.products());
+        savedOrder.setCreatedAt(LocalDateTime.now());
 
-        OrderDocument orderDocument = new OrderDocument();
-        orderDocument.setProducts(orderRequest.products());
-        orderDocument.setCreatedAt(LocalDateTime.now());
-        orderDocument.setOrderId(UUID.randomUUID().toString());
+        when(orderRepository.save(any(OrderDocument.class))).thenReturn(savedOrder);
 
-
-        when(orderRepository.save(any(OrderDocument.class))).thenReturn(orderDocument);
-
-        OrderDocument result = orderServiceImpl.createOrder(orderRequest);
+        OrderDocument result = orderService.createOrder(request);
 
         assertNotNull(result);
-        verify(orderRepository, times(1)).save(any(OrderDocument.class));
-        verify(eventPublisherService, times(1)).publish(any(EventDocument.class));
-
+        verify(orderRepository).save(any(OrderDocument.class));
+        verify(eventPublisherService).publish(any(EventDocument.class));
     }
 
+    @Test
+    void shouldThrowExceptionWhenSavingFails() {
+        OrderRequest request = createOrderRequest();
 
+        when(orderRepository.save(any(OrderDocument.class)))
+                .thenThrow(new DataAccessResourceFailureException("DB error"));
+
+        OrderProcessingException exception = assertThrows(OrderProcessingException.class, () -> {
+            orderService.createOrder(request);
+        });
+
+        assertEquals("Erro ao salvar ordem no banco de dados.", exception.getMessage());
+        verify(orderRepository).save(any(OrderDocument.class));
+        verify(eventPublisherService, never()).publish(any());
+    }
+
+    @Test
+    void shouldThrowExceptionWhenPublishingFails() {
+        OrderRequest request = createOrderRequest();
+
+        OrderDocument savedOrder = new OrderDocument();
+        savedOrder.setOrderId("order456");
+        savedOrder.setTransactionId("tx456");
+        savedOrder.setProducts(request.products());
+
+        when(orderRepository.save(any(OrderDocument.class))).thenReturn(savedOrder);
+        doThrow(new RuntimeException("Unexpected error"))
+                .when(eventPublisherService).publish(any(EventDocument.class));
+
+        OrderProcessingException exception = assertThrows(OrderProcessingException.class, () -> {
+            orderService.createOrder(request);
+        });
+
+        assertEquals("Erro ao processar evento da ordem.", exception.getMessage());
+        verify(orderRepository).save(any(OrderDocument.class));
+        verify(eventPublisherService).publish(any(EventDocument.class));
+    }
+
+    private OrderRequest createOrderRequest() {
+        OrderProducts orderProduct = new OrderProducts();
+        orderProduct.setProduct(new Product());
+        orderProduct.setQuantity(1);
+        return new OrderRequest(List.of(orderProduct));
+    }
 
 }
