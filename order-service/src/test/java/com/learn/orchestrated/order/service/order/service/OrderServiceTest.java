@@ -22,33 +22,21 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class OrderServiceTest {
+class OrderServiceTest {
 
-    @Mock
-    private OrderRepository orderRepository;
+    @Mock private OrderRepository orderRepository;
+    @Mock private EventPublisherService eventPublisherService;
+    @Mock private JsonUtil jsonUtil;
 
-    @Mock
-    private EventPublisherService eventPublisherService;
-
-    @Mock
-    private JsonUtil jsonUtil;
-
-    @InjectMocks
-    private OrderServiceImpl orderService;
-
+    @InjectMocks private OrderServiceImpl orderService;
 
     @Test
-    void shouldCreateOrderSuccessfully() {
-        OrderRequest request = createOrderRequest();
-
-        OrderDocument savedOrder = new OrderDocument();
-        savedOrder.setOrderId(UUID.randomUUID().toString());
-        savedOrder.setProducts(request.products());
-        savedOrder.setCreatedAt(LocalDateTime.now());
+    void shouldCreateOrderSuccessfully_whenRequestIsValid() {
+        OrderRequest request = buildOrderRequest();
+        OrderDocument savedOrder = buildOrderDocument(request);
 
         when(orderRepository.save(any(OrderDocument.class))).thenReturn(savedOrder);
 
@@ -60,9 +48,8 @@ public class OrderServiceTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenSavingFails() {
-        OrderRequest request = createOrderRequest();
-
+    void shouldThrowOrderProcessingException_whenSavingFails() {
+        OrderRequest request = buildOrderRequest();
         when(orderRepository.save(any(OrderDocument.class)))
                 .thenThrow(new DataAccessResourceFailureException("DB error"));
 
@@ -76,13 +63,11 @@ public class OrderServiceTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenPublishingFails() {
-        OrderRequest request = createOrderRequest();
-
-        OrderDocument savedOrder = new OrderDocument();
+    void shouldThrowOrderProcessingException_whenPublishingFails() {
+        OrderRequest request = buildOrderRequest();
+        OrderDocument savedOrder = buildOrderDocument(request);
         savedOrder.setOrderId("order456");
         savedOrder.setTransactionId("tx456");
-        savedOrder.setProducts(request.products());
 
         when(orderRepository.save(any(OrderDocument.class))).thenReturn(savedOrder);
         doThrow(new RuntimeException("Unexpected error"))
@@ -97,11 +82,18 @@ public class OrderServiceTest {
         verify(eventPublisherService).publish(any(EventDocument.class));
     }
 
-    private OrderRequest createOrderRequest() {
+    private OrderRequest buildOrderRequest() {
         OrderProducts orderProduct = new OrderProducts();
         orderProduct.setProduct(new Product());
         orderProduct.setQuantity(1);
         return new OrderRequest(List.of(orderProduct));
     }
 
+    private OrderDocument buildOrderDocument(OrderRequest request) {
+        OrderDocument doc = new OrderDocument();
+        doc.setOrderId(UUID.randomUUID().toString());
+        doc.setProducts(request.products());
+        doc.setCreatedAt(LocalDateTime.now());
+        return doc;
+    }
 }

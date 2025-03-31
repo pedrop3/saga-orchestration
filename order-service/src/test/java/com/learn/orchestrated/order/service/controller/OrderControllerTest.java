@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learn.orchestrated.order.service.document.OrderDocument;
 import com.learn.orchestrated.order.service.dto.OrderRequest;
 import com.learn.orchestrated.order.service.service.OrderService;
-import com.learn.sagacommons.dto.Order;
 import com.learn.sagacommons.dto.OrderProducts;
 import com.learn.sagacommons.dto.Product;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,36 +30,27 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class OrderControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    MockMvc mockMvc;
 
     @MockitoBean
-    private OrderService orderService;
+    OrderService orderService;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    ObjectMapper objectMapper;
 
-    private OrderRequest orderRequest;
-
-    private OrderDocument orderResponse;
+    OrderRequest orderRequest;
+    OrderDocument orderResponse;
 
     @BeforeEach
     void setUp() {
-        OrderProducts orderProduct = new OrderProducts();
-        orderProduct.setProduct(new Product());
-        orderProduct.setQuantity(2);
-
-        orderRequest = new OrderRequest(List.of(orderProduct));
-
-        orderResponse = new OrderDocument();
-        orderResponse.setOrderId(UUID.randomUUID().toString());
-        orderResponse.setProducts(List.of(orderProduct));
-
+        orderRequest = buildOrderRequest();
+        orderResponse = buildOrderResponse();
     }
 
     @Test
-    void shouldCreateOrderSuccessfully() throws Exception {
-        Mockito.when(orderService.createOrder(any(OrderRequest.class)))
-                .thenReturn(orderResponse);
+    void shouldCreateOrderSuccessfully_whenValidRequest() throws Exception {
+
+        Mockito.when(orderService.createOrder(any(OrderRequest.class))).thenReturn(orderResponse);
 
         mockMvc.perform(post("/api/orders")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -70,5 +60,19 @@ class OrderControllerTest {
                 .andExpect(jsonPath("$.products").isArray());
 
         Mockito.verify(orderService).createOrder(any(OrderRequest.class));
+    }
+
+    private OrderRequest buildOrderRequest() {
+        OrderProducts product = new OrderProducts();
+        product.setProduct(new Product());
+        product.setQuantity(2);
+        return new OrderRequest(List.of(product));
+    }
+
+    private OrderDocument buildOrderResponse() {
+        OrderDocument doc = new OrderDocument();
+        doc.setOrderId(UUID.randomUUID().toString());
+        doc.setProducts(orderRequest.products());
+        return doc;
     }
 }

@@ -31,7 +31,7 @@ public class ProductValidationService {
     private final ProductValidationRepository productRepository;
     private final ValidationRepository validationRepository;
 
-    public void validateExistingProducts(Event event) {
+    public void validateExistingProducts(Event event)  {
         try {
             checkCurrentValidation(event);
             createValidation(event, true);

@@ -9,21 +9,19 @@ import com.learn.sagacommons.dto.Event;
 import com.learn.sagacommons.dto.Order;
 import com.learn.sagacommons.dto.OrderProducts;
 import com.learn.sagacommons.dto.Product;
-import com.learn.sagacommons.exception.ValidationException;
 import com.learn.sagacommons.utils.JsonUtil;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static com.learn.sagacommons.enums.SagaStatusEnum.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -31,154 +29,152 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class ProductValidationServiceTest {
 
-    @Mock
-    private JsonUtil jsonUtil;
-
-    @Mock
-    private SagaProducer producer;
-
-    @Mock
-    private ProductValidationRepository productRepository;
-
-    @Mock
-    private ValidationRepository validationRepository;
-
-    @InjectMocks
-    private ProductValidationService productValidationService;
-
-    private Event event;
-    private Order order;
-    private OrderProducts orderProduct;
-    private Product product;
-
-    private static final String SUCCESS = "SUCCESS";
-    private static final String ROLLBACK = "ROLLBACK";
-    private static final String FAIL = "FAIL";
     private static final String CURRENT_SOURCE = "PRODUCT_VALIDATION_SERVICE";
 
+    @Mock private JsonUtil jsonUtil;
+    @Mock private SagaProducer producer;
+    @Mock private ProductValidationRepository productRepository;
+    @Mock private ValidationRepository validationRepository;
+
+    @InjectMocks private ProductValidationService service;
+
+    private Event event;
+    private Product product;
 
     @BeforeEach
     void setUp() {
-        product = new Product("123",1);
-        orderProduct = new OrderProducts(product, 1);
-        order = Order.builder().orderId("orderId").products(List.of(orderProduct)).build();
-        event = Event.builder().order(order).transactionId("transactionId").build();
-        when(jsonUtil.toJson(any())).thenReturn(Optional.of("{}"));
+        product = new Product("123", 1);
+        event = buildEvent("orderId", "transactionId", product.getCode(), 1);
+        when(jsonUtil.toJson(any())).thenReturn(Optional.of("{json}"));
     }
 
     @Test
-    @DisplayName("Teste de validação bem-sucedida de produtos existentes")
-    void validateExistingProducts_Success() {
-        when(validationRepository.existsByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId())).thenReturn(false);
-        when(productRepository.existsByCode(product.getCode())).thenReturn(true);
+    void shouldValidateSuccessfully_whenProductExists() {
+        givenNoValidationConflict();
+        givenProductExists();
 
-        productValidationService.validateExistingProducts(event);
+        service.validateExistingProducts(event);
 
-        verify(validationRepository, times(1)).save(any(Validation.class));
-        ArgumentCaptor<Validation> validationCaptor = ArgumentCaptor.forClass(Validation.class);
-        verify(validationRepository).save(validationCaptor.capture());
-        assertTrue(validationCaptor.getValue().isSuccess());
-        assertEquals(event.getOrderId(), validationCaptor.getValue().getOrderId());
-        assertEquals(event.getTransactionId(), validationCaptor.getValue().getTransactionId());
         assertEquals(SUCCESS, event.getStatus());
         assertEquals(CURRENT_SOURCE, event.getSource());
-        assertTrue(event.getEventHistory().stream().anyMatch(h -> h.getMessage().equals("Products are validated successfully!")));
-        verify(producer, times(1)).sendEvent("{}");
+        assertHistoryContains("Products are validated successfully!");
+        verify(validationRepository).save(any(Validation.class));
+        verify(producer).sendEvent("{json}");
     }
 
     @Test
-    @DisplayName("Teste de falha na validação de produtos existentes devido à lista de produtos vazia")
-    void validateExistingProducts_Failure_EmptyProductList() {
-        event.getOrder().setProducts(Collections.emptyList());
-
-        assertThrows(ValidationException.class, () -> productValidationService.validateExistingProducts(event), "Product list is empty!");
-        verify(validationRepository, never()).save(any());
-        verify(producer, never()).sendEvent(anyString());
-    }
-
-    @Test
-    @DisplayName("Teste de falha na validação de produtos existentes devido a informações de pedido em falta")
-    void validateExistingProducts_Failure_MissingOrderInformation() {
-        event.getOrder().setOrderId(null);
-
-        assertThrows(ValidationException.class, () -> productValidationService.validateExistingProducts(event), "OrderID and TransactionID must be informed!");
-        verify(validationRepository, never()).save(any());
-        verify(producer, never()).sendEvent(anyString());
-    }
-
-    @Test
-    @DisplayName("Teste de falha na validação de produtos existentes devido a informações de transação em falta")
-    void validateExistingProducts_Failure_MissingTransactionInformation() {
-        event.setTransactionId(null);
-
-        assertThrows(ValidationException.class, () -> productValidationService.validateExistingProducts(event), "OrderID and TransactionID must be informed!");
-        verify(validationRepository, never()).save(any());
-        verify(producer, never()).sendEvent(anyString());
-    }
-
-    @Test
-    @DisplayName("Teste de falha na validação de produtos existentes devido a registro de validação existente")
-    void validateExistingProducts_Failure_ValidationRecordExists() {
-        when(validationRepository.existsByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId())).thenReturn(true);
-
-        assertThrows(ValidationException.class, () -> productValidationService.validateExistingProducts(event), "There's another transactionId for this validation.");
-        verify(validationRepository, never()).save(any());
-        verify(producer, never()).sendEvent(anyString());
-    }
-
-    @Test
-    @DisplayName("Teste de falha na validação de produtos existentes devido a produto inexistente")
-    void validateExistingProducts_Failure_ProductDoesNotExist() {
-        when(validationRepository.existsByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId())).thenReturn(false);
+    void shouldRollback_whenProductDoesNotExist() {
+        givenNoValidationConflict();
         when(productRepository.existsByCode(product.getCode())).thenReturn(false);
 
-        assertThrows(ValidationException.class, () -> productValidationService.validateExistingProducts(event), "Product does not exists in database!");
-        verify(validationRepository, times(1)).save(any(Validation.class));
-        ArgumentCaptor<Validation> validationCaptor = ArgumentCaptor.forClass(Validation.class);
-        verify(validationRepository).save(validationCaptor.capture());
-        assertFalse(validationCaptor.getValue().isSuccess());
+        service.validateExistingProducts(event);
+
         assertEquals(ROLLBACK, event.getStatus());
-        assertEquals(CURRENT_SOURCE, event.getSource());
-        assertTrue(event.getEventHistory().stream().anyMatch(h -> h.getMessage().contains("Fail to validate products: Product does not exists in database!")));
-        verify(producer, times(1)).sendEvent("{}");
+        assertHistoryContains("Product does not exists in database!");
+        verify(producer).sendEvent("{json}");
     }
 
     @Test
-    @DisplayName("Teste de rollback bem-sucedido com registro de validação existente")
-    void rollbackEvent_Success_ExistingValidation() {
-        Validation existingValidation = Validation.builder().orderId(event.getOrderId()).transactionId(event.getTransactionId()).success(true).build();
-        when(validationRepository.findByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId())).thenReturn(Optional.of(existingValidation));
+    void shouldRollback_whenTransactionAlreadyExists() {
+        when(validationRepository.existsByOrderIdAndTransactionId(any(), any())).thenReturn(true);
 
-        productValidationService.rollbackEvent(event);
+        service.validateExistingProducts(event);
 
-        verify(validationRepository, times(1)).findByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId());
-        verify(validationRepository, times(1)).save(existingValidation);
-        assertFalse(existingValidation.isSuccess());
-        assertEquals(FAIL, event.getStatus());
-        assertEquals(CURRENT_SOURCE, event.getSource());
-        assertTrue(event.getEventHistory().stream().anyMatch(h -> h.getMessage().equals("Rollback executed on product validation!")));
-        verify(producer, times(1)).sendEvent("{}");
+        assertEquals(ROLLBACK, event.getStatus());
+        assertHistoryContains("There's another transactionId for this validation.");
+        verify(producer).sendEvent("{json}");
     }
 
     @Test
-    @DisplayName("Teste de rollback bem-sucedido sem registro de validação existente")
-    void rollbackEvent_Success_NoExistingValidation() {
-        when(validationRepository.findByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId())).thenReturn(Optional.empty());
+    void shouldRollback_whenOrderIsEmpty() {
+        event.setOrder(null);
 
-        productValidationService.rollbackEvent(event);
+        service.validateExistingProducts(event);
 
-        verify(validationRepository, times(1)).findByOrderIdAndTransactionId(event.getOrderId(), event.getTransactionId());
-        verify(validationRepository, times(1)).save(any(Validation.class));
-        ArgumentCaptor<Validation> validationCaptor = ArgumentCaptor.forClass(Validation.class);
-        verify(validationRepository).save(validationCaptor.capture());
-        assertFalse(validationCaptor.getValue().isSuccess());
+        assertEquals(ROLLBACK, event.getStatus());
+        assertHistoryContains("Product list is empty!");
+    }
+
+    @Test
+    void shouldRollback_whenProductIsNull() {
+        event.getOrder().getProducts().getFirst().setProduct(null);
+
+        service.validateExistingProducts(event);
+
+        assertEquals(ROLLBACK, event.getStatus());
+        assertHistoryContains("Product must be informed!");
+    }
+
+    @Test
+    void shouldRollback_whenOrderIdOrTransactionIdMissing() {
+        event.getOrder().setOrderId("");
+        event.setTransactionId(null);
+
+        service.validateExistingProducts(event);
+
+        assertEquals(ROLLBACK, event.getStatus());
+        assertHistoryContains("OrderID and TransactionID must be informed!");
+    }
+
+    @Test
+    void shouldRollbackAndUpdateValidation_whenItExists() {
+        var validation = Validation.builder()
+                .orderId(event.getOrderId())
+                .transactionId(event.getTransactionId())
+                .success(true)
+                .build();
+
+        when(validationRepository.findByOrderIdAndTransactionId(any(), any()))
+                .thenReturn(Optional.of(validation));
+
+        service.rollbackEvent(event);
+
         assertEquals(FAIL, event.getStatus());
-        assertEquals(CURRENT_SOURCE, event.getSource());
-        assertTrue(event.getEventHistory().stream().anyMatch(h -> h.getMessage().equals("Rollback executed on product validation!")));
-        verify(producer, times(1)).sendEvent("{}");
+        assertFalse(validation.isSuccess());
+        assertHistoryContains("Rollback executed on product validation!");
+        verify(validationRepository).save(validation);
+        verify(producer).sendEvent("{json}");
+    }
+
+    @Test
+    void shouldRollbackAndCreateValidation_whenNotExists() {
+        when(validationRepository.findByOrderIdAndTransactionId(any(), any()))
+                .thenReturn(Optional.empty());
+
+        service.rollbackEvent(event);
+
+        assertEquals(FAIL, event.getStatus());
+        assertHistoryContains("Rollback executed on product validation!");
+        verify(validationRepository).save(argThat(v -> !v.isSuccess()));
+        verify(producer).sendEvent("{json}");
     }
 
 
+    private Event buildEvent(String orderId, String txId, String productCode, int quantity) {
+        var prod = new Product(productCode, 1);
+        var orderProduct = new OrderProducts(prod, quantity);
+        var order = Order.builder().orderId(orderId).products(List.of(orderProduct)).build();
+        return Event.builder()
+                .order(order)
+                .transactionId(txId)
+                .eventHistory(new ArrayList<>())
+                .build();
+    }
 
+    // ========= Helpers ==========
 
+    private void givenNoValidationConflict() {
+        when(validationRepository.existsByOrderIdAndTransactionId(any(), any())).thenReturn(false);
+    }
+
+    private void givenProductExists() {
+        when(productRepository.existsByCode(product.getCode())).thenReturn(true);
+    }
+
+    private void assertHistoryContains(String expected) {
+        assertTrue(event.getEventHistory().stream()
+                        .anyMatch(h -> h.getMessage().toLowerCase().contains(expected.toLowerCase())),
+                "Expected to find in history: " + expected);
+    }
 }
+

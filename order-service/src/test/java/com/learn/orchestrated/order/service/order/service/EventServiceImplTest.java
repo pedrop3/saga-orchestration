@@ -17,32 +17,25 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class EventServiceImplTest {
 
-    @Mock
-    private EventRepository eventRepository;
+    @Mock private EventRepository eventRepository;
 
-    @InjectMocks
-    private EventServiceImpl eventService;
+    @InjectMocks private EventServiceImpl eventService;
 
     private EventDocument event;
 
     @BeforeEach
-    void setUp() {
-        event = new EventDocument();
-        event.setEventId("evt123");
-        event.setTransactionId("tx456");
-        event.setCreatedAt(LocalDateTime.now());
+    void setup() {
+        event = buildEvent("evt123", "tx456");
     }
 
     @Test
     void shouldNotifyEndingAndSaveEvent() {
-        when(eventRepository.save(any(EventDocument.class))).thenReturn(event);
+        when(eventRepository.save(event)).thenReturn(event);
 
         eventService.notifyEnding(event);
 
@@ -61,58 +54,67 @@ class EventServiceImplTest {
     }
 
     @Test
-    void shouldFindAllEventsOrderedByCreatedAtDesc() {
+    void shouldReturnAllEventsOrderedByCreatedAtDesc() {
         when(eventRepository.findAllByOrderByCreatedAtDesc()).thenReturn(List.of(event));
 
-        List<EventDocument> events = eventService.findAll();
+        List<EventDocument> result = eventService.findAll();
 
-        assertEquals(1, events.size());
-        assertEquals("evt123", events.get(0).getEventId());
+        assertEquals(1, result.size());
+        assertEquals("evt123", result.getFirst().getEventId());
+        verify(eventRepository).findAllByOrderByCreatedAtDesc();
     }
 
     @Test
-    void shouldFindEventByOrderId() {
-        EventFilter filter = new EventFilter("order-1", "tx-x");
-
-        when(eventRepository.findTop1ByOrderIdOrderByCreatedAtDesc("order-1"))
-                .thenReturn(Optional.of(event));
+    void shouldFindEventByOrderId_whenOrderIdIsPresent() {
+        EventFilter filter = buildFilter("order-1", "tx-x");
+        when(eventRepository.findTop1ByOrderIdOrderByCreatedAtDesc("order-1")).thenReturn(Optional.of(event));
 
         EventDocument result = eventService.findByFilters(filter);
 
         assertNotNull(result);
         assertEquals("evt123", result.getEventId());
+        verify(eventRepository).findTop1ByOrderIdOrderByCreatedAtDesc("order-1");
     }
 
     @Test
-    void shouldFindEventByTransactionIdWhenOrderIdIsEmpty() {
-        EventFilter filter = new EventFilter("", "tx456");
-
-        when(eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc("tx456"))
-                .thenReturn(Optional.of(event));
+    void shouldFindEventByTransactionId_whenOrderIdIsEmpty() {
+        EventFilter filter = buildFilter("", "tx456");
+        when(eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc("tx456")).thenReturn(Optional.of(event));
 
         EventDocument result = eventService.findByFilters(filter);
 
         assertNotNull(result);
         assertEquals("evt123", result.getEventId());
+        verify(eventRepository).findTop1ByTransactionIdOrderByCreatedAtDesc("tx456");
     }
 
     @Test
-    void shouldThrowExceptionWhenOrderIdNotFound() {
-        EventFilter filter = new EventFilter("order-1", "tx-x");
-
-        when(eventRepository.findTop1ByOrderIdOrderByCreatedAtDesc("order-1"))
-                .thenReturn(Optional.empty());
+    void shouldThrowException_whenEventByOrderIdNotFound() {
+        EventFilter filter = buildFilter("order-1", "tx-x");
+        when(eventRepository.findTop1ByOrderIdOrderByCreatedAtDesc("order-1")).thenReturn(Optional.empty());
 
         assertThrows(InvalidArgumentsException.class, () -> eventService.findByFilters(filter));
     }
 
     @Test
-    void shouldThrowExceptionWhenTransactionIdNotFound() {
-        EventFilter filter = new EventFilter("", "tx999");
-
-        when(eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc("tx999"))
-                .thenReturn(Optional.empty());
+    void shouldThrowException_whenEventByTransactionIdNotFound() {
+        EventFilter filter = buildFilter("", "tx999");
+        when(eventRepository.findTop1ByTransactionIdOrderByCreatedAtDesc("tx999")).thenReturn(Optional.empty());
 
         assertThrows(InvalidArgumentsException.class, () -> eventService.findByFilters(filter));
+    }
+
+    // ========== Helpers ==========
+
+    private EventDocument buildEvent(String eventId, String txId) {
+        EventDocument event = new EventDocument();
+        event.setEventId(eventId);
+        event.setTransactionId(txId);
+        event.setCreatedAt(LocalDateTime.now());
+        return event;
+    }
+
+    private EventFilter buildFilter(String orderId, String txId) {
+        return new EventFilter(orderId, txId);
     }
 }

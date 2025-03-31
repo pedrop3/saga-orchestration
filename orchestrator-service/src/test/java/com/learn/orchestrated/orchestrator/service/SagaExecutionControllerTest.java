@@ -4,17 +4,15 @@ import com.learn.orchestrated.orchestrator.service.enums.TopicsEnum;
 import com.learn.orchestrated.orchestrator.service.saga.SagaExecutionController;
 import com.learn.sagacommons.dto.Event;
 import com.learn.sagacommons.dto.Order;
+import com.learn.sagacommons.enums.SagaStatusEnum;
 import com.learn.sagacommons.exception.ValidationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.learn.orchestrated.orchestrator.service.enums.EventSourceEnum.PAYMENT_SERVICE;
-import static com.learn.orchestrated.orchestrator.service.enums.EventSourceEnum.PRODUCT_VALIDATION_SERVICE;
-import static com.learn.orchestrated.orchestrator.service.enums.TopicsEnum.INVENTORY_SUCCESS;
-import static com.learn.orchestrated.orchestrator.service.enums.TopicsEnum.PRODUCT_VALIDATION_FAIL;
+import static com.learn.orchestrated.orchestrator.service.enums.EventSourceEnum.*;
+import static com.learn.orchestrated.orchestrator.service.enums.TopicsEnum.*;
 import static com.learn.sagacommons.enums.SagaStatusEnum.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SagaExecutionControllerTest {
 
@@ -24,20 +22,12 @@ class SagaExecutionControllerTest {
     @BeforeEach
     void setUp() {
         sagaExecutionController = new SagaExecutionController();
-
-        Order order = new Order();
-        order.setOrderId("order-1");
-
-        event = new Event();
-        event.setEventId("evt-1");
-        event.setTransactionId("tx-1");
-        event.setOrder(order);
+        event = createDefaultEvent("order-1", "evt-1", "tx-1");
     }
 
     @Test
-    void shouldReturnCorrectTopicWhenValidSourceAndStatus() {
-        event.setSource(PAYMENT_SERVICE.toString());
-        event.setStatus(SUCCESS);
+    void shouldReturnNextTopicGivenValidSourceAndSuccessStatus() {
+        setEvent(PAYMENT_SERVICE.toString(), SUCCESS);
 
         TopicsEnum topic = sagaExecutionController.getNextTopic(event);
 
@@ -45,9 +35,8 @@ class SagaExecutionControllerTest {
     }
 
     @Test
-    void shouldReturnFailtTopicWhenValidSourceAndStatus() {
-        event.setSource(PAYMENT_SERVICE.toString());
-        event.setStatus(FAIL);
+    void shouldReturnFailTopicGivenValidSourceAndFailStatus() {
+        setEvent(PAYMENT_SERVICE.toString(), FAIL);
 
         TopicsEnum topic = sagaExecutionController.getNextTopic(event);
 
@@ -55,9 +44,8 @@ class SagaExecutionControllerTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenSourceIsNull() {
-        event.setSource(null);
-        event.setStatus(SUCCESS);
+    void shouldThrowValidationExceptionWhenSourceIsNull() {
+        setEvent(null, SUCCESS);
 
         ValidationException ex = assertThrows(ValidationException.class, () -> {
             sagaExecutionController.getNextTopic(event);
@@ -67,9 +55,8 @@ class SagaExecutionControllerTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenStatusIsNull() {
-        event.setSource(PAYMENT_SERVICE.toString());
-        event.setStatus(null);
+    void shouldThrowValidationExceptionWhenStatusIsNull() {
+        setEvent(PAYMENT_SERVICE.toString(), null);
 
         ValidationException ex = assertThrows(ValidationException.class, () -> {
             sagaExecutionController.getNextTopic(event);
@@ -79,12 +66,10 @@ class SagaExecutionControllerTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenNoMatchingTopicFound() {
-        event.setSource(PAYMENT_SERVICE.toString());
+    void shouldThrowValidationExceptionWhenTopicNotFound() {
+        setEvent(PAYMENT_SERVICE.toString(), TIMEOUT); // assuming TIMEOUT is not mapped
 
-        event.setStatus(TIMEOUT);
-
-        Exception ex = assertThrows(ValidationException.class, () -> {
+        ValidationException ex = assertThrows(ValidationException.class, () -> {
             sagaExecutionController.getNextTopic(event);
         });
 
@@ -92,12 +77,28 @@ class SagaExecutionControllerTest {
     }
 
     @Test
-    void shouldFormatSagaIdCorrectlyInLogs() {
-        event.setSource(PRODUCT_VALIDATION_SERVICE.toString());
-        event.setStatus(ROLLBACK);
+    void shouldLogSagaIdCorrectlyAndReturnRollbackTopic() {
+        setEvent(PRODUCT_VALIDATION_SERVICE.toString(), ROLLBACK);
 
         TopicsEnum topic = sagaExecutionController.getNextTopic(event);
 
         assertEquals(PRODUCT_VALIDATION_FAIL, topic);
+    }
+
+
+    private Event createDefaultEvent(String orderId, String eventId, String txId) {
+        Order order = new Order();
+        order.setOrderId(orderId);
+
+        Event event = new Event();
+        event.setOrder(order);
+        event.setEventId(eventId);
+        event.setTransactionId(txId);
+        return event;
+    }
+
+    private void setEvent(String source, SagaStatusEnum status) {
+        event.setSource(source);
+        event.setStatus(status);
     }
 }

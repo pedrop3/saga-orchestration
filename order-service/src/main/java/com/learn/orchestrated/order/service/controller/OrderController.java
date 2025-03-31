@@ -23,6 +23,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
+    
     public ResponseEntity<Order> createOrder(@Valid @RequestBody OrderRequest orderRequest) {
         log.info("Receiving request to create new order: {}", orderRequest);
         Order createdOrder = orderService.createOrder(orderRequest);

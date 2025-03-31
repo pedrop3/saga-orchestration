@@ -27,24 +27,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class EventControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    MockMvc mockMvc;
 
     @MockitoBean
-    private EventService eventService;
+    EventService eventService;
 
-    private EventDocument event;
+    EventDocument event;
 
     @BeforeEach
-    void setUp() {
-        event = new EventDocument();
-        event.setEventId("evt123");
-        event.setTransactionId("tx456");
-        event.setCreatedAt(LocalDateTime.now());
+    void setup() {
+        event = buildEventDocument("evt123", "tx456");
     }
 
     @Test
-    void shouldReturnAllEvents() throws Exception {
-        Mockito.when(eventService.findAll()).thenReturn(List.of(event));
+    void shouldReturnAllEvents_whenFindAllIsCalled() throws Exception {
+        givenEventList(List.of(event));
 
         mockMvc.perform(get("/api/events"))
                 .andExpect(status().isOk())
@@ -55,8 +52,8 @@ class EventControllerTest {
     }
 
     @Test
-    void shouldReturnEventByFilters() throws Exception {
-        Mockito.when(eventService.findByFilters(any(EventFilter.class))).thenReturn(event);
+    void shouldReturnEvent_whenFilteredByOrderIdAndTransactionId() throws Exception {
+        givenFilteredEvent(event);
 
         mockMvc.perform(get("/api/events/filters")
                         .param("orderId", "order-1")
@@ -67,5 +64,21 @@ class EventControllerTest {
                 .andExpect(jsonPath("$.transactionId").value("tx456"));
 
         Mockito.verify(eventService).findByFilters(any(EventFilter.class));
+    }
+
+    private EventDocument buildEventDocument(String eventId, String transactionId) {
+        EventDocument eventDocument = new EventDocument();
+        eventDocument.setEventId(eventId);
+        eventDocument.setTransactionId(transactionId);
+        eventDocument.setCreatedAt(LocalDateTime.now());
+        return eventDocument;
+    }
+
+    private void givenEventList(List<EventDocument> list) {
+        Mockito.when(eventService.findAll()).thenReturn(list);
+    }
+
+    private void givenFilteredEvent(EventDocument event) {
+        Mockito.when(eventService.findByFilters(any(EventFilter.class))).thenReturn(event);
     }
 }

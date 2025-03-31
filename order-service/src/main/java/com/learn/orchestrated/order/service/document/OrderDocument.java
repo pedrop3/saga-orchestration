@@ -17,6 +17,4 @@ public class OrderDocument extends Order {
 
     @Id
     private String orderId;
-
-
 }

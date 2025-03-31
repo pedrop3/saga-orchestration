@@ -15,35 +15,28 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class EventPublisherServiceImplTest {
 
-    @Mock
-    private EventService eventService;
+    @Mock private EventService eventService;
+    @Mock private SagaProducer sagaProducer;
+    @Mock private JsonUtil jsonUtil;
 
-    @Mock
-    private SagaProducer sagaProducer;
-
-    @Mock
-    private JsonUtil jsonUtil;
-
-    @InjectMocks
-    private EventPublisherServiceImpl eventPublisherService;
+    @InjectMocks private EventPublisherServiceImpl eventPublisherService;
 
     private EventDocument event;
 
     @BeforeEach
     void setUp() {
-        event = new EventDocument();
-        event.setEventId("evt123");
+        event = buildEvent("evt123");
     }
 
     @Test
-    void shouldPublishEventSuccessfully() {
+    void shouldPublishEventSuccessfully_whenSerializationSucceeds() {
+        // Arrange
         String json = "{\"eventId\":\"evt123\"}";
         when(jsonUtil.toJson(event)).thenReturn(Optional.of(json));
 
@@ -54,15 +47,21 @@ class EventPublisherServiceImplTest {
     }
 
     @Test
-    void shouldThrowExceptionWhenSerializationFails() {
+    void shouldThrowSerializationException_whenJsonIsEmpty() {
         when(jsonUtil.toJson(event)).thenReturn(Optional.empty());
 
-        SerializationException ex = assertThrows(SerializationException.class, () -> {
+        SerializationException exception = assertThrows(SerializationException.class, () -> {
             eventPublisherService.publish(event);
         });
 
-        assertEquals("Falha na serialização do evento.", ex.getMessage());
-        verify(eventService).save(event); // still saved before serialization
+        assertEquals("Falha na serialização do evento.", exception.getMessage());
+        verify(eventService).save(event);
         verify(sagaProducer, never()).sendEvent(anyString());
+    }
+
+    private EventDocument buildEvent(String eventId) {
+        EventDocument event = new EventDocument();
+        event.setEventId(eventId);
+        return event;
     }
 }
