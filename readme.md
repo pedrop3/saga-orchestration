@@ -1,24 +1,96 @@
-O erro ocorre porque o caminho **/Users/pedrosantos/Documents/workspace/saga-orchestration/data/kafka/data** não está compartilhado com o Docker no seu Mac. Isso impede que o Docker monte esse diretório como volume no contêiner **Kafka**.
+# 🧩 Saga Orchestration Microservices Architecture – README
 
-### Como Resolver
+## 🧾 Project Overview
 
-1. **Abrir as configurações do Docker Desktop**
-    - Vá em **Docker Desktop** → **Settings** → **Resources** → **File Sharing**.
-    - Clique no botão **+** e adicione o caminho:
-      ```
-      /Users/pedrosantos/Documents/workspace/saga-orchestration/data/kafka/data
-      ```
-    - Clique em **Apply & Restart**.
+This project implements a distributed microservices architecture based on the **Saga Pattern**, designed to handle complex transactions across multiple services. The architecture uses event-driven communication and central orchestration to ensure consistency, traceability, and reliability across all operations.
 
-2. **Criar o diretório manualmente**  
-   Caso ele não exista, crie-o antes de rodar o `docker-compose`:
-   ```sh
-   mkdir -p /Users/pedrosantos/Documents/workspace/saga-orchestration/data/kafka/data
-   ```
+---
 
-3. **Tentar rodar o `docker-compose` novamente**
-   ```sh
-   docker-compose up
-   ```
+## 🔀 Services Overview
 
-Isso deve resolver o problema e permitir que o Kafka utilize o volume corretamente. 🚀
+### 🛒 **Order-Service**
+- Exposes REST endpoints to initiate orders.
+- Stores initial order data and the events received.
+- Database: **MongoDB**.
+
+### 🧠 **Orchestrator-Service**
+- Central brain of the system.
+- Responsible for directing the saga flow: it tracks which services have been executed and manages transitions to the next.
+- Saves the orchestration process state.
+- Stateless (no database).
+
+### 🧾 **Product-Validation-Service**
+- Validates whether ordered products exist and are valid.
+- Stores validation results per order ID.
+- Database: **PostgreSQL**.
+
+### 💳 **Payment-Service**
+- Calculates and processes the payment based on order quantity and unit price.
+- Stores payment status.
+- Database: **PostgreSQL**.
+
+### 📦 **Inventory-Service**
+- Updates inventory by subtracting ordered quantities.
+- Stores product quantity debits for each order.
+- Database: **PostgreSQL**.
+
+---
+
+## 🧠 Saga Orchestration Flow
+
+The saga follows a strict flow defined and controlled by the **Orchestrator-Service**. Each step emits and listens to events via message brokers
+### 🖼️ Saga Design  Architecture
+TODO
+
+### 🖼️ Saga Orchestration Diagram
+![Saga Orchestration](./SagaOrchestrator.png)
+
+### 🖼️ Service Topics / Communication
+![Service Topics](ServiceTopic.png)
+
+---
+
+## 🐳 Running the Project with Docker Compose
+
+Make sure you have Docker and Docker Compose installed.
+
+### ▶️ Start the System
+```bash
+docker-compose up --build
+```
+
+This will spin up all services, including MongoDB and PostgreSQL databases.
+
+---
+
+## 🌐 API Access & Documentation
+
+Each microservice exposes its own API (typically via Swagger UI):
+
+- Order Service: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
+- Orchestrator: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
+- Product Validation: [http://localhost:8083/swagger-ui.html](http://localhost:8083/swagger-ui.html)
+- Payment Service: [http://localhost:8084/swagger-ui.html](http://localhost:8084/swagger-ui.html)
+- Inventory Service: [http://localhost:8085/swagger-ui.html](http://localhost:8085/swagger-ui.html)
+
+---
+
+## 📦 Technologies Used
+
+- Java 21
+- Spring Boot
+- MongoDB & PostgreSQL
+- Docker & Docker Compose
+- Event-driven architecture (Kafka or RabbitMQ)
+- OpenAPI (Swagger)
+
+---
+
+
+---
+
+## ✅ Author
+Pedro Santos
+
+> This architecture provides a robust and scalable foundation for distributed transaction management using the Saga pattern.
+
