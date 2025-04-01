@@ -39,8 +39,8 @@ This project implements a distributed microservices architecture based on the **
 ## 🧠 Saga Orchestration Flow
 
 The saga follows a strict flow defined and controlled by the **Orchestrator-Service**. Each step emits and listens to events via message brokers
-### 🖼️ Saga Design  Architecture
-TODO
+### 🖼️ Architectural Drawing
+![Architectural Drawing](./architectural%20drawing.png)
 
 ### 🖼️ Saga Orchestration Diagram
 ![Saga Orchestration](./SagaOrchestrator.png)
