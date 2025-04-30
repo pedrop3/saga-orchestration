@@ -65,13 +65,10 @@ This will spin up all services, including MongoDB and PostgreSQL databases.
 
 ## 🌐 API Access & Documentation
 
-Each microservice exposes its own API (typically via Swagger UI):
+Each microservice exposes its own API
 
-- Order Service: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
-- Orchestrator: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
-- Product Validation: [http://localhost:8083/swagger-ui.html](http://localhost:8083/swagger-ui.html)
-- Payment Service: [http://localhost:8084/swagger-ui.html](http://localhost:8084/swagger-ui.html)
-- Inventory Service: [http://localhost:8085/swagger-ui.html](http://localhost:8085/swagger-ui.html)
+- Order Service: [http://localhost:3000/swagger-ui.html](http://localhost:3000/swagger-ui/index.html)
+- RedPanda: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
 
 ---
 

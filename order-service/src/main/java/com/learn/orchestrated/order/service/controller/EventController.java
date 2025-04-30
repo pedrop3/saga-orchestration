@@ -20,15 +20,15 @@ public class EventController {
 
     private final EventService eventService;
 
-    @GetMapping
-    public ResponseEntity<List<EventDocument>> findAll() {
-        List<EventDocument> eventDocument = eventService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(eventDocument);
-    }
-
     @GetMapping("/filters")
     public ResponseEntity<EventDocument> findByFilters(@Valid  EventFilter eventFilter) {
         EventDocument eventDocument = eventService.findByFilters(eventFilter);
+        return ResponseEntity.status(HttpStatus.OK).body(eventDocument);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<EventDocument>> findAll() {
+        List<EventDocument> eventDocument = eventService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(eventDocument);
     }
 }

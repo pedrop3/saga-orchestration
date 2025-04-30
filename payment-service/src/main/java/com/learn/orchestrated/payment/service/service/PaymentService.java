@@ -48,8 +48,8 @@ public class PaymentService {
     }
 
     private void checkCurrentValidation(Event event) {
-        if (paymentRepository.existsByOrderIdAndTransactionId(
-                event.getOrder().getOrderId(), event.getTransactionId())
+        if (Boolean.TRUE.equals(paymentRepository.existsByOrderIdAndTransactionId(
+                event.getOrder().getOrderId(), event.getTransactionId()))
         ) {
             throw new ValidationException("There's another transactionId for this validation.");
         }
@@ -99,6 +99,7 @@ public class PaymentService {
     }
 
     private void changePaymentToSuccess(Payment payment) {
+        log.info("Change payment to success: {}", payment);
         payment.setStatus(PaymentStatus.SUCCESS);
         save(payment);
     }
