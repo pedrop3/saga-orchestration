@@ -68,7 +68,7 @@ This will spin up all services, including MongoDB and PostgreSQL databases.
 Each microservice exposes its own API
 
 - Order Service: [http://localhost:3000/swagger-ui.html](http://localhost:3000/swagger-ui/index.html)
-- RedPanda: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
+- RedPanda: [http://localhost:8081](http://localhost:8081)
 
 ---
 

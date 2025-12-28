@@ -27,3 +27,12 @@ springdoc:
     enabled: true
     title: Order Service
     version: openapi_3_0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
