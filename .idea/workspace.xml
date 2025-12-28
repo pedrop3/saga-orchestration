@@ -4,25 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Improve all tests">
-      <change afterPath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/service/PaymentServiceTest.java" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating the roadmap">
+      <change afterPath="$PROJECT_DIR$/prometheus/prometheus.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/InventoryServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator/service/SagaExecutionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/test/java/com/learn/orchestrated/orchestrator/service/SagaExecutionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/OrderDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/OrderDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/OrderServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/EventControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/EventControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventPublisherServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventPublisherServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/EventServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/PaymentServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,16 +96,16 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="payment-service" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="payment-service" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="payment-service" type="f1a62948:ProjectNode" />
+                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -131,12 +138,12 @@
     &quot;assignee&quot;: &quot;pedrop3&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/pedrop3/saga-orchestration&quot;,
-    &quot;accountId&quot;: &quot;b0b32ed5-567a-4b67-8c84-63844df4eac1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/pedrop3/saga-orchestration",
+    "accountId": "b19e4a9a-7cc3-494b-b99f-5a9bdd8ec6d5"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/3.4.2/387ff91a749cce404f7a6e4a15a3b75ff497bdbc/spring-data-commons-3.4.2.jar!/org/springframework/data/annotation/Id.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.sdkman/candidates/java/21.0.4-zulu/zulu-21.jdk/Contents/Home/lib/src.zip!/java.base/java/time/LocalDateTime.java" root0="SKIP_INSPECTION" />
@@ -156,7 +163,6 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2sH1tCuzCBCyVPOWHHiJW0ph5Qj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -164,6 +170,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Docker.docker-compose.yml.grafana: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.inventory-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.order-db: Compose Deployment.executor": "Run",
@@ -171,6 +178,7 @@
     "Docker.docker-compose.yml.payment-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.prometheus: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
@@ -193,6 +201,7 @@
     "Gradle.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound.executor": "Run",
     "Gradle.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists.executor": "Run",
     "Gradle.InventoryServiceTest.shouldThrowValidationExceptionIfInventoryNotFound.executor": "Run",
+    "Gradle.OrchestrationServiceTest.executor": "Run",
     "Gradle.OrderControllerTest.shouldCreateOrderSuccessfully.executor": "Run",
     "Gradle.OrderServiceTest.deveLancarExcecaoAoSalvarOrdem.executor": "Run",
     "Gradle.OrderServiceTest.executor": "Run",
@@ -217,25 +226,30 @@
     "Gradle.SagaExecutionControllerTest.executor": "Run",
     "Gradle.SagaExecutionControllerTest.shouldReturnFailtTopicWhenValidSourceAndStatus.executor": "Debug",
     "Gradle.SagaExecutionControllerTest.shouldThrowExceptionWhenNoMatchingTopicFound.executor": "Debug",
-    "Gradle.Tests in 'inventory-service'.executor": "Coverage",
+    "Gradle.Tests in 'inventory-service'.executor": "Debug",
     "Gradle.Tests in 'orchestrator-service'.executor": "Coverage",
     "Gradle.Tests in 'order-service'.executor": "Coverage",
     "Gradle.Tests in 'payment-service'.executor": "Coverage",
     "Gradle.Tests in 'product-validation-service'.executor": "Coverage",
+    "Gradle.inventory-service [:InventoryServiceApplication.main()].executor": "Run",
     "Gradle.inventory-service [buildDependents].executor": "Run",
     "Gradle.inventory-service [build].executor": "Run",
     "Gradle.inventory-service [clean build].executor": "Run",
     "Gradle.inventory-service [clean].executor": "Run",
+    "Gradle.orchestrator-service [:OrchestratorServiceApplication.main()].executor": "Run",
     "Gradle.orchestrator-service [buildDependents].executor": "Run",
     "Gradle.orchestrator-service [build].executor": "Run",
     "Gradle.orchestrator-service [clean build].executor": "Run",
     "Gradle.orchestrator-service [clean].executor": "Run",
+    "Gradle.order-service [:OrderServiceApplication.main()].executor": "Run",
     "Gradle.order-service [buildDependents].executor": "Run",
     "Gradle.order-service [build].executor": "Run",
     "Gradle.order-service [clean].executor": "Run",
     "Gradle.order-service [jar].executor": "Run",
+    "Gradle.payment-service [:PaymentServiceApplication.main()].executor": "Run",
     "Gradle.payment-service [build].executor": "Run",
     "Gradle.payment-service [clean].executor": "Run",
+    "Gradle.product-validation-service [:ProductValidationServiceApplication.main()].executor": "Run",
     "Gradle.product-validation-service [buildDependents].executor": "Run",
     "Gradle.product-validation-service [build].executor": "Run",
     "Gradle.product-validation-service [clean].executor": "Run",
@@ -256,6 +270,7 @@
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
+    "JUnit.Whole project (1).executor": "Coverage",
     "JUnit.Whole project.executor": "Coverage",
     "JUnit.com.learn.orchestrated.order.service.controller in order-service.main.executor": "Coverage",
     "JUnit.com.learn.orchestrated.order.service.service.impl in order-service.main.executor": "Coverage",
@@ -270,14 +285,14 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.InventoryServiceApplication.executor": "Debug",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
+    "Spring Boot.InventoryServiceApplication.executor": "Run",
+    "Spring Boot.OrchestratorServiceApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
     "Spring Boot.PaymentServiceApplication (1).executor": "Run",
-    "Spring Boot.PaymentServiceApplication.executor": "Debug",
+    "Spring Boot.PaymentServiceApplication.executor": "Run",
     "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
-    "git-widget-placeholder": "main",
+    "Spring Boot.ProductValidationServiceApplication.executor": "Run",
+    "git-widget-placeholder": "13-add-micrometer-prometheus-metrics",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration",
     "node.js.detected.package.eslint": "true",
@@ -289,7 +304,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "coverage",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -301,11 +316,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
       <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
       <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
       <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
-      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prometheus" />
+      <recent name="$PROJECT_DIR$/" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.learn.orchestrated.order.service.service" />
@@ -333,125 +352,53 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.EventServiceImplTest">
-    <configuration name="EventControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.controller.EventControllerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+  <component name="RunManager" selected="Docker.docker-compose.yml.grafana: Compose Deployment">
+    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.learn.orchestrated.order.service.OrderServiceApplication" />
+      <module name="order-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.orchestrated.order.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="EventServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.order.service.order.service.EventServiceImplTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.learn.orchestrated.payment.service.PaymentServiceApplication" />
+      <module name="payment-service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.orchestrated.payment.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PaymentServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.payment.service.service.PaymentServiceTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProductValidationServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/product-validation-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.product.validation.service.ProductValidationServiceTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SagaExecutionControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="orchestrator-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.learn.orchestrated.orchestrator.service.SagaExecutionControllerTest&quot;" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -499,35 +446,49 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.grafana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="grafana" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.prometheus: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="prometheus" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Gradle.EventControllerTest" />
-      <item itemvalue="Gradle.EventServiceImplTest" />
-      <item itemvalue="Gradle.PaymentServiceTest" />
-      <item itemvalue="Gradle.ProductValidationServiceTest" />
-      <item itemvalue="Gradle.SagaExecutionControllerTest" />
-      <item itemvalue="Spring Boot.InventoryServiceApplication" />
-      <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
-      <item itemvalue="Spring Boot.OrderServiceApplication" />
-      <item itemvalue="Spring Boot.PaymentServiceApplication" />
-      <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
+      <item itemvalue="Application.OrderServiceApplication" />
+      <item itemvalue="Application.PaymentServiceApplication" />
+      <item itemvalue="Docker.docker-compose.yml.grafana: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.prometheus: Compose Deployment" />
+      <item itemvalue="Gradle.Tests in 'inventory-service'" />
+      <item itemvalue="Gradle.orchestrator-service [build]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.EventServiceImplTest" />
-        <item itemvalue="Gradle.EventControllerTest" />
-        <item itemvalue="Gradle.ProductValidationServiceTest" />
-        <item itemvalue="Gradle.PaymentServiceTest" />
-        <item itemvalue="Gradle.SagaExecutionControllerTest" />
+        <item itemvalue="Docker.docker-compose.yml.grafana: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.prometheus: Compose Deployment" />
+        <item itemvalue="Application.PaymentServiceApplication" />
+        <item itemvalue="Application.OrderServiceApplication" />
+        <item itemvalue="Gradle.orchestrator-service [build]" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -589,7 +550,20 @@
       <workItem from="1743339183043" duration="7350000" />
       <workItem from="1743348406309" duration="2267000" />
       <workItem from="1743350702238" duration="14348000" />
-      <workItem from="1743442722425" duration="10134000" />
+      <workItem from="1743442722425" duration="12168000" />
+      <workItem from="1743459712704" duration="81000" />
+      <workItem from="1743460546982" duration="1205000" />
+      <workItem from="1743537113889" duration="4945000" />
+      <workItem from="1743627564538" duration="2850000" />
+      <workItem from="1743631916792" duration="6000" />
+      <workItem from="1743632536643" duration="1572000" />
+      <workItem from="1743634310458" duration="1415000" />
+      <workItem from="1743672427719" duration="3819000" />
+      <workItem from="1744751560483" duration="52000" />
+      <workItem from="1744754643124" duration="1929000" />
+      <workItem from="1746033424224" duration="15371000" />
+      <workItem from="1746658491661" duration="27000" />
+      <workItem from="1747608706546" duration="70000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -815,7 +789,71 @@
       <option name="project" value="LOCAL" />
       <updated>1743443017646</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Improve all tests">
+      <option name="closed" value="true" />
+      <created>1743453224520</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1743453224520</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Improve OrchestrationService">
+      <option name="closed" value="true" />
+      <created>1743457555570</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1743457555570</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improving read.me">
+      <option name="closed" value="true" />
+      <created>1743462813341</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1743462813341</updated>
+    </task>
+    <task id="LOCAL-00032" summary="adding Architectural Drawing">
+      <option name="closed" value="true" />
+      <created>1743542350187</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1743542350187</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix: adjusting the readme.md">
+      <option name="closed" value="true" />
+      <created>1746034147808</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1746034147808</updated>
+    </task>
+    <task id="LOCAL-00034" summary="adding gitignore">
+      <option name="closed" value="true" />
+      <created>1746296837818</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1746296837818</updated>
+    </task>
+    <task id="LOCAL-00035" summary="adding gitignore">
+      <option name="closed" value="true" />
+      <created>1746296881766</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1746296881766</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Creating the roadmap">
+      <option name="closed" value="true" />
+      <created>1746309829488</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1746309829488</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -833,12 +871,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creating the base objets" />
-    <MESSAGE value="Creating commons for reuse acrossl micronservices" />
-    <MESSAGE value="Creating commons for reuse across microservices" />
-    <MESSAGE value="Creating producer" />
-    <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
-    <MESSAGE value="Creating EventDocument logic" />
     <MESSAGE value="Creating EventDocument logic, Custom Exception" />
     <MESSAGE value="Creating the logic to saveOrder and create the payload." />
     <MESSAGE value="Creating notifyEnding to Event" />
@@ -858,7 +890,13 @@
     <MESSAGE value="Improve tests inventory and order service." />
     <MESSAGE value="Improve tests SagaExecutionControllerTest" />
     <MESSAGE value="Improve all tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve all tests" />
+    <MESSAGE value="Improve OrchestrationService" />
+    <MESSAGE value="Improving read.me" />
+    <MESSAGE value="adding Architectural Drawing" />
+    <MESSAGE value="fix: adjusting the readme.md" />
+    <MESSAGE value="adding gitignore" />
+    <MESSAGE value="Creating the roadmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating the roadmap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -973,12 +1011,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>113</line>
+          <line>115</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>121</line>
+          <line>126</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1071,6 +1109,11 @@
           <line>119</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -1099,14 +1142,29 @@
     <SUITE FILE_PATH="coverage/inventory_service$com_learn_orchestrated_order_service_service_impl_in_order_service_main.ic" NAME="com.learn.orchestrated.order.service.service.impl in order-service.main Coverage Results" MODIFIED="1743351763656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.learn.orchestrated.order.service.service.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__order_service_.ic" NAME="Tests in 'order-service' Coverage Results" MODIFIED="1743449244291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__orchestrator_service_.ic" NAME="Tests in 'orchestrator-service' Coverage Results" MODIFIED="1743449265006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__orchestrator_service_.ic" NAME="Tests in 'orchestrator-service' Coverage Results" MODIFIED="1743635065041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__order_service_.ic" NAME="Tests in 'order-service' Coverage Results" MODIFIED="1743635076975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/inventory_service$com_learn_orchestrated_order_service_controller_in_order_service_main.ic" NAME="com.learn.orchestrated.order.service.controller in order-service.main Coverage Results" MODIFIED="1743354083056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.learn.orchestrated.order.service.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__payment_service_.ic" NAME="Tests in 'payment-service' Coverage Results" MODIFIED="1743451065807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__inventory_service_.ic" NAME="Tests in 'inventory-service' Coverage Results" MODIFIED="1743449282377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__product_validation_service_.ic" NAME="Tests in 'product-validation-service' Coverage Results" MODIFIED="1743449160179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
-    <SUITE FILE_PATH="coverage/inventory_service$Whole_project.ic" NAME="Whole project Coverage Results" MODIFIED="1743443234916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__payment_service_.ic" NAME="Tests in 'payment-service' Coverage Results" MODIFIED="1743635089698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__inventory_service_.ic" NAME="Tests in 'inventory-service' Coverage Results" MODIFIED="1743635136698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <EXCLUDED_FILTER>com.learn.orchestrated.inventory.service.model.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.orchestrator.service.dto.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.orchestrator.service.enums.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.order.service.document.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.model.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.enums.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.config.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.model.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.enums.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.payment.service.config.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.product.validation.service.config.*</EXCLUDED_FILTER>
+      <EXCLUDED_FILTER>com.learn.orchestrated.product.validation.service.model.*</EXCLUDED_FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/inventory_service$Whole_project__1_.ic" NAME="Whole project (1) Coverage Results" MODIFIED="1743635050640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Tests_in__product_validation_service_.ic" NAME="Tests in 'product-validation-service' Coverage Results" MODIFIED="1743635121600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/inventory_service$Whole_project.ic" NAME="Whole project Coverage Results" MODIFIED="1743632874271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

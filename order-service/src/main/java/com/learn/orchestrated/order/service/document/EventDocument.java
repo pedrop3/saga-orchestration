@@ -19,7 +19,9 @@ public class EventDocument extends Event {
     private String eventId;
 
     public static EventDocument fromEvent(Event event) {
+
         EventDocument eventDocument = new EventDocument();
+
         eventDocument.setEventId(event.getEventId());
         eventDocument.setTransactionId(event.getTransactionId());
         eventDocument.setOrderId(event.getOrderId());
@@ -28,6 +30,7 @@ public class EventDocument extends Event {
         eventDocument.setStatus(event.getStatus());
         eventDocument.setEventHistory(event.getEventHistory());
         eventDocument.setCreatedAt(event.getCreatedAt());
+
         return eventDocument;
     }
 }

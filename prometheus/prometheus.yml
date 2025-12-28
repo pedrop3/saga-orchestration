@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  evaluation_interval: 15s
+  metric_name_validation_scheme: utf8
+  scrape_native_histograms: false
+runtime:
+  gogc: 75
+alerting:
+  alertmanagers:
+    - follow_redirects: true
+      enable_http2: true
+      scheme: http
+      timeout: 10s
+      api_version: v2
+      static_configs:
+        - targets: []
+scrape_configs:
+  - job_name: 'saga-application'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 15s
+    static_configs:
+      - targets: [ 'host.docker.internal:3000' ]
+        labels:
+          app: order-service
+      - targets: [ 'host.docker.internal:8050' ]
+        labels:
+          app: orchestrator-service
+      - targets: [ 'host.docker.internal:8090' ]
+        labels:
+          app: product-validation-service
+      - targets: [ 'host.docker.internal:8091' ]
+        labels:
+          app: payment-service
+      - targets: [ 'host.docker.internal:8092' ]
+        labels:
+          app: inventory-service
+
+otlp:
+  translation_strategy: UnderscoreEscapingWithSuffixes
+  label_name_underscore_sanitization: true
+  label_name_preserve_multiple_underscores: true

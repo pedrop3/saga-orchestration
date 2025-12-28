@@ -30,3 +30,12 @@ logging:
     org:
       apache:
         kafka: OFF
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
