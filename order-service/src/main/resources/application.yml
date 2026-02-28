@@ -36,3 +36,10 @@ management:
   endpoint:
     health:
       show-details: always
+otel:
+  exporter:
+    otlp:
+      endpoint: http://otel-collector:4317
+  resource:
+    attributes:
+      service.name: order-service

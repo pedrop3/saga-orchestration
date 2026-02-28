@@ -30,6 +30,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
+	// OpenTelemetry
+	implementation platform("io.opentelemetry:opentelemetry-bom:1.57.0")
+	implementation "io.opentelemetry:opentelemetry-api"
+	implementation "io.opentelemetry:opentelemetry-sdk"
+	implementation "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure"
+	implementation "io.opentelemetry:opentelemetry-exporter-logging"
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
