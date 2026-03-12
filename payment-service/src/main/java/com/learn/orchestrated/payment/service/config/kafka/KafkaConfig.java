@@ -1,4 +1,4 @@
-package com.learn.orchestrated.payment.service.config;
+package com.learn.orchestrated.payment.service.config.kafka;
 
 import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 import lombok.RequiredArgsConstructor;

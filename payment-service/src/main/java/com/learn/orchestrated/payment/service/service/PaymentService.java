@@ -1,5 +1,6 @@
 package com.learn.orchestrated.payment.service.service;
 
+import aj.org.objectweb.asm.commons.Remapper;
 import com.learn.orchestrated.payment.service.enums.PaymentStatus;
 import com.learn.orchestrated.payment.service.model.Payment;
 import com.learn.orchestrated.payment.service.producer.SagaProducer;
@@ -14,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 import static com.learn.sagacommons.enums.SagaStatusEnum.*;
 
@@ -137,6 +140,22 @@ public class PaymentService {
             addHistory(event, "Rollback not executed for payment: ".concat(ex.getMessage()));
         }
         producer.sendEvent(jsonUtil.toJson(event).orElseThrow());
+    }
+
+    public Optional<Payment> findByOrderIdAndTransactionId(String orderId, String transactionId) {
+        return paymentRepository.findByOrderIdAndTransactionId(orderId, transactionId);
+    }
+
+    public long countByStatus(PaymentStatus paymentStatus) {
+        return paymentRepository.countByStatus(paymentStatus);
+    }
+
+    public long count() {
+        return paymentRepository.count();
+    }
+
+    public List<Payment> findByStatusOrderByCreatedAtDesc(PaymentStatus paymentStatus) {
+        return paymentRepository.findByStatusOrderByCreatedAtDesc(paymentStatus);
     }
 
     private void changePaymentStatusToRefund(Event event) {

@@ -9,5 +9,5 @@ public interface OrderInventoryRepository extends JpaRepository<OrderInventory, 
 
     List<OrderInventory> findByOrderIdAndTransactionId(String orderId, String transactionId);
 
-    Boolean existsByOrderIdAndTransactionId(String orderId, String transactionId);
+    boolean existsByOrderIdAndTransactionId(String orderId, String transactionId);
 }

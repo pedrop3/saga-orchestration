@@ -1,5 +1,6 @@
 package com.learn.orchestrated.product.validation.service.service;
 
+import com.learn.orchestrated.product.validation.service.model.Product;
 import com.learn.orchestrated.product.validation.service.model.Validation;
 import com.learn.orchestrated.product.validation.service.producer.SagaProducer;
 import com.learn.orchestrated.product.validation.service.repository.ProductValidationRepository;
@@ -14,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static com.learn.sagacommons.enums.SagaStatusEnum.*;
 import static org.springframework.util.ObjectUtils.isEmpty;
@@ -28,7 +30,7 @@ public class ProductValidationService {
 
     private final JsonUtil jsonUtil;
     private final SagaProducer producer;
-    private final ProductValidationRepository productRepository;
+    private final ProductValidationRepository productValidationRepository;
     private final ValidationRepository validationRepository;
 
     public void validateExistingProducts(Event event)  {
@@ -71,7 +73,7 @@ public class ProductValidationService {
     }
 
     private void validateExistingProduct(String code) {
-        if (!productRepository.existsByCode(code)) {
+        if (!productValidationRepository.existsByCode(code)) {
             throw new ValidationException("Product does not exists in database!");
         }
     }
@@ -116,6 +118,18 @@ public class ProductValidationService {
         event.setSource(CURRENT_SOURCE);
         addHistory(event, "Rollback executed on product validation!");
         producer.sendEvent(jsonUtil.toJson(event).orElseThrow());
+    }
+
+    public boolean existsByCode(String code) {
+        return productValidationRepository.existsByCode(code);
+    }
+
+    public boolean existsByOrderIdAndTransactionId(String orderId, String transactionId) {
+        return validationRepository.existsByOrderIdAndTransactionId(orderId, transactionId);
+    }
+
+    public List<Product> findAll() {
+        return productValidationRepository.findAll();
     }
 
     private void changeValidationToFail(Event event) {

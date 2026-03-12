@@ -13,19 +13,35 @@ java {
 	}
 }
 
+ext {
+	lombokVersion = "1.18.30"
+}
+
 repositories {
-	mavenLocal()
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
+	// Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Kafka
 	implementation 'org.springframework.kafka:spring-kafka'
-	implementation('com.learn:saga-commons:0.0.3-SNAPSHOT')
+
+	// MCP Server
+	implementation 'io.modelcontextprotocol.sdk:mcp:0.9.0'
+
+	// Shared
+	implementation 'com.learn:saga-commons:0.0.3-SNAPSHOT'
+
+	// Lombok & Configuration
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	// Dev & Test
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
