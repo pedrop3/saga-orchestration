@@ -2,23 +2,29 @@ server:
   port: 8099
 
 spring:
+  threads:
+    virtual:
+      enabled: true
   kafka:
     bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
-    consumer:
-      group-id: ai-agent-group
-      auto-offset-reset: latest
     topic:
       notify-ending: notify-ending
+    consumer:
+      group-id: ai-agent-group
+      auto-offset-reset: earliest
+
 
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ${DB_PASSWORD:password}
+    url: jdbc:postgresql://${VECTORS_DB_HOST:localhost}:${VECTORS_DB_PORT:5435}/${VECTORS_DB_NAME:vectors-db}
+    username: ${VECTORS_DB_USER:postgres}
+    password: ${VECTORS_DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    database-platform: org.hibernate.dialect.H2Dialect
+      ddl-auto: create-only
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   #data:
   #  redis:
@@ -26,7 +32,7 @@ spring:
   #    port: 6379
 
 ai:
-  primary-model: gemini
+  primary-model: ollama
   ollama:
     base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
     model-name: ${OLLAMA_MODEL:qwen3:8b}

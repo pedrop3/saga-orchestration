@@ -62,5 +62,20 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="vectors-db@localhost" uuid="07a7babc-ba8d-4b2e-a84b-3a236531039e">
+      <database-info product="PostgreSQL" version="16.13 (Debian 16.13-1.pgdg12+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="16.13" exact-driver-version="42.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

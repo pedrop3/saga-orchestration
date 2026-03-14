@@ -4,31 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/AiProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/ChatModelConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/McpClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/controller/AgentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/listener/MetricsCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/listener/TokenUsageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/provider/ChatMemoryProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/provider/ChatModelProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/config/mcp/OrderMcpConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding DataAnalystAgent">
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/EmbeddingConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka/kafka/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/model/SagaDiagnostic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/repository/SagaDiagnosticRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationAgentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/init-vectors.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ai-saga-agent/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/AiSagaAgentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/AiSagaAgentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/test/java/com/learn/aisagaagent/AiSagaAgentApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/mcp/PaymentMcpConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/mcp/PaymentMcpConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/respository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/respository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/controller/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/controller/AgentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,42 +95,23 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
+                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="saga-commons" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
+                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -169,7 +141,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="1-step-adding-mcp" />
+        <entry key="$PROJECT_DIR$" value="2-step-ai-agent-analyst" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -221,7 +193,9 @@
     "Docker.docker-compose.yml.payment-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.redis: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.vectors-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.AtLeastOneNotEmptyValidatorTest.executor": "Run",
@@ -274,6 +248,7 @@
     "Gradle.Tests in 'payment-service'.executor": "Coverage",
     "Gradle.Tests in 'product-validation-service'.executor": "Coverage",
     "Gradle.ai-saga-agent [build].executor": "Run",
+    "Gradle.ai-saga-agent [classes].executor": "Run",
     "Gradle.ai-saga-agent [clean].executor": "Run",
     "Gradle.inventory-service [buildDependents].executor": "Run",
     "Gradle.inventory-service [build].executor": "Run",
@@ -327,17 +302,17 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "Spring Boot.AiSagaAgentApplication.executor": "Debug",
-    "Spring Boot.InventoryServiceApplication.executor": "Debug",
+    "Spring Boot.InventoryServiceApplication.executor": "Run",
     "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
     "Spring Boot.OrderServiceApplication.executor": "Debug",
     "Spring Boot.PaymentServiceApplication (1).executor": "Run",
     "Spring Boot.PaymentServiceApplication.executor": "Debug",
     "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
+    "Spring Boot.ProductValidationServiceApplication.executor": "Run",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "2-step-ai-agent-analyst",
+    "git-widget-placeholder": "3step-ai-agent-operation",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/ai-saga-agent/src/main/java/com/learn/aisagaagent/config",
+    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -352,8 +327,8 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "postgresql",
-      "mongo"
+      "mongo",
+      "postgresql"
     ]
   }
 }]]></component>
@@ -362,21 +337,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka" />
       <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config" />
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
       <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
       <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
-      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.learn.orchestrated.order.service.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.aisagaagent.service" />
       <recent name="com.learn.aisagaagent.listener" />
       <recent name="com.learn.orchestrated.payment.service.config" />
       <recent name="com.learn.orchestrated.payment.service.model" />
       <recent name="com.learn.orchestrated.product.validation.service.repository" />
-      <recent name="com.learn.orchestrated.product.validation.service.model" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -394,7 +373,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="Spring Boot.AiSagaAgentApplication">
     <configuration name="ai-saga-agent [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -407,6 +386,28 @@
         <option name="taskNames">
           <list>
             <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ai-saga-agent [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ai-saga-agent" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="classes" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -439,79 +440,13 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="saga-commons [publishAllPublicationsToMavenLocalRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="publishAllPublicationsToMavenLocalRepository" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="saga-commons [publishMavenJavaPublicationToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="publishMavenJavaPublicationToMavenLocal" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="saga-commons [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/saga-commons" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="publishToMavenLocal" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="AiSagaAgentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
       <additionalParameters>
         <param>
           <option name="enabled" value="true" />
           <option name="name" value="GEMINI_API_KEY" />
-          <option name="value" value="AIzaSyAURat-FThAjnGZl073WiSNOCcmIRqilXk" />
+          <option name="value" value="AIzaSyCFFJH4rqr3wMVlJ8anc4K_CfoPQeUvw_g" />
         </param>
       </additionalParameters>
       <option name="INCLUDE_PROVIDED_SCOPE" value="false" />
@@ -566,13 +501,39 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.vectors-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="vectors-db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.docker-compose.yml.redis: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.vectors-db: Compose Deployment" />
       <item itemvalue="Gradle.Tests in 'inventory-service'" />
+      <item itemvalue="Gradle.ai-saga-agent [classes]" />
       <item itemvalue="Gradle.ai-saga-agent [build]" />
       <item itemvalue="Gradle.ai-saga-agent [clean]" />
-      <item itemvalue="Gradle.saga-commons [publishAllPublicationsToMavenLocalRepository]" />
-      <item itemvalue="Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal]" />
-      <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
       <item itemvalue="Spring Boot.AiSagaAgentApplication" />
       <item itemvalue="Spring Boot.PaymentServiceApplication" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
@@ -584,9 +545,9 @@
       <list>
         <item itemvalue="Gradle.ai-saga-agent [build]" />
         <item itemvalue="Gradle.ai-saga-agent [clean]" />
-        <item itemvalue="Gradle.saga-commons [publishMavenJavaPublicationToMavenLocal]" />
-        <item itemvalue="Gradle.saga-commons [publishAllPublicationsToMavenLocalRepository]" />
-        <item itemvalue="Gradle.saga-commons [publishToMavenLocal]" />
+        <item itemvalue="Gradle.ai-saga-agent [classes]" />
+        <item itemvalue="Docker.docker-compose.yml.redis: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.vectors-db: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -660,7 +621,9 @@
       <workItem from="1743350702238" duration="14348000" />
       <workItem from="1743442722425" duration="10134000" />
       <workItem from="1773100705081" duration="35541000" />
-      <workItem from="1773446534242" duration="6617000" />
+      <workItem from="1773446534242" duration="10727000" />
+      <workItem from="1773457500375" duration="4484000" />
+      <workItem from="1773462031767" duration="8225000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -894,7 +857,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773278017982</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="adding DataAnalystAgent">
+      <option name="closed" value="true" />
+      <created>1773453231626</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1773453231626</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -913,7 +884,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Creating commons for reuse across microservices" />
     <MESSAGE value="Creating producer" />
     <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
     <MESSAGE value="Creating EventDocument logic" />
@@ -938,7 +908,8 @@
     <MESSAGE value="Improve all tests" />
     <MESSAGE value="Adding MCP in MCS." />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="adding DataAnalystAgent" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding DataAnalystAgent" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -955,19 +926,9 @@
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>
           <line>29</line>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java</url>
@@ -1063,11 +1024,6 @@
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java</url>
           <line>174</line>
           <option name="timeStamp" value="81" />
@@ -1088,11 +1044,6 @@
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/service/PaymentServiceTest.java</url>
           <line>58</line>
           <option name="timeStamp" value="86" />
@@ -1109,37 +1060,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>60</line>
+          <line>59</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>67</line>
+          <line>66</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>90</line>
+          <line>89</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>38</line>
+          <line>37</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1151,6 +1097,26 @@
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentServiceOLd.java</url>
           <line>51</line>
           <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -48,7 +48,7 @@ dependencies {
 	implementation 'dev.langchain4j:langchain4j-pgvector:1.11.0-beta19'
 	implementation 'dev.langchain4j:langchain4j-agentic:1.11.0-beta19'
 
-
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
