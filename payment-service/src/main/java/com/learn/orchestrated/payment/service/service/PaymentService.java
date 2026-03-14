@@ -1,6 +1,5 @@
 package com.learn.orchestrated.payment.service.service;
 
-import aj.org.objectweb.asm.commons.Remapper;
 import com.learn.orchestrated.payment.service.enums.PaymentStatus;
 import com.learn.orchestrated.payment.service.model.Payment;
 import com.learn.orchestrated.payment.service.producer.SagaProducer;
@@ -173,5 +172,9 @@ public class PaymentService {
 
     private void save(Payment payment) {
         paymentRepository.save(payment);
+    }
+
+    public Optional<Payment> findByTransactionId(String transactionId) {
+        return paymentRepository.findByTransactionId(transactionId);
     }
 }

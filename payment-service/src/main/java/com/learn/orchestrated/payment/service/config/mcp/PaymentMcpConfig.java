@@ -36,7 +36,7 @@ public class PaymentMcpConfig {
     @Bean
     public ServletRegistrationBean<HttpServletSseServerTransportProvider> mcpServlet(
             HttpServletSseServerTransportProvider transport) {
-        return new ServletRegistrationBean<>(transport, "/sse", "/mcp/message");
+        return new ServletRegistrationBean<>(transport, "/sse", "/mcp/message","/mcp");
     }
 
     @Bean
@@ -58,29 +58,30 @@ public class PaymentMcpConfig {
     private SyncToolSpecification getPaymentStatus(PaymentService paymentService) {
         return tool(
                 "getPaymentStatus",
-                "Returns the current payment status for a given order and transaction. " +
+                "Returns the current payment status for a given transaction. " +
                         "Use this tool to verify whether a payment was successfully processed, " +
-                        "is still pending, or has been refunded as part of a saga compensation.",
+                        "is still pending, or has been refunded as part of a saga compensation. " +
+                        "orderId is optional — transactionId alone is sufficient.",
                 """
                 {
                   "type": "object",
                   "properties": {
                     "orderId": {
                       "type": "string",
-                      "description": "The unique identifier of the order."
+                      "description": "Order ID (optional if transactionId is provided)."
                     },
                     "transactionId": {
                       "type": "string",
-                      "description": "The unique transaction identifier associated with the saga execution."
+                      "description": "Transaction ID associated with the saga execution."
                     }
                   },
-                  "required": ["orderId", "transactionId"]
+                  "required": ["transactionId"]
                 }
                 """,
                 args -> {
                     String orderId       = (String) args.get("orderId");
                     String transactionId = (String) args.get("transactionId");
-                    return paymentService.findByOrderIdAndTransactionId(orderId, transactionId)
+                    return paymentService.findByTransactionId(transactionId)
                             .map(p -> "orderId=" + orderId
                                     + " | transactionId=" + transactionId
                                     + " | status=" + p.getStatus()
