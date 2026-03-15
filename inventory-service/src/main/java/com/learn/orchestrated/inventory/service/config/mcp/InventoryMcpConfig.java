@@ -3,6 +3,7 @@ package com.learn.orchestrated.inventory.service.config.mcp;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learn.orchestrated.inventory.service.repository.OrderInventoryRepository;
 import com.learn.orchestrated.inventory.service.service.InventoryService;
+import com.learn.sagacommons.utils.JsonUtil;
 import io.modelcontextprotocol.server.McpServer;
 import io.modelcontextprotocol.server.McpServerFeatures.SyncToolSpecification;
 import io.modelcontextprotocol.server.McpSyncServer;
@@ -10,6 +11,7 @@ import io.modelcontextprotocol.server.transport.HttpServletSseServerTransportPro
 import io.modelcontextprotocol.spec.McpSchema;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.TextContent;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,10 +21,12 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Configuration
+@RequiredArgsConstructor
 public class InventoryMcpConfig {
 
     private static final String SERVER_NAME    = "inventory-mcp";
     private static final String SERVER_VERSION = "1.0.0";
+    private final JsonUtil jsonUtil ;
 
     @Bean
     public HttpServletSseServerTransportProvider mcpTransport() {
@@ -76,9 +80,8 @@ public class InventoryMcpConfig {
                 """,
                 args -> {
                     String code = (String) args.get("productCode");
-                    return inventoryService.findByProductCode(code)
-                            .map(i -> "productCode=" + code + " | available=" + i.getAvailable())
-                            .orElse("Product not found for productCode: " + code);
+
+                    return jsonUtil.toJson(inventoryService.findByProductCode(code)).orElse("Product not found for productCode: " + code);
                 }
         );
     }
@@ -103,13 +106,10 @@ public class InventoryMcpConfig {
                 """,
                 args -> {
                     int threshold = (Integer) args.get("threshold");
-                    List<String> low = inventoryService.findByAvailableLessThan(threshold)
-                            .stream()
-                            .map(i -> i.getProductCode() + ": available=" + i.getAvailable())
-                            .toList();
-                    return low.isEmpty()
-                            ? "No products found below threshold=" + threshold
-                            : "Low stock products:\n" + String.join("\n", low);
+;
+                    List<?> low = inventoryService.findByAvailableLessThan(threshold);
+
+                    return jsonUtil.toJson(low).orElse("{\"message\": \"No products found below threshold=" + threshold + "\"}");
                 }
         );
     }

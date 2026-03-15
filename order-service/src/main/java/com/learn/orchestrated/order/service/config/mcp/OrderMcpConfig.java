@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learn.orchestrated.order.service.document.EventDocument;
 import com.learn.orchestrated.order.service.repository.EventRepository;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
+import com.learn.sagacommons.utils.JsonUtil;
 import io.modelcontextprotocol.server.McpServer;
 import io.modelcontextprotocol.server.McpServerFeatures.SyncToolSpecification;
 import io.modelcontextprotocol.server.McpSyncServer;
@@ -11,6 +12,7 @@ import io.modelcontextprotocol.server.transport.HttpServletSseServerTransportPro
 import io.modelcontextprotocol.spec.McpSchema;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.TextContent;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +23,12 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Configuration
+@RequiredArgsConstructor
 public class OrderMcpConfig {
 
     private static final String SERVER_NAME = "order-mcp";
     private static final String SERVER_VERSION = "1.0.0";
+    private final JsonUtil jsonUtil;
 
     @Bean
     public HttpServletSseServerTransportProvider orderMcpTransport() {
@@ -80,9 +84,8 @@ public class OrderMcpConfig {
 
                     String orderId = (String) args.get("orderId");
 
-                    return orderRepository.findById(orderId)
-                            .map(order -> "Order found | id=" + order.getOrderId())
-                            .orElse("Order not found for id=" + orderId);
+
+                    return jsonUtil.toJson(orderRepository.findById(orderId)).orElse("No events found for orderId=" + orderId);
                 }
         );
     }
@@ -112,12 +115,7 @@ public class OrderMcpConfig {
                     Optional<EventDocument> event = eventRepository
                             .findTop1ByOrderIdOrderByCreatedAtDesc(orderId);
 
-
-                    return event
-                            .map(e -> "Last event for orderId=" + orderId +
-                                    " | status=" + e.getStatus() +
-                                    " | timestamp=" + e.getCreatedAt())
-                            .orElse("No events found for orderId=" + orderId);
+                    return jsonUtil.toJson(event).orElse("No events found for orderId=" + orderId);
                 }
         );
     }
@@ -144,12 +142,10 @@ public class OrderMcpConfig {
 
                     String transactionId = (String) args.get("transactionId");
 
-                    Optional<?> event = eventRepository
+                    Optional<EventDocument> event = eventRepository
                             .findTop1ByTransactionIdOrderByCreatedAtDesc(transactionId);
 
-                    return event
-                            .map(e -> "Last event found for transactionId=" + transactionId)
-                            .orElse("No events found for transactionId=" + transactionId);
+                    return jsonUtil.toJson(event).orElse("No events found for transactionId=" + transactionId);
                 }
         );
     }
@@ -176,17 +172,13 @@ public class OrderMcpConfig {
 
                     int limit = (Integer) args.get("limit");
 
-                    List<String> events = eventRepository.findAllByOrderByCreatedAtDesc()
+                    List<EventDocument> events = eventRepository.findAllByOrderByCreatedAtDesc()
                             .stream()
                             .limit(limit)
-                            .map(e -> "eventId=" + e.getEventId() +
-                                    " | orderId=" + e.getOrderId() +
-                                    " | transactionId=" + e.getTransactionId())
                             .toList();
 
-                    return events.isEmpty()
-                            ? "No events found"
-                            : String.join("\n", events);
+
+                    return jsonUtil.toJson(events).orElse("No events found");
                 }
         );
     }

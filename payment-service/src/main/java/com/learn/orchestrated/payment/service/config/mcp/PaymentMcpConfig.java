@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learn.orchestrated.payment.service.enums.PaymentStatus;
 import com.learn.orchestrated.payment.service.service.FraudValidationService;
 import com.learn.orchestrated.payment.service.service.PaymentService;
+import com.learn.sagacommons.utils.JsonUtil;
 import io.modelcontextprotocol.server.McpServer;
 import io.modelcontextprotocol.server.McpServerFeatures.SyncToolSpecification;
 import io.modelcontextprotocol.server.McpSyncServer;
@@ -12,6 +13,7 @@ import io.modelcontextprotocol.server.transport.HttpServletSseServerTransportPro
 import io.modelcontextprotocol.spec.McpSchema;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.TextContent;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,10 +23,12 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Configuration
+@RequiredArgsConstructor
 public class PaymentMcpConfig {
 
-    private static final String SERVER_NAME    = "payment-mcp";
+    private static final String SERVER_NAME = "payment-mcp";
     private static final String SERVER_VERSION = "1.0.0";
+    private final JsonUtil jsonUtil;
 
     @Bean
     public HttpServletSseServerTransportProvider mcpTransport() {
@@ -37,7 +41,7 @@ public class PaymentMcpConfig {
     @Bean
     public ServletRegistrationBean<HttpServletSseServerTransportProvider> mcpServlet(
             HttpServletSseServerTransportProvider transport) {
-        return new ServletRegistrationBean<>(transport, "/sse", "/mcp/message","/mcp");
+        return new ServletRegistrationBean<>(transport, "/sse", "/mcp/message", "/mcp");
     }
 
     @Bean
@@ -66,23 +70,23 @@ public class PaymentMcpConfig {
                         "is still pending, or has been refunded as part of a saga compensation. " +
                         "orderId is optional — transactionId alone is sufficient.",
                 """
-                {
-                  "type": "object",
-                  "properties": {
-                    "orderId": {
-                      "type": "string",
-                      "description": "Order ID (optional if transactionId is provided)."
-                    },
-                    "transactionId": {
-                      "type": "string",
-                      "description": "Transaction ID associated with the saga execution."
-                    }
-                  },
-                  "required": ["transactionId"]
-                }
-                """,
+                        {
+                          "type": "object",
+                          "properties": {
+                            "orderId": {
+                              "type": "string",
+                              "description": "Order ID (optional if transactionId is provided)."
+                            },
+                            "transactionId": {
+                              "type": "string",
+                              "description": "Transaction ID associated with the saga execution."
+                            }
+                          },
+                          "required": ["transactionId"]
+                        }
+                        """,
                 args -> {
-                    String orderId       = (String) args.get("orderId");
+                    String orderId = (String) args.get("orderId");
                     String transactionId = (String) args.get("transactionId");
                     return paymentService.findByTransactionId(transactionId)
                             .map(p -> "orderId=" + orderId
@@ -103,17 +107,18 @@ public class PaymentMcpConfig {
                         "Use this tool to assess the health of payment processing and identify " +
                         "whether saga compensations are occurring at an abnormal rate.",
                 """
-                {
-                  "type": "object",
-                  "properties": {},
-                  "required": []
-                }
-                """,
+                        {
+                          "type": "object",
+                          "properties": {},
+                          "required": []
+                        }
+                        """,
                 args -> {
-                    long total    = paymentService.count();
+                    long total = paymentService.count();
                     long refunded = paymentService.countByStatus(PaymentStatus.REFUND);
                     if (total == 0) return "No payments found.";
                     double rate = (refunded * 100.0) / total;
+
                     return "totalPayments=" + total
                             + " | refunded=" + refunded
                             + " | refundRate=" + String.format("%.2f", rate) + "%";
@@ -128,17 +133,17 @@ public class PaymentMcpConfig {
                         "Use this tool to investigate recent saga compensations and understand " +
                         "which orders triggered payment rollbacks.",
                 """
-                {
-                  "type": "object",
-                  "properties": {
-                    "limit": {
-                      "type": "integer",
-                      "description": "Maximum number of refunds to return."
-                    }
-                  },
-                  "required": ["limit"]
-                }
-                """,
+                        {
+                          "type": "object",
+                          "properties": {
+                            "limit": {
+                              "type": "integer",
+                              "description": "Maximum number of refunds to return."
+                            }
+                          },
+                          "required": ["limit"]
+                        }
+                        """,
                 args -> {
                     int limit = (Integer) args.get("limit");
                     List<String> refunds = paymentService.findByStatusOrderByCreatedAtDesc(PaymentStatus.REFUND)
@@ -159,52 +164,52 @@ public class PaymentMcpConfig {
         return tool(
                 "getFraudRiskScore",
                 """
-                Calculates a fraud risk score (0-100) for a given order context.
-                Uses the exact same rules as the PaymentService fraud validation.
-                Score >= 75 = BLOCKED, 50-74 = REVIEW, < 50 = APPROVED.
-                Use when asked about fraud risk, suspicious orders or blocked payments.
-                """,
+                        Calculates a fraud risk score (0-100) for a given order context.
+                        Uses the exact same rules as the PaymentService fraud validation.
+                        Score >= 75 = BLOCKED, 50-74 = REVIEW, < 50 = APPROVED.
+                        Use when asked about fraud risk, suspicious orders or blocked payments.
+                        """,
                 """
-                {
-                  "type": "object",
-                  "properties": {
-                    "totalAmount": {
-                        "type": "number",
-                        "description": "Order total value in BRL"
-                    },
-                    "clientType": {
-                        "type": "string",
-                        "enum": ["new", "vip", "returning", "default"]
-                    },
-                    "hourOfDay": {
-                        "type": "integer",
-                        "description": "Hour of order 0-23"
-                    },
-                    "clientOrderCount": {
-                        "type": "integer",
-                        "description": "Total historical orders from this client"
-                    },
-                    "clientSuccessRate": {
-                        "type": "number",
-                        "description": "Client historical success rate 0-100"
-                    },
-                    "totalItems": {
-                        "type": "integer",
-                        "description": "Total quantity of items in order"
-                    }
-                  },
-                  "required": ["totalAmount", "clientType", "hourOfDay"]
-                }
-                """,
+                        {
+                          "type": "object",
+                          "properties": {
+                            "totalAmount": {
+                                "type": "number",
+                                "description": "Order total value in BRL"
+                            },
+                            "clientType": {
+                                "type": "string",
+                                "enum": ["new", "vip", "returning", "default"]
+                            },
+                            "hourOfDay": {
+                                "type": "integer",
+                                "description": "Hour of order 0-23"
+                            },
+                            "clientOrderCount": {
+                                "type": "integer",
+                                "description": "Total historical orders from this client"
+                            },
+                            "clientSuccessRate": {
+                                "type": "number",
+                                "description": "Client historical success rate 0-100"
+                            },
+                            "totalItems": {
+                                "type": "integer",
+                                "description": "Total quantity of items in order"
+                            }
+                          },
+                          "required": ["totalAmount", "clientType", "hourOfDay"]
+                        }
+                        """,
                 args -> {
-                    double amount      = ((Number) args.get("totalAmount")).doubleValue();
-                    String clientType  = (String) args.get("clientType");
-                    int hour           = ((Number) args.get("hourOfDay")).intValue();
-                    int orderCount     = args.get("clientOrderCount") != null
+                    double amount = ((Number) args.get("totalAmount")).doubleValue();
+                    String clientType = (String) args.get("clientType");
+                    int hour = ((Number) args.get("hourOfDay")).intValue();
+                    int orderCount = args.get("clientOrderCount") != null
                             ? ((Number) args.get("clientOrderCount")).intValue() : 0;
                     double successRate = args.get("clientSuccessRate") != null
                             ? ((Number) args.get("clientSuccessRate")).doubleValue() : 100.0;
-                    int totalItems     = args.get("totalItems") != null
+                    int totalItems = args.get("totalItems") != null
                             ? ((Number) args.get("totalItems")).intValue() : 1;
 
                     // Delega para o FraudValidationService existente

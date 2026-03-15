@@ -46,7 +46,7 @@ public class DataAnalystAgentService {
                 .chatModel(primaryChatModel)
                 .chatMemory(memory)
                 .toolProvider(mcpToolProvider)
-                .maxSequentialToolsInvocations(3)
+                .maxSequentialToolsInvocations(5)
                 .build();
     }
 
