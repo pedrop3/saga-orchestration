@@ -2,6 +2,7 @@ package com.learn.aisagaagent.service;
 
 import com.learn.aisagaagent.listener.MetricsCollector;
 import com.learn.aisagaagent.provider.ChatMemoryProvider;
+import com.learn.aisagaagent.service.agent.OperationsAgent;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.output.TokenUsage;
 import dev.langchain4j.service.AiServices;

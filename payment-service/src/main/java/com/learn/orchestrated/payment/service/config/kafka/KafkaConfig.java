@@ -39,6 +39,12 @@ public class KafkaConfig {
     @Value("${spring.kafka.topic.payment-fail}")
     private String paymentFailTopic;
 
+    @Value("${spring.kafka.topic.fraud-success}")
+    private String fraudSuccessTopic;
+
+    @Value("${spring.kafka.topic.fraud-fail}")
+    private String fraudFailTopic;
+
     @Value("${spring.kafka.topic.orchestrator}")
     private String orchestratorTopic;
 
@@ -100,6 +106,17 @@ public class KafkaConfig {
     @Bean
     public NewTopic orchestratorTopic() {
         return buildTopic(orchestratorTopic);
+    }
+
+
+    @Bean
+    public NewTopic fraudSuccessTopic() {
+        return buildTopic(fraudSuccessTopic);
+    }
+
+    @Bean
+    public NewTopic fraudFailTopic() {
+        return buildTopic(fraudFailTopic);
     }
 
 }

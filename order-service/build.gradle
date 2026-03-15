@@ -40,7 +40,7 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
 
 	// Shared & Utilities
-	implementation 'com.learn:saga-commons:0.0.3-SNAPSHOT'
+	implementation 'com.learn:saga-commons:0.0.4-SNAPSHOT'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 
 	// Lombok & Configuration

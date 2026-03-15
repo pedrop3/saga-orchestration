@@ -35,7 +35,7 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 
 	// Commons (Event, Order, History, JsonUtil)
-	implementation 'com.learn:saga-commons:0.0.3-SNAPSHOT'
+	implementation 'com.learn:saga-commons:0.0.4-SNAPSHOT'
 
 	// ── LangChain4j ──────────────────────────────────────────────────
 	implementation "dev.langchain4j:langchain4j:${langchainVersion}"

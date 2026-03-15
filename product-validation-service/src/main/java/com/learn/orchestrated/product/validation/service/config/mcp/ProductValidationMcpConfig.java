@@ -49,7 +49,8 @@ public class ProductValidationMcpConfig {
                 .tools(
                         checkProductExists(productValidationService),
                         checkValidationExists(productValidationService),
-                        listCatalog(productValidationService)
+                        listCatalog(productValidationService),
+                        getFraudRiskScore()
                 )
                 .build();
     }
@@ -136,6 +137,59 @@ public class ProductValidationMcpConfig {
                     return products.isEmpty()
                             ? "No products found in catalog."
                             : "Catalog:\n" + String.join("\n", products);
+                }
+        );
+    }
+
+    private SyncToolSpecification getFraudRiskScore() {
+        return tool(
+                "getFraudRiskScore",
+                "Returns a fraud risk score (0-100) for a given order context. " +
+                        "Considers order value, clinet type, client history and time of day. " +
+                        "Score above 70 = HIGH risk, 40-69 = MEDIUM, below 40 = LOW.",
+                """
+                {
+                  "type": "object",
+                  "properties": {
+                    "totalAmount":       { "type": "number" },
+                    "clientType":        { "type": "string", "enum": ["novo", "vip", "recorrente"] },
+                    "clientOrderCount":  { "type": "integer", "description": "Total orders placed by client" },
+                    "clientSuccessRate": { "type": "number",  "description": "Client success rate 0-100" },
+                    "hourOfDay":         { "type": "integer", "description": "0-23" }
+                  },
+                  "required": ["totalAmount", "clientType", "hourOfDay"]
+                }
+                """,
+                args -> {
+                    double amount       = ((Number) args.get("totalAmount")).doubleValue();
+                    String clientType   = (String) args.get("clientType");
+                    int hour            = ((Number) args.get("hourOfDay")).intValue();
+                    int orderCount      = args.get("clientOrderCount") != null
+                            ? ((Number) args.get("clientOrderCount")).intValue() : 0;
+                    double successRate  = args.get("clientSuccessRate") != null
+                            ? ((Number) args.get("clientSuccessRate")).doubleValue() : 100.0;
+
+                    int score = 0;
+
+                    // Rule 1 — high value order
+                    if (amount > 500)      score += 30;
+                    else if (amount > 200) score += 15;
+
+                    // Rule 2 — new client
+                    if ("novo".equals(clientType)) score += 25;
+
+                    // Rule 3 — peak fraud window (18h-23h)
+                    if (hour >= 18 && hour <= 23) score += 20;
+
+                    // Rule 4 — poor client history
+                    if (orderCount > 3 && successRate < 70.0) score += 25;
+
+                    String risk = score >= 70 ? "HIGH"
+                            : score >= 40 ? "MEDIUM"
+                            : "LOW";
+
+                    return "fraudScore=%d | risk=%s | amount=%.2f | clientType=%s | hour=%d"
+                            .formatted(score, risk, amount, clientType, hour);
                 }
         );
     }

@@ -3,6 +3,7 @@ package com.learn.orchestrated.payment.service.config.mcp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.learn.orchestrated.payment.service.enums.PaymentStatus;
+import com.learn.orchestrated.payment.service.service.FraudValidationService;
 import com.learn.orchestrated.payment.service.service.PaymentService;
 import io.modelcontextprotocol.server.McpServer;
 import io.modelcontextprotocol.server.McpServerFeatures.SyncToolSpecification;
@@ -42,7 +43,8 @@ public class PaymentMcpConfig {
     @Bean
     public McpSyncServer mcpServer(
             HttpServletSseServerTransportProvider transport,
-            PaymentService paymentService) {
+            PaymentService paymentService,
+            FraudValidationService fraudValidationService) {
 
         return McpServer.sync(transport)
                 .serverInfo(SERVER_NAME, SERVER_VERSION)
@@ -50,7 +52,8 @@ public class PaymentMcpConfig {
                 .tools(
                         getPaymentStatus(paymentService),
                         getRefundRate(paymentService),
-                        getRecentRefunds(paymentService)
+                        getRecentRefunds(paymentService),
+                        getFraudRiskScore(fraudValidationService)
                 )
                 .build();
     }
@@ -148,6 +151,67 @@ public class PaymentMcpConfig {
                     return refunds.isEmpty()
                             ? "No refunds found."
                             : "Recent refunds:\n" + String.join("\n", refunds);
+                }
+        );
+    }
+
+    private SyncToolSpecification getFraudRiskScore(FraudValidationService fraudValidationService) {
+        return tool(
+                "getFraudRiskScore",
+                """
+                Calculates a fraud risk score (0-100) for a given order context.
+                Uses the exact same rules as the PaymentService fraud validation.
+                Score >= 75 = BLOCKED, 50-74 = REVIEW, < 50 = APPROVED.
+                Use when asked about fraud risk, suspicious orders or blocked payments.
+                """,
+                """
+                {
+                  "type": "object",
+                  "properties": {
+                    "totalAmount": {
+                        "type": "number",
+                        "description": "Order total value in BRL"
+                    },
+                    "clientType": {
+                        "type": "string",
+                        "enum": ["new", "vip", "returning", "default"]
+                    },
+                    "hourOfDay": {
+                        "type": "integer",
+                        "description": "Hour of order 0-23"
+                    },
+                    "clientOrderCount": {
+                        "type": "integer",
+                        "description": "Total historical orders from this client"
+                    },
+                    "clientSuccessRate": {
+                        "type": "number",
+                        "description": "Client historical success rate 0-100"
+                    },
+                    "totalItems": {
+                        "type": "integer",
+                        "description": "Total quantity of items in order"
+                    }
+                  },
+                  "required": ["totalAmount", "clientType", "hourOfDay"]
+                }
+                """,
+                args -> {
+                    double amount      = ((Number) args.get("totalAmount")).doubleValue();
+                    String clientType  = (String) args.get("clientType");
+                    int hour           = ((Number) args.get("hourOfDay")).intValue();
+                    int orderCount     = args.get("clientOrderCount") != null
+                            ? ((Number) args.get("clientOrderCount")).intValue() : 0;
+                    double successRate = args.get("clientSuccessRate") != null
+                            ? ((Number) args.get("clientSuccessRate")).doubleValue() : 100.0;
+                    int totalItems     = args.get("totalItems") != null
+                            ? ((Number) args.get("totalItems")).intValue() : 1;
+
+                    // Delega para o FraudValidationService existente
+                    return fraudValidationService.calculateFraudScore(
+                            amount, clientType, hour,
+                            orderCount, successRate, totalItems
+                    );
                 }
         );
     }

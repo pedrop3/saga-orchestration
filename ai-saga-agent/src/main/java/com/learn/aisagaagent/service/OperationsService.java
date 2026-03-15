@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.learn.aisagaagent.model.SagaDiagnostic;
 import com.learn.aisagaagent.repository.SagaDiagnosticRepository;
+import com.learn.aisagaagent.service.agent.OperationsAgent;
 import com.learn.sagacommons.dto.Event;
 import com.learn.sagacommons.enums.SagaStatusEnum;
 import dev.langchain4j.data.document.Metadata;
@@ -36,6 +37,8 @@ public class OperationsService {
     private final SagaDiagnosticRepository diagnosticRepository;
     private ObjectMapper objectMapper;
     private OperationsAgent operationsAgent;
+    private final ProfileClassifier profileClassifier;
+
 
     @PostConstruct
     void init() {
@@ -89,13 +92,21 @@ public class OperationsService {
     }
 
     private void vectorize(Event event, String historyText) {
+        String profileKey = classifyProfile(event);
+
         var metadata = new Metadata()
                 .put("orderId",   event.getOrderId())
                 .put("status",    event.getStatus().toString())
+                .put("profileKey", profileKey)
                 .put("createdAt", LocalDateTime.now().toString());
 
         var segment = TextSegment.from(historyText, metadata);
         embeddingStore.add(embeddingModel.embed(segment).content(), segment);
+    }
+
+    private String classifyProfile(Event event) {
+        if (event.getOrder() == null) return "default";
+        return profileClassifier.classify(event.getOrder());
     }
 
     private String findSimilarIncidents(String historyText) {

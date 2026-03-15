@@ -121,6 +121,16 @@ public class KafkaConfig {
     }
 
     @Bean
+    public NewTopic fraudValidationSuccess() {
+        return buildTopic(FRAUD_VALIDATION_SUCCESS.getTopic());
+    }
+
+    @Bean
+    public NewTopic fraudValidationFail() {
+        return buildTopic(FRAUD_VALIDATION_FAIL.getTopic());
+    }
+
+    @Bean
     public NewTopic inventoryFailTopic() {
         return buildTopic(INVENTORY_FAIL.getTopic());
     }

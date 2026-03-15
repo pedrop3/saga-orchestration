@@ -10,4 +10,6 @@ public interface ValidationRepository extends JpaRepository<Validation, Integer>
     boolean existsByOrderIdAndTransactionId(String orderId, String transactionId);
 
     Optional<Validation> findByOrderIdAndTransactionId(String orderId, String transactionId);
+
+    long countByOrderIdStartingWithAndSuccess(String substring, boolean b);
 }

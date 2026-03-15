@@ -66,7 +66,14 @@ class OrderControllerTest {
         OrderProducts product = new OrderProducts();
         product.setProduct(new Product());
         product.setQuantity(2);
-        return new OrderRequest(List.of(product));
+        return new OrderRequest(
+                List.of(product),  // products
+                null,                   // customerId
+                null,                   // clientType
+                null,                   // clientOrderCount
+                null,                   // clientSuccessRate
+                null                    // hasDigitalProducts
+        );
     }
 
     private OrderDocument buildOrderResponse() {

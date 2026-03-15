@@ -23,6 +23,9 @@ public enum TopicsEnum {
     INVENTORY_SUCCESS("inventory-success"),
     INVENTORY_FAIL("inventory-fail"),
 
+    FRAUD_VALIDATION_SUCCESS("fraud-validation-success"),
+    FRAUD_VALIDATION_FAIL("fraud-validation-fail"),
+
     NOTIFY_ENDING("notify-ending");
 
     private final String topic;

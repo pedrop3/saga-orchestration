@@ -35,7 +35,7 @@ dependencies {
 	implementation 'io.modelcontextprotocol.sdk:mcp:0.9.0'
 
 	// Shared
-	implementation 'com.learn:saga-commons:0.0.3-SNAPSHOT'
+	implementation 'com.learn:saga-commons:0.0.4-SNAPSHOT'
 
 	// Database
 	runtimeOnly 'org.postgresql:postgresql'
