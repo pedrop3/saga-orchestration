@@ -2,6 +2,7 @@ package com.learn.aisagaagent.service;
 
 import com.learn.aisagaagent.listener.MetricsCollector;
 import com.learn.aisagaagent.provider.ChatMemoryProvider;
+import com.learn.aisagaagent.service.agent.DataAnalystAgent;
 import dev.langchain4j.mcp.McpToolProvider;
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.model.chat.ChatModel;

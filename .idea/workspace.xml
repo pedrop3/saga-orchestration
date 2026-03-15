@@ -4,27 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding DataAnalystAgent">
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/EmbeddingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/model/SagaDiagnostic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/repository/SagaDiagnosticRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationAgentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/init-vectors.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding OperationAgentService">
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/redis/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/dto/SagaPlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/ProfileClassifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/agent/SagaComposerAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config/redis/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/dto/SagaPlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/consumer/FraudValidationConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/FraudValidationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/inventory-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/inventory-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/orchestrator-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/order-service.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/saga-commons.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ai-saga-agent/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/AiSagaAgentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/AiSagaAgentApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/controller/AgentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/controller/AgentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/agent/DataAnalystAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationAgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationAgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/agent/OperationsAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/enums/TopicsEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/dto/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/order/service/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/kafka/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/mcp/PaymentMcpConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/config/mcp/PaymentMcpConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/mcp/ProductValidationMcpConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/config/mcp/ProductValidationMcpConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/repository/ValidationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/repository/ValidationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saga-commons/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/saga-commons/src/main/java/com/learn/sagacommons/dto/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="REBUILD_ON_DEPENDENCY_CHANGE" value="false" />
   </component>
   <component name="DockerExecCommands">
     <ExecCommand>
@@ -95,23 +137,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ai-saga-agent" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+                <item name="order-service" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -141,7 +167,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="2-step-ai-agent-analyst" />
+        <entry key="$PROJECT_DIR$" value="3step-ai-agent-operation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -250,6 +276,8 @@
     "Gradle.ai-saga-agent [build].executor": "Run",
     "Gradle.ai-saga-agent [classes].executor": "Run",
     "Gradle.ai-saga-agent [clean].executor": "Run",
+    "Gradle.ai-saga-agent [compileJava].executor": "Run",
+    "Gradle.ai-saga-agent [compileTestJava].executor": "Run",
     "Gradle.inventory-service [buildDependents].executor": "Run",
     "Gradle.inventory-service [build].executor": "Run",
     "Gradle.inventory-service [clean build].executor": "Run",
@@ -258,14 +286,17 @@
     "Gradle.orchestrator-service [build].executor": "Run",
     "Gradle.orchestrator-service [clean build].executor": "Run",
     "Gradle.orchestrator-service [clean].executor": "Run",
+    "Gradle.orchestrator-service [compileJava].executor": "Run",
     "Gradle.order-service [buildDependents].executor": "Run",
     "Gradle.order-service [build].executor": "Run",
     "Gradle.order-service [clean].executor": "Run",
+    "Gradle.order-service [compileJava].executor": "Run",
     "Gradle.order-service [jar].executor": "Run",
     "Gradle.payment-service [bootJar].executor": "Run",
     "Gradle.payment-service [bootRun].executor": "Run",
     "Gradle.payment-service [build].executor": "Run",
     "Gradle.payment-service [clean].executor": "Run",
+    "Gradle.payment-service [compileJava].executor": "Run",
     "Gradle.product-validation-service [buildDependents].executor": "Run",
     "Gradle.product-validation-service [build].executor": "Run",
     "Gradle.product-validation-service [clean].executor": "Run",
@@ -287,7 +318,7 @@
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
-    "JUnit.Whole project.executor": "Coverage",
+    "JUnit.Whole project.executor": "Run",
     "JUnit.com.learn.orchestrated.order.service.controller in order-service.main.executor": "Coverage",
     "JUnit.com.learn.orchestrated.order.service.service.impl in order-service.main.executor": "Coverage",
     "Repository.Attach.Annotations": "false",
@@ -301,18 +332,18 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.AiSagaAgentApplication.executor": "Debug",
+    "Spring Boot.AiSagaAgentApplication.executor": "Run",
     "Spring Boot.InventoryServiceApplication.executor": "Run",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
-    "Spring Boot.OrderServiceApplication.executor": "Debug",
+    "Spring Boot.OrchestratorServiceApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
     "Spring Boot.PaymentServiceApplication (1).executor": "Run",
     "Spring Boot.PaymentServiceApplication.executor": "Debug",
     "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Run",
+    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "3step-ai-agent-operation",
+    "git-widget-placeholder": "4-step-ai-agent-saga-plan",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka",
+    "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -322,7 +353,8 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "sonarlint",
+    "settings.editor.splitter.proportion": "0.2793716",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -337,11 +369,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/dto" />
+      <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/config" />
       <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/kafka" />
       <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config" />
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
-      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
-      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ai-saga-agent/src/main/resources" />
@@ -396,10 +428,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ai-saga-agent [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="payment-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/ai-saga-agent" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -407,7 +439,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="classes" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -418,10 +450,10 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ai-saga-agent [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="payment-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/ai-saga-agent" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -440,15 +472,50 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="payment-service [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileJava" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Whole project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AiSagaAgentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" activateToolWindowBeforeRun="false" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
       <additionalParameters>
         <param>
           <option name="enabled" value="true" />
           <option name="name" value="GEMINI_API_KEY" />
-          <option name="value" value="AIzaSyCFFJH4rqr3wMVlJ8anc4K_CfoPQeUvw_g" />
+          <option name="value" value="AIzaSyCoCx9usDkZUOlyfzn5K4iTmX-ukxZqw5w" />
         </param>
       </additionalParameters>
+      <option name="SCHEDULED_DEBUGGER" value="true" />
       <option name="INCLUDE_PROVIDED_SCOPE" value="false" />
       <module name="ai-saga-agent.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.aisagaagent.AiSagaAgentApplication" />
@@ -501,39 +568,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="redis" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.vectors-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="vectors-db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.redis: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.vectors-db: Compose Deployment" />
       <item itemvalue="Gradle.Tests in 'inventory-service'" />
-      <item itemvalue="Gradle.ai-saga-agent [classes]" />
+      <item itemvalue="Gradle.payment-service [build]" />
+      <item itemvalue="Gradle.payment-service [clean]" />
+      <item itemvalue="Gradle.payment-service [compileJava]" />
       <item itemvalue="Gradle.ai-saga-agent [build]" />
-      <item itemvalue="Gradle.ai-saga-agent [clean]" />
+      <item itemvalue="JUnit.Whole project" />
       <item itemvalue="Spring Boot.AiSagaAgentApplication" />
       <item itemvalue="Spring Boot.PaymentServiceApplication" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
@@ -543,11 +584,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.payment-service [build]" />
+        <item itemvalue="Gradle.payment-service [compileJava]" />
+        <item itemvalue="Gradle.payment-service [clean]" />
+        <item itemvalue="JUnit.Whole project" />
         <item itemvalue="Gradle.ai-saga-agent [build]" />
-        <item itemvalue="Gradle.ai-saga-agent [clean]" />
-        <item itemvalue="Gradle.ai-saga-agent [classes]" />
-        <item itemvalue="Docker.docker-compose.yml.redis: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.vectors-db: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -560,6 +601,9 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="" />
@@ -623,7 +667,9 @@
       <workItem from="1773100705081" duration="35541000" />
       <workItem from="1773446534242" duration="10727000" />
       <workItem from="1773457500375" duration="4484000" />
-      <workItem from="1773462031767" duration="8225000" />
+      <workItem from="1773462031767" duration="18663000" />
+      <workItem from="1773512272395" duration="9683000" />
+      <workItem from="1773525459008" duration="19979000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -865,7 +911,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773453231626</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="adding OperationAgentService">
+      <option name="closed" value="true" />
+      <created>1773501609018</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1773501609018</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -884,7 +938,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Creating producer" />
     <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
     <MESSAGE value="Creating EventDocument logic" />
     <MESSAGE value="Creating EventDocument logic, Custom Exception" />
@@ -909,7 +962,8 @@
     <MESSAGE value="Adding MCP in MCS." />
     <MESSAGE value="init commit" />
     <MESSAGE value="adding DataAnalystAgent" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding DataAnalystAgent" />
+    <MESSAGE value="adding OperationAgentService" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding OperationAgentService" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1019,11 +1073,6 @@
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java</url>
           <line>174</line>
           <option name="timeStamp" value="81" />
@@ -1060,33 +1109,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>33</line>
+          <line>35</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>89</line>
+          <line>91</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>36</line>
+          <line>38</line>
           <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java</url>
@@ -1100,23 +1134,128 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
-          <line>58</line>
+          <line>61</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
-          <line>66</line>
+          <line>69</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
-          <line>96</line>
+          <line>102</line>
           <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/FraudValidationService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/producer/SagaProducer.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestratorProducer.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
