@@ -33,7 +33,7 @@ public class SagaComposerService {
     private final ObjectMapper objectMapper;
     private final ChatModel primaryChatModel;
 
-    private static final Duration PLAN_TTL = Duration.ofMinutes(1);
+    private static final Duration PLAN_TTL = Duration.ofMinutes(2);
 
     private static final List<String> PROFILES = List.of(
             "new:high-value",

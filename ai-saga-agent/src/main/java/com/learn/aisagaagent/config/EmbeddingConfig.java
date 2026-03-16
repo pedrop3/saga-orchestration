@@ -23,7 +23,7 @@ public class EmbeddingConfig {
     public EmbeddingModel embeddingModel() {
         return OllamaEmbeddingModel.builder()
                 .baseUrl(ollamaUrl)
-                .modelName("nomic-embed-text") //nomic-embed-text via Ollama (local, gratuito)
+                .modelName("nomic-embed-text") //nomic-embed-text via Ollama (local, free)
                 .build();
     }
 

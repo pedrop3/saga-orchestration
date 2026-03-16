@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding improve all :)">
-      <change afterPath="$PROJECT_DIR$/diagram-architecture.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/diagram-saga-no-ai.html" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding diagram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/ChatModelConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/ChatModelConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/EmbeddingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/config/EmbeddingConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,7 +463,7 @@
         <param>
           <option name="enabled" value="true" />
           <option name="name" value="GEMINI_API_KEY" />
-          <option name="value" value="AIzaSyBm5z2YYSJQSnXxKqDrMvL1I6fWjx5EEPA" />
+          <option name="value" value="AIzaSyCRSdXK8VVrvPrZhBADoPWtbfyuUFtIvlY" />
         </param>
       </additionalParameters>
       <option name="SCHEDULED_DEBUGGER" value="true" />
@@ -619,7 +621,8 @@
       <workItem from="1773462031767" duration="18663000" />
       <workItem from="1773512272395" duration="9683000" />
       <workItem from="1773525459008" duration="34389000" />
-      <workItem from="1773664189212" duration="2711000" />
+      <workItem from="1773664189212" duration="3572000" />
+      <workItem from="1773691500134" duration="4561000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -893,7 +896,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773595748806</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="adding diagram">
+      <option name="closed" value="true" />
+      <created>1773666974117</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1773666974117</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -912,7 +923,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Creating EventDocument logic, Custom Exception" />
     <MESSAGE value="Creating the logic to saveOrder and create the payload." />
     <MESSAGE value="Creating notifyEnding to Event" />
     <MESSAGE value="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception." />
@@ -937,7 +947,8 @@
     <MESSAGE value="adding OperationAgentService" />
     <MESSAGE value="adding SagaOrchestratedAgent" />
     <MESSAGE value="adding improve all :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding improve all :)" />
+    <MESSAGE value="adding diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding diagram" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1133,12 +1144,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
-          <line>156</line>
+          <line>158</line>
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
-          <line>150</line>
+          <line>152</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

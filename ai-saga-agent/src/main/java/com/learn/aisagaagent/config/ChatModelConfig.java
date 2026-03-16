@@ -73,7 +73,7 @@ public class ChatModelConfig {
                 .topP(0.8)
                 .maxOutputTokens(1024)
                 .thinkingConfig(GeminiThinkingConfig.builder()
-                        .includeThoughts(true)
+                        .includeThoughts(false)
                         .thinkingBudget(512)
                         .build())
                 .timeout(Duration.ofSeconds(config.getTimeout()))
