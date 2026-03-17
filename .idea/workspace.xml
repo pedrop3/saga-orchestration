@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="adding diagram">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8a7e30f-bcc3-4ff5-93b7-81f33128afa3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8a7e30f-bcc3-4ff5-93b7-81f33128afa3.xml" afterDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="review script sql and payment logic,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/import.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,11 +347,23 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="GradleRunConfiguration" />
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
+    </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="GradleRunConfiguration">
+          <value>
+            <set>
+              <option value="Tests in 'inventory-service'" />
+            </set>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml.redpanda-console: Compose Deployment">
@@ -591,7 +598,7 @@
       <workItem from="1773525459008" duration="34389000" />
       <workItem from="1773664189212" duration="3572000" />
       <workItem from="1773691500134" duration="6946000" />
-      <workItem from="1773708383858" duration="1830000" />
+      <workItem from="1773708383858" duration="2684000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -881,7 +888,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773696387422</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="review script sql and payment logic,">
+      <option name="closed" value="true" />
+      <created>1773710301736</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1773710301736</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -900,7 +915,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="Creating the logic to saveOrder and create the payload." />
     <MESSAGE value="Creating notifyEnding to Event" />
     <MESSAGE value="feat: add @AtLeastOneNotEmpty annotation to validate fields with custom exception." />
     <MESSAGE value="fix: TransactionId was not being informed." />
@@ -925,7 +939,8 @@
     <MESSAGE value="adding SagaOrchestratedAgent" />
     <MESSAGE value="adding improve all :)" />
     <MESSAGE value="adding diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding diagram" />
+    <MESSAGE value="review script sql and payment logic," />
+    <option name="LAST_COMMIT_MESSAGE" value="review script sql and payment logic," />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
