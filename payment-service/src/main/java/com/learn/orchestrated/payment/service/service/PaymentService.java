@@ -29,7 +29,7 @@ public class PaymentService {
     private static final Double MIN_VALUE_AMOUNT = 15.0;
     private static final boolean SIMULATE_RANDOM_HOUR = true; // toggle fácil
     // Mock Payment
-    private static final Double MAX_AMOUNT_PER_ORDER   = 500.0;  // limite por pedido
+    private static final Double MAX_AMOUNT_PER_ORDER   = 1500.0;  // limite por pedido
     private static final Double MAX_AMOUNT_NEW_CUSTOMER = 500.0;  // limite cliente novo
     private static final int    FRAUD_SCORE_THRESHOLD  = 75;      // score de fraude
     private static final double PAYMENT_FAILURE_RATE   = 0.15;    // 15% falha aleatória (gateway)
@@ -144,14 +144,11 @@ public class PaymentService {
     private GatewayResult callPaymentGateway(double amount) {
         double random = Math.random();
 
-        // 80% sucess
-        if (random < 0.80) return GatewayResult.SUCCESS;
-
-        // 15% falhas distribuídas realisticamente
-        if (random < 0.95) return GatewayResult.INSUFFICIENT_FUNDS; // 5%
-        if (random < 0.93) return GatewayResult.CARD_EXPIRED;       // 3%
-        if (random < 0.96) return GatewayResult.GATEWAY_TIMEOUT;    // 3%
-        return GatewayResult.DUPLICATE_TRANSACTION;                  // 4%
+        if (random < 0.80) return GatewayResult.SUCCESS;            // 80%
+        if (random < 0.87) return GatewayResult.INSUFFICIENT_FUNDS; //  7%
+        if (random < 0.92) return GatewayResult.CARD_EXPIRED;       //  5%
+        if (random < 0.96) return GatewayResult.GATEWAY_TIMEOUT;    //  4%
+        return GatewayResult.DUPLICATE_TRANSACTION;                  //  4%
     }
 
     // ─── Fraud Score ─────────────────────────────────────────────────
