@@ -14,4 +14,26 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="21" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="inventory-service" options="-parameters" />
+      <module name="inventory-service.main" options="-parameters" />
+      <module name="inventory-service.test" options="-parameters" />
+      <module name="orchestrator-service" options="-parameters" />
+      <module name="orchestrator-service.main" options="-parameters" />
+      <module name="orchestrator-service.test" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="order-service.main" options="-parameters" />
+      <module name="order-service.test" options="-parameters" />
+      <module name="payment-service" options="-parameters" />
+      <module name="payment-service.main" options="-parameters" />
+      <module name="payment-service.test" options="-parameters" />
+      <module name="product-validation-service" options="-parameters" />
+      <module name="product-validation-service.main" options="-parameters" />
+      <module name="product-validation-service.test" options="-parameters" />
+      <module name="saga-commons" options="-parameters" />
+      <module name="saga-commons.main" options="-parameters" />
+      <module name="saga-commons.test" options="-parameters" />
+    </option>
+  </component>
 </project>

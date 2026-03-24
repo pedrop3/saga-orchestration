@@ -52,7 +52,10 @@ public class InventoryService {
 
     private void checkCurrentValidation(Event event) {
         if (orderInventoryRepository.existsByOrderIdAndTransactionId(
-                event.getOrder().getOrderId(), event.getTransactionId())) {
+                event.getOrder().getOrderId(),
+                event.getTransactionId()
+            ))
+        {
             throw new ValidationException("There's another transactionId for this validation.");
         }
     }
@@ -64,6 +67,7 @@ public class InventoryService {
                 .forEach(product -> {
                     var inventory = findInventoryByProductCode(product.getProduct().getCode());
                     var orderInventory = createOrderInventory(event, product, inventory);
+
                     orderInventoryRepository.save(orderInventory);
                 });
     }
@@ -105,17 +109,6 @@ public class InventoryService {
         addHistory(event, "Inventory updated successfully!");
     }
 
-    private void addHistory(Event event, String message) {
-        var history = History
-                .builder()
-                .source(event.getSource())
-                .status(event.getStatus().toString())
-                .message(message)
-                .createdAt(LocalDateTime.now())
-                .build();
-
-        event.addToHistory(history);
-    }
 
     private void handleFailCurrentNotExecuted(Event event, String message) {
         event.setStatus(ROLLBACK);
@@ -147,6 +140,18 @@ public class InventoryService {
                     log.info("Restored inventory for order {}: from {} to {}",
                             event.getOrder().getOrderId(), orderInventory.getNewQuantity(), inventory.getAvailable());
                 });
+    }
+
+    private void addHistory(Event event, String message) {
+        var history = History
+                .builder()
+                .source(event.getSource())
+                .status(event.getStatus().toString())
+                .message(message)
+                .createdAt(LocalDateTime.now())
+                .build();
+
+        event.addToHistory(history);
     }
 
     private Inventory findInventoryByProductCode(String productCode) {

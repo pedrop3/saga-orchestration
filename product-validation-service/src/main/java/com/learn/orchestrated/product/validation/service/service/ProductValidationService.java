@@ -85,12 +85,14 @@ public class ProductValidationService {
                 .transactionId(event.getTransactionId())
                 .success(success)
                 .build();
+
         validationRepository.save(validation);
     }
 
     private void handleSuccess(Event event) {
         event.setStatus(SUCCESS);
         event.setSource(CURRENT_SOURCE);
+
         addHistory(event, "Products are validated successfully!");
     }
 
@@ -114,9 +116,12 @@ public class ProductValidationService {
 
     public void rollbackEvent(Event event) {
         changeValidationToFail(event);
+
         event.setStatus(FAIL);
         event.setSource(CURRENT_SOURCE);
+
         addHistory(event, "Rollback executed on product validation!");
+
         producer.sendEvent(jsonUtil.toJson(event).orElseThrow());
     }
 

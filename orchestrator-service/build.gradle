@@ -25,7 +25,8 @@ repositories {
 dependencies {
 	// Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
 	// Kafka
 	implementation 'org.springframework.kafka:spring-kafka'
 
