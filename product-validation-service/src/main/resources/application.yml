@@ -18,9 +18,16 @@ spring:
     username: ${DB_USER:postgres}
     password: ${DB_PASSWORD:postgres}
 
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:import.sql
+
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

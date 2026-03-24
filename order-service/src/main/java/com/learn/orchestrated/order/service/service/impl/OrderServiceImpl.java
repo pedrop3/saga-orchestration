@@ -7,7 +7,6 @@ import com.learn.orchestrated.order.service.exception.OrderProcessingException;
 import com.learn.orchestrated.order.service.repository.OrderRepository;
 import com.learn.orchestrated.order.service.service.EventPublisherService;
 import com.learn.orchestrated.order.service.service.OrderService;
-import com.learn.sagacommons.utils.JsonUtil;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +53,29 @@ public class OrderServiceImpl implements OrderService {
         orderDocument.setCreatedAt(LocalDateTime.now());
         orderDocument.setTransactionId(generateTransactionId());
 
+
+        orderDocument.setCustomerId(orderRequest.customerId());
+        orderDocument.setClientType(resolveClientType(orderRequest.customerId()));
+        orderDocument.setClientOrderCount(countPreviousOrders(orderRequest.customerId()));
+
+        orderDocument.setClientSuccessRate(
+                orderRequest.clientSuccessRate() != null ? orderRequest.clientSuccessRate() : 100.0);
+        orderDocument.setHasDigitalProducts(
+                orderRequest.hasDigitalProducts() != null ? orderRequest.hasDigitalProducts() : false);
+
+
         return orderRepository.save(orderDocument);
+    }
+
+    private String resolveClientType(String customerId) {
+        long orderCount = orderRepository.countByCustomerId(customerId);
+        if (orderCount == 0)  return "new";
+        if (orderCount >= 10) return "vip";
+        return "returning";
+    }
+
+    private int countPreviousOrders(String customerId) {
+        return orderRepository.countByCustomerId(customerId);
     }
 
     private String generateTransactionId() {

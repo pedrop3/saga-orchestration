@@ -13,25 +13,45 @@ java {
 	}
 }
 
+ext {
+	lombokVersion = "1.18.30"
+}
+
 repositories {
-	mavenLocal()
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
-	implementation('com.learn:saga-commons:0.0.3-SNAPSHOT')
-	implementation 'org.apache.commons:commons-lang3:3.12.0'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-	implementation 'org.projectlombok:lombok:1.18.30'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	// Spring Boot
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+	// Kafka
 	implementation 'org.springframework.kafka:spring-kafka'
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'io.micrometer:micrometer-registry-prometheus'
+
+	// MCP Server
+	implementation 'io.modelcontextprotocol.sdk:mcp:0.9.0'
+
+	// Database (MongoDB)
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+	// Documentation
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Shared & Utilities
+	implementation 'com.learn:saga-commons:0.0.4-SNAPSHOT'
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+	// Lombok & Configuration
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	// Dev & Test
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 

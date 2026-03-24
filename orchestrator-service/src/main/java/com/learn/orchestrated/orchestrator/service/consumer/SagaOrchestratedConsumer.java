@@ -14,8 +14,7 @@ import org.springframework.stereotype.Component;
 public class SagaOrchestratedConsumer {
 
     private final JsonUtil jsonUtil;
-    private final OrchestrationService service;
-
+    private final OrchestrationService orchestrationService;
 
     @KafkaListener(
             groupId = "${spring.kafka.consumer.group-id}",
@@ -25,7 +24,7 @@ public class SagaOrchestratedConsumer {
         log.info("Receiving event  {} from start-saga topic", payload);
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
-        service.startSaga(event);
+        orchestrationService.startSagaWithAI(event);
 
     }
 
@@ -37,8 +36,12 @@ public class SagaOrchestratedConsumer {
         log.info("Receiving event  {} from orchestrator topic", payload);
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
-        service.continueSaga(event);
 
+        switch (event.getStatus()) {
+            case SUCCESS  -> orchestrationService.continueSaga(event);
+            case ROLLBACK -> orchestrationService.rollbackSaga(event);
+            case FAIL     -> orchestrationService.handleFail(event);
+        }
     }
 
     @KafkaListener(
@@ -49,7 +52,7 @@ public class SagaOrchestratedConsumer {
         log.info("Receiving event  {} from finish success topic", payload);
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
-        service.finishSagaSuccess(event);
+        orchestrationService.finishSagaSuccess(event);
 
     }
 
@@ -61,7 +64,7 @@ public class SagaOrchestratedConsumer {
         log.info("Receiving event  {} from finish fail topic", payload);
 
         var event = jsonUtil.toEvent(payload).orElseThrow();
-        service.finishSagaFail(event);
+        orchestrationService.finishSagaFail(event);
 
     }
 }

@@ -53,6 +53,27 @@ services:
     ports:
       - "5434:5432"
 
+  vectors-db:
+    container_name: vectors-db
+    image: pgvector/pgvector:pg16
+    networks:
+      - orchestrator-saga
+    environment:
+      POSTGRES_DB: vectors-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./ai-saga-agent/src/main/resources/init-vectors.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    networks:
+      - orchestrator-saga
   kafka:
     container_name: kafka
     image: obsidiandynamics/kafka

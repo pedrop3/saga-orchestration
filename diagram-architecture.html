@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Diagram — AI Agent + MCP + Saga</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #080f1c;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 15%, rgba(99,102,241,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 45% at 80% 85%, rgba(139,92,246,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-title {
+      font-size: 13px; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: #6366f1; margin-bottom: 36px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .page-title::before, .page-title::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99,102,241,.4), transparent);
+      min-width: 60px;
+    }
+
+    /* ── Canvas ── */
+    .canvas {
+      position: relative;
+      width: 1100px;
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: #475569;
+      margin-bottom: 12px; padding-left: 4px;
+    }
+
+    /* ── Row layout ── */
+    .row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-bottom: 0;
+    }
+
+    /* ── Swimlane columns ── */
+    .lane {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    /* ── Nodes ── */
+    .node {
+      position: relative;
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(6px);
+    }
+
+    .node-icon { font-size: 22px; line-height: 1; }
+    .node-name { font-size: 13px; font-weight: 700; color: #e2e8f0; }
+    .node-sub  { font-size: 11px; color: #64748b; line-height: 1.4; }
+    .node-tag  {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px; font-weight: 500;
+      padding: 2px 7px; border-radius: 5px;
+      margin-top: 2px;
+    }
+
+    /* colour variants */
+    .node-user     { border-color: rgba(100,116,139,.3); }
+    .node-agent    { border-color: rgba(99,102,241,.35); background: rgba(99,102,241,.06); }
+    .node-agent .node-tag { background: rgba(99,102,241,.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,.25); }
+
+    .node-mcp      { border-color: rgba(6,182,212,.3); background: rgba(6,182,212,.05); }
+    .node-mcp .node-tag { background: rgba(6,182,212,.12); color: #22d3ee; border: 1px solid rgba(6,182,212,.2); }
+
+    .node-service  { border-color: rgba(16,185,129,.25); background: rgba(16,185,129,.04); }
+    .node-service .node-tag { background: rgba(16,185,129,.1); color: #6ee7b7; border: 1px solid rgba(16,185,129,.2); }
+
+    .node-infra    { border-color: rgba(245,158,11,.2); background: rgba(245,158,11,.04); }
+    .node-infra .node-tag { background: rgba(245,158,11,.1); color: #fcd34d; border: 1px solid rgba(245,158,11,.18); }
+
+    .node-llm      { border-color: rgba(139,92,246,.35); background: rgba(139,92,246,.07); }
+    .node-llm .node-tag { background: rgba(139,92,246,.15); color: #c4b5fd; border: 1px solid rgba(139,92,246,.25); }
+
+    /* ── SVG diagram ── */
+    .diagram-svg {
+      width: 1100px;
+      display: block;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .legend-item {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 11px; color: #64748b;
+    }
+
+    .legend-line {
+      width: 28px; height: 2px; border-radius: 2px; flex-shrink: 0;
+    }
+    .leg-user    { background: #94a3b8; }
+    .leg-tool    { background: #6366f1; }
+    .leg-mcp     { background: #06b6d4; }
+    .leg-kafka   { background: #f59e0b; }
+    .leg-redis   { background: #10b981; }
+    .leg-llm     { background: #8b5cf6; stroke-dasharray: 5,3; }
+
+    .legend-dash {
+      width: 28px; height: 0; flex-shrink: 0;
+      border-top: 2px dashed #8b5cf6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-title">AI Agent · MCP · Saga Architecture</div>
+
+<!-- SVG diagram — all layout is done here for pixel-perfect control -->
+<svg class="diagram-svg" viewBox="0 0 1100 680" xmlns="http://www.w3.org/2000/svg" font-family="Inter, sans-serif">
+
+  <!-- ── Defs ── -->
+  <defs>
+    <!-- arrow markers -->
+    <marker id="arr-gray"    markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+    <marker id="arr-indigo"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arr-cyan"    markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#06b6d4"/>
+    </marker>
+    <marker id="arr-amber"   markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-emerald" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-violet"  markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8b5cf6"/>
+    </marker>
+
+    <!-- glows -->
+    <filter id="glow-indigo" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#6366f1" flood-opacity=".6" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#06b6d4" flood-opacity=".5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════
+       BACKGROUND ZONES
+  ═══════════════════════════════════════════ -->
+
+  <!-- Client zone -->
+  <rect x="20" y="20" width="140" height="640" rx="14"
+        fill="rgba(100,116,139,.04)" stroke="rgba(100,116,139,.12)" stroke-width="1"/>
+  <text x="90" y="42" text-anchor="middle" font-size="9" font-weight="700"
+        fill="#475569" letter-spacing="2" text-decoration="none">CLIENT</text>
+
+  <!-- AI Agent zone -->
+  <rect x="175" y="20" width="280" height="640" rx="14"
+        fill="rgba(99,102,241,.04)" stroke="rgba(99,102,241,.15)" stroke-width="1"/>
+  <text x="315" y="42" text-anchor="middle" font-size="9" font-weight="700"
+        fill="#6366f1" letter-spacing="2">AI AGENT LAYER</text>
+
+  <!-- MCP zone -->
+  <rect x="470" y="20" width="180" height="640" rx="14"
+        fill="rgba(6,182,212,.03)" stroke="rgba(6,182,212,.12)" stroke-width="1"/>
+  <text x="560" y="42" text-anchor="middle" font-size="9" font-weight="700"
+        fill="#06b6d4" letter-spacing="2">MCP SERVERS</text>
+
+  <!-- Services zone -->
+  <rect x="665" y="20" width="200" height="640" rx="14"
+        fill="rgba(16,185,129,.03)" stroke="rgba(16,185,129,.1)" stroke-width="1"/>
+  <text x="765" y="42" text-anchor="middle" font-size="9" font-weight="700"
+        fill="#10b981" letter-spacing="2">MICROSERVICES</text>
+
+  <!-- Infra zone -->
+  <rect x="880" y="20" width="200" height="640" rx="14"
+        fill="rgba(245,158,11,.03)" stroke="rgba(245,158,11,.1)" stroke-width="1"/>
+  <text x="980" y="42" text-anchor="middle" font-size="9" font-weight="700"
+        fill="#f59e0b" letter-spacing="2">INFRASTRUCTURE</text>
+
+
+  <!-- ═══════════════════════════════════════════
+       NODES — CLIENT
+  ═══════════════════════════════════════════ -->
+
+  <!-- Developer / User -->
+  <g transform="translate(28, 70)">
+    <rect width="124" height="72" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(100,116,139,.3)" stroke-width="1"/>
+    <text x="14" y="24" font-size="20">🧑‍💻</text>
+    <text x="14" y="44" font-size="12" font-weight="700" fill="#e2e8f0">Developer</text>
+    <text x="14" y="58" font-size="10" fill="#64748b">HTTP request</text>
+  </g>
+
+  <!-- Kafka event source -->
+  <g transform="translate(28, 280)">
+    <rect width="124" height="72" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(245,158,11,.25)" stroke-width="1"/>
+    <text x="14" y="24" font-size="20">📨</text>
+    <text x="14" y="44" font-size="12" font-weight="700" fill="#e2e8f0">Kafka</text>
+    <text x="14" y="58" font-size="10" fill="#64748b">FAIL event</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       NODES — AI AGENT LAYER
+  ═══════════════════════════════════════════ -->
+
+  <!-- LLM (OpenAI / Ollama) -->
+  <g transform="translate(183, 70)">
+    <rect width="256" height="80" rx="10"
+          fill="rgba(30,41,59,.9)" stroke="rgba(139,92,246,.35)" stroke-width="1"
+          filter="url(#glow-indigo)"/>
+    <text x="14" y="28" font-size="20">🤖</text>
+    <text x="44" y="26" font-size="13" font-weight="700" fill="#e2e8f0">LLM</text>
+    <text x="44" y="41" font-size="10" fill="#94a3b8">OpenAI / Ollama</text>
+    <rect x="14" y="50" width="90" height="18" rx="5"
+          fill="rgba(139,92,246,.15)" stroke="rgba(139,92,246,.25)" stroke-width="1"/>
+    <text x="59" y="63" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#c4b5fd" font-family="JetBrains Mono, monospace">claude-sonnet</text>
+  </g>
+
+  <!-- Operations Agent -->
+  <g transform="translate(183, 200)">
+    <rect width="256" height="92" rx="10"
+          fill="rgba(30,41,59,.9)" stroke="rgba(99,102,241,.4)" stroke-width="1"
+          filter="url(#glow-indigo)"/>
+    <text x="14" y="28" font-size="20">🔍</text>
+    <text x="44" y="26" font-size="13" font-weight="700" fill="#e2e8f0">Operations Agent</text>
+    <text x="44" y="41" font-size="10" fill="#94a3b8">Failure diagnosis</text>
+    <rect x="14" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.15)" stroke="rgba(99,102,241,.25)" stroke-width="1"/>
+    <text x="69" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">@AiService</text>
+    <rect x="132" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.2)" stroke-width="1"/>
+    <text x="187" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">@SystemMessage</text>
+  </g>
+
+  <!-- Saga Composer Agent -->
+  <g transform="translate(183, 340)">
+    <rect width="256" height="92" rx="10"
+          fill="rgba(30,41,59,.9)" stroke="rgba(99,102,241,.4)" stroke-width="1"/>
+    <text x="14" y="28" font-size="20">🧠</text>
+    <text x="44" y="26" font-size="13" font-weight="700" fill="#e2e8f0">Saga Composer</text>
+    <text x="44" y="41" font-size="10" fill="#94a3b8">Dynamic plan per profile</text>
+    <rect x="14" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.15)" stroke="rgba(99,102,241,.25)" stroke-width="1"/>
+    <text x="69" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">@AiService</text>
+    <rect x="132" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.2)" stroke-width="1"/>
+    <text x="187" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">ProfileClassifier</text>
+  </g>
+
+  <!-- Data Analyst Agent -->
+  <g transform="translate(183, 480)">
+    <rect width="256" height="92" rx="10"
+          fill="rgba(30,41,59,.9)" stroke="rgba(99,102,241,.35)" stroke-width="1"/>
+    <text x="14" y="28" font-size="20">📊</text>
+    <text x="44" y="26" font-size="13" font-weight="700" fill="#e2e8f0">Data Analyst</text>
+    <text x="44" y="41" font-size="10" fill="#94a3b8">Metrics &amp; insights</text>
+    <rect x="14" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.15)" stroke="rgba(99,102,241,.25)" stroke-width="1"/>
+    <text x="69" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">@AiService</text>
+    <rect x="132" y="54" width="110" height="18" rx="5"
+          fill="rgba(99,102,241,.1)" stroke="rgba(99,102,241,.2)" stroke-width="1"/>
+    <text x="187" y="67" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#a5b4fc" font-family="JetBrains Mono, monospace">RAG + PgVector</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       NODES — MCP SERVERS
+  ═══════════════════════════════════════════ -->
+
+  <!-- MCP tools list (single grouped node) -->
+  <g transform="translate(478, 150)">
+    <rect width="164" height="370" rx="10"
+          fill="rgba(15,23,42,.8)" stroke="rgba(6,182,212,.25)" stroke-width="1"
+          filter="url(#glow-cyan)"/>
+    <text x="82" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#22d3ee">MCP Tools</text>
+    <line x1="14" y1="30" x2="150" y2="30" stroke="rgba(6,182,212,.2)" stroke-width="1"/>
+
+    <!-- tool rows -->
+    <!-- Order -->
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#94a3b8">📦 Order Service</text>
+    <text x="20" y="68" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getOrderById</text>
+    <text x="20" y="82" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">listRecentEvents</text>
+    <text x="20" y="96" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getLastEvent*</text>
+
+    <!-- Payment -->
+    <text x="14" y="118" font-size="10" font-weight="600" fill="#94a3b8">💳 Payment Service</text>
+    <text x="20" y="134" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getPaymentStatus</text>
+    <text x="20" y="148" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getFraudRiskScore</text>
+    <text x="20" y="162" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getRefundRate</text>
+
+    <!-- Inventory -->
+    <text x="14" y="184" font-size="10" font-weight="600" fill="#94a3b8">🏭 Inventory Service</text>
+    <text x="20" y="200" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getStockByProduct</text>
+    <text x="20" y="214" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getLowStockAlert</text>
+    <text x="20" y="228" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">checkReservation*</text>
+
+    <!-- Product -->
+    <text x="14" y="250" font-size="10" font-weight="600" fill="#94a3b8">🛒 Product Validation</text>
+    <text x="20" y="266" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">checkProductExists</text>
+    <text x="20" y="280" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">listCatalog</text>
+
+    <!-- Orchestrator -->
+    <text x="14" y="302" font-size="10" font-weight="600" fill="#94a3b8">⚙️ Orchestrator</text>
+    <text x="20" y="318" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">triggerCompensation</text>
+    <text x="20" y="332" font-size="9" fill="#475569" font-family="JetBrains Mono, monospace">getSagaRouteInfo</text>
+
+    <!-- Protocol badge -->
+    <rect x="14" y="348" width="136" height="16" rx="5"
+          fill="rgba(6,182,212,.1)" stroke="rgba(6,182,212,.2)" stroke-width="1"/>
+    <text x="82" y="360" text-anchor="middle" font-size="9" font-weight="600"
+          fill="#22d3ee" font-family="JetBrains Mono, monospace">HTTP SSE · JSON</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       NODES — MICROSERVICES
+  ═══════════════════════════════════════════ -->
+
+  <g transform="translate(673, 70)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">📦</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Order Service</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">MongoDB · Events</text>
+  </g>
+
+  <g transform="translate(673, 158)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">💳</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Payment Service</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">PostgreSQL · Fraud</text>
+  </g>
+
+  <g transform="translate(673, 246)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🏭</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Inventory Service</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">PostgreSQL · Stock</text>
+  </g>
+
+  <g transform="translate(673, 334)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🛒</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Product Validation</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">PostgreSQL · Catalog</text>
+  </g>
+
+  <g transform="translate(673, 422)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.25)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">⚙️</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Orchestrator</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Saga state machine</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       NODES — INFRASTRUCTURE
+  ═══════════════════════════════════════════ -->
+
+  <g transform="translate(888, 70)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🚀</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Kafka</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Event bus · Topics</text>
+  </g>
+
+  <g transform="translate(888, 168)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(16,185,129,.22)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">⚡</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">Redis</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Saga plans · Cache</text>
+  </g>
+
+  <g transform="translate(888, 266)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(99,102,241,.2)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🧬</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">PgVector</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Embeddings · RAG</text>
+  </g>
+
+  <g transform="translate(888, 364)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🗄️</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">PostgreSQL</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Business data</text>
+  </g>
+
+  <g transform="translate(888, 462)">
+    <rect width="184" height="56" rx="10"
+          fill="rgba(30,41,59,.8)" stroke="rgba(245,158,11,.2)" stroke-width="1"/>
+    <text x="14" y="22" font-size="16">🍃</text>
+    <text x="38" y="22" font-size="12" font-weight="700" fill="#e2e8f0">MongoDB</text>
+    <text x="14" y="40" font-size="10" fill="#64748b">Orders · Event log</text>
+  </g>
+
+
+  <!-- ═══════════════════════════════════════════
+       ARROWS
+  ═══════════════════════════════════════════ -->
+
+  <!-- Developer → Operations Agent (HTTP question) -->
+  <path d="M152,106 L183,236" stroke="#64748b" stroke-width="1.5"
+        fill="none" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+  <text x="158" y="175" font-size="9" fill="#475569" transform="rotate(-70,158,175)">HTTP /chat</text>
+
+  <!-- Kafka FAIL event → Operations Agent -->
+  <path d="M152,316 L183,258" stroke="#f59e0b" stroke-width="1.5"
+        fill="none" stroke-dasharray="5,3" marker-end="url(#arr-amber)"/>
+  <text x="172" y="294" font-size="9" fill="#f59e0b">FAIL event</text>
+
+  <!-- Developer → Saga Composer (trigger) -->
+  <path d="M90,142 Q90,375 183,376" stroke="#64748b" stroke-width="1.5"
+        fill="none" stroke-dasharray="5,3" marker-end="url(#arr-gray)"/>
+
+  <!-- Agents → LLM (reasoning) -->
+  <path d="M311,200 L311,150" stroke="#8b5cf6" stroke-width="1.5"
+        fill="none" stroke-dasharray="4,3" marker-end="url(#arr-violet)"/>
+  <path d="M311,340 Q280,280 311,150" stroke="#8b5cf6" stroke-width="1.5"
+        fill="none" stroke-dasharray="4,3" marker-end="url(#arr-violet)"/>
+  <path d="M311,480 Q260,320 311,150" stroke="#8b5cf6" stroke-width="1.5"
+        fill="none" stroke-dasharray="4,3" marker-end="url(#arr-violet)"/>
+  <text x="262" y="240" font-size="9" fill="#8b5cf6" transform="rotate(-80,262,240)">LLM call</text>
+
+  <!-- Agents → MCP (tool invocation) -->
+  <path d="M439,250 L478,310" stroke="#6366f1" stroke-width="2"
+        fill="none" marker-end="url(#arr-indigo)"/>
+  <path d="M439,388 L478,350" stroke="#6366f1" stroke-width="2"
+        fill="none" marker-end="url(#arr-indigo)"/>
+  <path d="M439,520 L478,420" stroke="#6366f1" stroke-width="2"
+        fill="none" marker-end="url(#arr-indigo)"/>
+  <text x="442" y="346" font-size="9" fill="#6366f1">tool call</text>
+
+  <!-- MCP → Microservices (data fetch) -->
+  <path d="M642,200 L673,100" stroke="#06b6d4" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-cyan)"/>
+  <path d="M642,240 L673,188" stroke="#06b6d4" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-cyan)"/>
+  <path d="M642,290 L673,276" stroke="#06b6d4" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-cyan)"/>
+  <path d="M642,340 L673,364" stroke="#06b6d4" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-cyan)"/>
+  <path d="M642,390 L673,452" stroke="#06b6d4" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-cyan)"/>
+  <text x="648" y="302" font-size="9" fill="#06b6d4">JSON</text>
+
+  <!-- Saga Composer → Redis (cache plan) -->
+
+
+  <!-- Orchestrator → Kafka (events) -->
+  <path d="M857,452 L888,106" stroke="#f59e0b" stroke-width="1.5"
+        fill="none" marker-end="url(#arr-amber)"/>
+  <text x="870" y="288" font-size="9" fill="#f59e0b" transform="rotate(-80,870,288)">Kafka events</text>
+
+  <!-- Orchestrator → Redis (read plan) -->
+  <path d="M857,456 L888,210" stroke="#10b981" stroke-width="1.5"
+        fill="none" stroke-dasharray="4,3" marker-end="url(#arr-emerald)"/>
+
+  <!-- Services → DB -->
+  <path d="M857,188 L888,190" stroke="#64748b" stroke-width="1" fill="none" marker-end="url(#arr-gray)"/>
+  <path d="M857,276 L888,392" stroke="#64748b" stroke-width="1" fill="none" marker-end="url(#arr-gray)"/>
+  <path d="M857,364 L888,392" stroke="#64748b" stroke-width="1" fill="none" marker-end="url(#arr-gray)"/>
+  <path d="M857,98  L888,490" stroke="#64748b" stroke-width="1" fill="none" marker-end="url(#arr-gray)"/>
+
+  <!-- Agent → PgVector (RAG) -->
+  <path d="M439,526 Q700,600 888,298" stroke="#8b5cf6" stroke-width="1.5"
+        fill="none" stroke-dasharray="4,3" marker-end="url(#arr-violet)"/>
+  <text x="640" y="600" font-size="9" fill="#8b5cf6">embeddings / RAG</text>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM LABELS: @Tool annotation callout
+  ═══════════════════════════════════════════ -->
+  <g transform="translate(478, 540)">
+    <rect width="164" height="56" rx="8"
+          fill="rgba(6,182,212,.07)" stroke="rgba(6,182,212,.2)" stroke-width="1"/>
+    <text x="82" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#22d3ee">How it works</text>
+    <text x="10" y="34" font-size="9" fill="#94a3b8">1. LLM decides which tool</text>
+    <text x="10" y="47" font-size="9" fill="#94a3b8">2. MCP calls service method</text>
+  </g>
+
+</svg>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-dash"></div>
+    LLM reasoning
+  </div>
+  <div class="legend-item">
+    <div class="legend-line" style="background:#6366f1"></div>
+    Tool invocation (MCP)
+  </div>
+  <div class="legend-item">
+    <div class="legend-line" style="background:#06b6d4"></div>
+    Data fetch (JSON)
+  </div>
+  <div class="legend-item">
+    <div class="legend-line" style="background:#f59e0b"></div>
+    Kafka events
+  </div>
+  <div class="legend-item">
+    <div class="legend-line" style="background:#10b981"></div>
+    Redis cache
+  </div>
+  <div class="legend-item">
+    <div class="legend-line" style="background:#64748b; border-top: 1px dashed #94a3b8"></div>
+    HTTP / trigger
+  </div>
+</div>
+
+</body>
+</html>

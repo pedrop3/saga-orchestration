@@ -1,5 +1,6 @@
 package com.learn.orchestrated.inventory.service.service;
 
+import aj.org.objectweb.asm.commons.Remapper;
 import com.learn.orchestrated.inventory.service.model.Inventory;
 import com.learn.orchestrated.inventory.service.model.OrderInventory;
 import com.learn.orchestrated.inventory.service.producer.SagaProducer;
@@ -17,6 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 import static com.learn.sagacommons.enums.SagaStatusEnum.FAIL;
 import static com.learn.sagacommons.enums.SagaStatusEnum.ROLLBACK;
@@ -155,5 +158,13 @@ public class InventoryService {
         return inventoryRepository
                 .findByProductCode(productCode)
                 .orElseThrow(() -> new ValidationException("Inventory not found by informed product."));
+    }
+
+    public Optional<Inventory> findByProductCode(String code) {
+        return inventoryRepository.findByProductCode(code);
+    }
+
+    public List<Inventory> findByAvailableLessThan(int threshold) {
+        return inventoryRepository.findByAvailableLessThan(threshold);
     }
 }

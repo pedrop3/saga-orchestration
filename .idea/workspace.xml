@@ -4,37 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="Creating the roadmap">
-      <change afterPath="$PROJECT_DIR$/prometheus/prometheus.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d9940e3b-4189-41e2-bcac-d708ab3bac54/storage_v2/_src_/database/payment-db.pf0hYA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/payment-service.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/product-validation-service.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+    <list default="true" id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="review script sql and payment logic,">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/orchestrator-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/document/EventDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product-validation-service/src/main/resources/import.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="REBUILD_ON_DEPENDENCY_CHANGE" value="false" />
   </component>
   <component name="DockerExecCommands">
     <ExecCommand>
@@ -45,6 +26,9 @@
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/" />
   </component>
   <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/ai-saga-agent">
+      <ProjectState />
+    </projectState>
     <projectState path="$PROJECT_DIR$/inventory-service">
       <ProjectState />
     </projectState>
@@ -91,21 +75,27 @@
         <task path="$PROJECT_DIR$/saga-commons">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/ai-agent-saga">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/ai-saga-agent">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="orchestrator-service" type="f1a62948:ProjectNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -130,7 +120,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Pedro Santos &lt;pedro_henriquems321@hotmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4-step-ai-agent-saga-plan" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -170,7 +171,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Docker.docker-compose.yml.grafana: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.inventory-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.kafka: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.order-db: Compose Deployment.executor": "Run",
@@ -178,7 +178,6 @@
     "Docker.docker-compose.yml.payment-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-db: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.product-validation-service: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.prometheus: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.redpanda-console: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
@@ -201,7 +200,6 @@
     "Gradle.InventoryServiceTest.shouldThrowExceptionIfInventoryNotFound.executor": "Run",
     "Gradle.InventoryServiceTest.shouldThrowExceptionIfTransactionAlreadyExists.executor": "Run",
     "Gradle.InventoryServiceTest.shouldThrowValidationExceptionIfInventoryNotFound.executor": "Run",
-    "Gradle.OrchestrationServiceTest.executor": "Run",
     "Gradle.OrderControllerTest.shouldCreateOrderSuccessfully.executor": "Run",
     "Gradle.OrderServiceTest.deveLancarExcecaoAoSalvarOrdem.executor": "Run",
     "Gradle.OrderServiceTest.executor": "Run",
@@ -226,30 +224,25 @@
     "Gradle.SagaExecutionControllerTest.executor": "Run",
     "Gradle.SagaExecutionControllerTest.shouldReturnFailtTopicWhenValidSourceAndStatus.executor": "Debug",
     "Gradle.SagaExecutionControllerTest.shouldThrowExceptionWhenNoMatchingTopicFound.executor": "Debug",
-    "Gradle.Tests in 'inventory-service'.executor": "Debug",
+    "Gradle.Tests in 'inventory-service'.executor": "Coverage",
     "Gradle.Tests in 'orchestrator-service'.executor": "Coverage",
     "Gradle.Tests in 'order-service'.executor": "Coverage",
     "Gradle.Tests in 'payment-service'.executor": "Coverage",
     "Gradle.Tests in 'product-validation-service'.executor": "Coverage",
-    "Gradle.inventory-service [:InventoryServiceApplication.main()].executor": "Run",
     "Gradle.inventory-service [buildDependents].executor": "Run",
     "Gradle.inventory-service [build].executor": "Run",
     "Gradle.inventory-service [clean build].executor": "Run",
     "Gradle.inventory-service [clean].executor": "Run",
-    "Gradle.orchestrator-service [:OrchestratorServiceApplication.main()].executor": "Run",
     "Gradle.orchestrator-service [buildDependents].executor": "Run",
     "Gradle.orchestrator-service [build].executor": "Run",
     "Gradle.orchestrator-service [clean build].executor": "Run",
     "Gradle.orchestrator-service [clean].executor": "Run",
-    "Gradle.order-service [:OrderServiceApplication.main()].executor": "Run",
     "Gradle.order-service [buildDependents].executor": "Run",
     "Gradle.order-service [build].executor": "Run",
     "Gradle.order-service [clean].executor": "Run",
     "Gradle.order-service [jar].executor": "Run",
-    "Gradle.payment-service [:PaymentServiceApplication.main()].executor": "Run",
     "Gradle.payment-service [build].executor": "Run",
     "Gradle.payment-service [clean].executor": "Run",
-    "Gradle.product-validation-service [:ProductValidationServiceApplication.main()].executor": "Run",
     "Gradle.product-validation-service [buildDependents].executor": "Run",
     "Gradle.product-validation-service [build].executor": "Run",
     "Gradle.product-validation-service [clean].executor": "Run",
@@ -270,7 +263,6 @@
     "HTTP Request.generated-requests | #2.executor": "Run",
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | GET request with parameter.executor": "Run",
-    "JUnit.Whole project (1).executor": "Coverage",
     "JUnit.Whole project.executor": "Coverage",
     "JUnit.com.learn.orchestrated.order.service.controller in order-service.main.executor": "Coverage",
     "JUnit.com.learn.orchestrated.order.service.service.impl in order-service.main.executor": "Coverage",
@@ -285,14 +277,14 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "Spring Boot.InventoryServiceApplication.executor": "Run",
-    "Spring Boot.OrchestratorServiceApplication.executor": "Run",
-    "Spring Boot.OrderServiceApplication.executor": "Run",
+    "Spring Boot.InventoryServiceApplication.executor": "Debug",
+    "Spring Boot.OrchestratorServiceApplication.executor": "Debug",
+    "Spring Boot.OrderServiceApplication.executor": "Debug",
     "Spring Boot.PaymentServiceApplication (1).executor": "Run",
-    "Spring Boot.PaymentServiceApplication.executor": "Run",
+    "Spring Boot.PaymentServiceApplication.executor": "Debug",
     "Spring Boot.ProductValidationServiceApplication (1).executor": "Debug",
-    "Spring Boot.ProductValidationServiceApplication.executor": "Run",
-    "git-widget-placeholder": "13-add-micrometer-prometheus-metrics",
+    "Spring Boot.ProductValidationServiceApplication.executor": "Debug",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/pedrosantos/Documents/workspace/saga-orchestration",
     "node.js.detected.package.eslint": "true",
@@ -304,37 +296,36 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "coverage",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql",
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory_service" />
       <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment_service" />
       <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service" />
       <recent name="$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator_service" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/prometheus" />
-      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product_validation_service/config/kafka" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.learn.orchestrated.order.service.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.aisagaagent.service" />
+      <recent name="com.learn.aisagaagent.listener" />
       <recent name="com.learn.orchestrated.payment.service.config" />
       <recent name="com.learn.orchestrated.payment.service.model" />
       <recent name="com.learn.orchestrated.product.validation.service.repository" />
-      <recent name="com.learn.orchestrated.product.validation.service.model" />
-      <recent name="com.learn.orchestrated.order.service.exception" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -345,6 +336,7 @@
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="GradleRunConfiguration" />
         <option value="KtorApplicationConfigurationType" />
         <option value="MicronautRunConfigurationType" />
         <option value="QuarkusRunConfigurationType" />
@@ -352,53 +344,125 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.grafana: Compose Deployment">
-    <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.learn.orchestrated.order.service.OrderServiceApplication" />
-      <module name="order-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.orchestrated.order.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.learn.orchestrated.payment.service.PaymentServiceApplication" />
-      <module name="payment-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.learn.orchestrated.payment.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="orchestrator-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.EventServiceImplTest">
+    <configuration name="EventControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.order.service.controller.EventControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EventServiceImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.order.service.order.service.EventServiceImplTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PaymentServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/payment-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.payment.service.service.PaymentServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ProductValidationServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/product-validation-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.product.validation.service.ProductValidationServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SagaExecutionControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/orchestrator-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.learn.orchestrated.orchestrator.service.SagaExecutionControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -446,6 +510,71 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.inventory-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="inventory-db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="kafka" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.redpanda-console: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redpanda-console" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.vectors-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="vectors-db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml.grafana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -473,24 +602,39 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.OrderServiceApplication" />
-      <item itemvalue="Application.PaymentServiceApplication" />
-      <item itemvalue="Docker.docker-compose.yml.grafana: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.prometheus: Compose Deployment" />
-      <item itemvalue="Gradle.Tests in 'inventory-service'" />
-      <item itemvalue="Gradle.orchestrator-service [build]" />
+      <item itemvalue="Gradle.EventControllerTest" />
+      <item itemvalue="Gradle.EventServiceImplTest" />
+      <item itemvalue="Gradle.PaymentServiceTest" />
+      <item itemvalue="Gradle.ProductValidationServiceTest" />
+      <item itemvalue="Gradle.SagaExecutionControllerTest" />
+      <item itemvalue="Spring Boot.InventoryServiceApplication" />
+      <item itemvalue="Spring Boot.OrchestratorServiceApplication" />
+      <item itemvalue="Spring Boot.OrderServiceApplication" />
+      <item itemvalue="Spring Boot.PaymentServiceApplication" />
+      <item itemvalue="Spring Boot.ProductValidationServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.grafana: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.prometheus: Compose Deployment" />
-        <item itemvalue="Application.PaymentServiceApplication" />
-        <item itemvalue="Application.OrderServiceApplication" />
-        <item itemvalue="Gradle.orchestrator-service [build]" />
+        <item itemvalue="Gradle.EventServiceImplTest" />
+        <item itemvalue="Gradle.EventControllerTest" />
+        <item itemvalue="Gradle.ProductValidationServiceTest" />
+        <item itemvalue="Gradle.PaymentServiceTest" />
+        <item itemvalue="Gradle.SagaExecutionControllerTest" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0e22c0ea-aedc-4cb1-ae04-0ba06f244561" name="Changes" comment="" />
@@ -564,6 +708,15 @@
       <workItem from="1746033424224" duration="15371000" />
       <workItem from="1746658491661" duration="27000" />
       <workItem from="1747608706546" duration="70000" />
+      <workItem from="1773100705081" duration="35541000" />
+      <workItem from="1773446534242" duration="10727000" />
+      <workItem from="1773457500375" duration="4484000" />
+      <workItem from="1773462031767" duration="18663000" />
+      <workItem from="1773512272395" duration="9683000" />
+      <workItem from="1773525459008" duration="34389000" />
+      <workItem from="1773664189212" duration="3572000" />
+      <workItem from="1773691500134" duration="6946000" />
+      <workItem from="1773708383858" duration="2684000" />
     </task>
     <task id="LOCAL-00001" summary="Init project saga">
       <option name="closed" value="true" />
@@ -789,71 +942,7 @@
       <option name="project" value="LOCAL" />
       <updated>1743443017646</updated>
     </task>
-    <task id="LOCAL-00029" summary="Improve all tests">
-      <option name="closed" value="true" />
-      <created>1743453224520</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1743453224520</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Improve OrchestrationService">
-      <option name="closed" value="true" />
-      <created>1743457555570</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1743457555570</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Improving read.me">
-      <option name="closed" value="true" />
-      <created>1743462813341</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1743462813341</updated>
-    </task>
-    <task id="LOCAL-00032" summary="adding Architectural Drawing">
-      <option name="closed" value="true" />
-      <created>1743542350187</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1743542350187</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fix: adjusting the readme.md">
-      <option name="closed" value="true" />
-      <created>1746034147808</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1746034147808</updated>
-    </task>
-    <task id="LOCAL-00034" summary="adding gitignore">
-      <option name="closed" value="true" />
-      <created>1746296837818</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1746296837818</updated>
-    </task>
-    <task id="LOCAL-00035" summary="adding gitignore">
-      <option name="closed" value="true" />
-      <created>1746296881766</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1746296881766</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Creating the roadmap">
-      <option name="closed" value="true" />
-      <created>1746309829488</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1746309829488</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -871,6 +960,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Creating the base objets" />
+    <MESSAGE value="Creating commons for reuse acrossl micronservices" />
+    <MESSAGE value="Creating commons for reuse across microservices" />
+    <MESSAGE value="Creating producer" />
+    <MESSAGE value="Rename package&#10;Import saga-commons&#10;Creating consumer and producer." />
+    <MESSAGE value="Creating EventDocument logic" />
     <MESSAGE value="Creating EventDocument logic, Custom Exception" />
     <MESSAGE value="Creating the logic to saveOrder and create the payload." />
     <MESSAGE value="Creating notifyEnding to Event" />
@@ -890,13 +985,7 @@
     <MESSAGE value="Improve tests inventory and order service." />
     <MESSAGE value="Improve tests SagaExecutionControllerTest" />
     <MESSAGE value="Improve all tests" />
-    <MESSAGE value="Improve OrchestrationService" />
-    <MESSAGE value="Improving read.me" />
-    <MESSAGE value="adding Architectural Drawing" />
-    <MESSAGE value="fix: adjusting the readme.md" />
-    <MESSAGE value="adding gitignore" />
-    <MESSAGE value="Creating the roadmap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the roadmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve all tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -912,19 +1001,9 @@
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/consumer/EventConsumer.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>
           <line>29</line>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/OrderController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/order-service/src/test/java/com/learn/orchestrated/order/service/controller/OrderControllerTest.java</url>
@@ -938,13 +1017,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java</url>
-          <line>37</line>
+          <line>22</line>
           <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/inventory-service/src/main/java/com/learn/orchestrated/inventory/service/service/InventoryService.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java</url>
@@ -1006,7 +1080,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1016,18 +1090,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>126</line>
+          <line>121</line>
           <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/test/java/com/learn/orchestrated/product/validation/service/ProductValidationServiceTest.java</url>
@@ -1036,23 +1100,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>68</line>
+          <line>70</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
-          <line>74</line>
+          <line>76</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/service/PaymentServiceTest.java</url>
           <line>76</line>
           <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/test/java/com/learn/orchestrated/payment/service/service/PaymentServiceTest.java</url>
@@ -1071,43 +1130,167 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>90</line>
+          <line>91</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
           <line>38</line>
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/inventory-service/src/test/java/com/learn/orchestrated/inventory/service/service/InventoryServiceTest.java</url>
           <line>119</line>
           <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentServiceOLd.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/OperationsService.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/service/impl/EventServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/controller/EventController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/SagaComposerService.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/FraudValidationService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
+          <line>181</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/order-service/src/main/java/com/learn/orchestrated/order/service/producer/SagaProducer.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/product-validation-service/src/main/java/com/learn/orchestrated/product/validation/service/service/ProductValidationService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/producer/SagaOrchestratorProducer.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/OrchestrationService.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/consumer/SagaOrchestratedConsumer.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/orchestrator-service/src/main/java/com/learn/orchestrated/orchestrator/service/SagaPlannerService.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ai-saga-agent/src/main/java/com/learn/aisagaagent/service/DataAnalystAgentService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/FraudValidationService.java</url>
+          <line>32</line>
+          <properties class="com.learn.orchestrated.payment.service.service.FraudValidationService" method="calculateFraudScore">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/payment-service/src/main/java/com/learn/orchestrated/payment/service/service/PaymentService.java</url>
@@ -1118,6 +1301,7 @@
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="jdk.proxy2.$Proxy131" memberName="h" />
         <PinnedItemInfo parentTag="com.learn.orchestrated.order.service.dto.OrderRequestDTO" memberName="products" />
         <PinnedItemInfo parentTag="com.learn.sagacommons.dto.OrderProducts" memberName="product" />
       </pinned-members>

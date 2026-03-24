@@ -1,0 +1,58 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.0.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.learn'
+version = '0.0.1-SNAPSHOT'
+description = 'ai-saga-agent'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+ext {
+	langchainVersion = "1.11.0"
+	lombokVersion = "1.18.30"
+}
+
+dependencies {
+	// Spring Boot base
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Commons (Event, Order, History, JsonUtil)
+	implementation 'com.learn:saga-commons:0.0.4-SNAPSHOT'
+
+	// ── LangChain4j ──────────────────────────────────────────────────
+	implementation "dev.langchain4j:langchain4j:${langchainVersion}"
+	implementation "dev.langchain4j:langchain4j-core:${langchainVersion}"
+	implementation "dev.langchain4j:langchain4j-open-ai:${langchainVersion}"
+	implementation "dev.langchain4j:langchain4j-ollama:${langchainVersion}"
+	implementation "dev.langchain4j:langchain4j-google-ai-gemini:${langchainVersion}"
+	implementation "dev.langchain4j:langchain4j-anthropic:${langchainVersion}"
+	implementation 'dev.langchain4j:langchain4j-mcp:1.11.0-beta19'
+	implementation 'dev.langchain4j:langchain4j-pgvector:1.11.0-beta19'
+	implementation 'dev.langchain4j:langchain4j-agentic:1.11.0-beta19'
+
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+	// Lombok
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+}

@@ -1,0 +1,54 @@
+server:
+  port: 8099
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    topic:
+      notify-ending: notify-ending
+    consumer:
+      group-id: ai-agent-group
+      auto-offset-reset: earliest
+
+
+  datasource:
+    url: jdbc:postgresql://${VECTORS_DB_HOST:localhost}:${VECTORS_DB_PORT:5435}/${VECTORS_DB_NAME:vectors-db}
+    username: ${VECTORS_DB_USER:postgres}
+    password: ${VECTORS_DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-only
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: 6379
+
+ai:
+  primary-model: gemini
+  ollama:
+    base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+    model-name: ${OLLAMA_MODEL:qwen3:8b}
+    timeout: 120
+
+  gemini:
+    api-key: ${GEMINI_API_KEY}
+    model-name: ${GEMINI_MODEL:gemini-2.5-flash}
+
+  claude:
+    api-key: ${CLAUDE_API_KEY}
+    model-name: ${CLAUDE_MODEL:claude-sonnet-4-20250514}
+
+mcp:
+  order-service-url:      ${ORDER_MCP_URL:http://localhost:3000/sse}
+  payment-service-url:    ${PAYMENT_MCP_URL:http://localhost:8091/sse}
+  inventory-service-url:  ${INVENTORY_MCP_URL:http://localhost:8092/sse}
+  product-validation-url: ${PRODUCT_VALIDATION_MCP_URL:http://localhost:8090/sse}
+  orchestrator-url:       ${ORCHESTRATOR_MCP_URL:http://localhost:8050/sse}

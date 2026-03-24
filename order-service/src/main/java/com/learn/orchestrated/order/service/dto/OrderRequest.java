@@ -11,5 +11,11 @@ public record OrderRequest(
                 description = "Lista de produtos do pedido",
                 example = "[{\"product\":{\"code\":\"COMIC_BOOKS\",\"unitValue\":15.50},\"quantity\":3},{\"product\":{\"code\":\"BOOKS\",\"unitValue\":9.90},\"quantity\":1}]"
         )
-        List<OrderProducts> products
+        List<OrderProducts> products,
+        String customerId,
+        @Schema(description = "Client type", example = "novo")
+        String clientType,
+        Integer clientOrderCount,
+        Double clientSuccessRate,
+        Boolean hasDigitalProducts
 ) {}
