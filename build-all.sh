@@ -241,6 +241,23 @@ if printf '%s\n' "${SERVICES[@]}" | grep -q "ai-saga-agent"; then
   fi
 fi
 
+# ── Publish saga-commons ─────────────────────────────────────
+section "Publishing saga-commons"
+SAGA_COMMONS_DIR="$ROOT_DIR/saga-commons"
+if [[ -d "$SAGA_COMMONS_DIR" ]]; then
+  log "Publishing saga-commons to mavenLocal..."
+  if (cd "$SAGA_COMMONS_DIR" && ./gradlew publishToMavenLocal --no-daemon --console=plain) > "$LOG_DIR/saga-commons-publish_${TIMESTAMP}.log" 2>&1; then
+    ok "saga-commons published successfully"
+  else
+    err "Failed to publish saga-commons — all dependent services will fail"
+    tail -10 "$LOG_DIR/saga-commons-publish_${TIMESTAMP}.log" | sed 's/^/    /'
+    exit 1
+  fi
+else
+  err "saga-commons directory not found at $SAGA_COMMONS_DIR"
+  exit 1
+fi
+
 # ── Build ─────────────────────────────────────────────────────
 section "Build (${#SERVICES[@]} servicos)"
 GLOBAL_START=$(date +%s)
